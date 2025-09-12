@@ -1,0 +1,222 @@
+name: PR Validation - Banking API BDD Tests
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'features/**'
+      - 'steps/**'
+      - 'support/**'
+      - 'pyproject.toml'
+      - '.github/workflows/**'
+
+env:
+  PYTHON_VERSION: '3.11'
+  TEST_ENVIRONMENT: 'test'
+
+jobs:
+  lint-and-format:
+    name: Code Quality Checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ env.PYTHON_VERSION }}-${{ hashFiles('**/poetry.lock') }}
+      
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+      
+      - name: Run code formatting check
+        run: |
+          poetry run black --check --diff .
+          poetry run isort --check-only --diff .
+      
+      - name: Run linting
+        run: |
+          poetry run flake8 .
+          poetry run mypy steps support
+
+  smoke-tests:
+    name: Smoke Tests
+    runs-on: ubuntu-latest
+    needs: lint-and-format
+    strategy:
+      matrix:
+        test-suite: [authentication, accounts, customers]
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ env.PYTHON_VERSION }}-${{ hashFiles('**/poetry.lock') }}
+      
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction
+      
+      - name: Create test reports directory
+        run: mkdir -p reports/allure-results reports/junit
+      
+      - name: Run smoke tests for ${{ matrix.test-suite }}
+        env:
+          BASE_URL: ${{ secrets.RAILWAY_API_URL || 'https://your-wiremock-app.railway.app' }}
+          AUTH_TOKEN: ${{ secrets.API_AUTH_TOKEN || 'banking-api-key-2024' }}
+          TEST_ENVIRONMENT: test
+        run: |
+          poetry run behave \
+            --tags=@smoke \
+            --tags=@${{ matrix.test-suite }} \
+            --format=allure_behave.formatter:AllureFormatter \
+            --outdir=reports/allure-results \
+            --junit \
+            --junit-directory=reports/junit \
+            features/${{ matrix.test-suite }}/
+      
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-results-${{ matrix.test-suite }}
+          path: |
+            reports/
+            logs/
+          retention-days: 30
+
+  api-health-check:
+    name: API Health Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check API availability
+        run: |
+          API_URL="${{ secrets.RAILWAY_API_URL || 'https://your-wiremock-app.railway.app' }}"
+          echo "Checking API health at: $API_URL"
+          
+          # Basic connectivity test
+          if curl -f -s --max-time 10 "$API_URL" > /dev/null; then
+            echo "✅ API is reachable"
+          else
+            echo "❌ API is not reachable"
+            exit 1
+          fi
+          
+          # Authentication test
+          if curl -f -s --max-time 10 \
+               -H "Authorization: Bearer ${{ secrets.API_AUTH_TOKEN || 'banking-api-key-2024' }}" \
+               "$API_URL/customers/CUST001" > /dev/null; then
+            echo "✅ API authentication working"
+          else
+            echo "⚠️ API authentication may have issues (this might be expected for test data)"
+          fi
+
+  regression-subset:
+    name: Regression Subset
+    runs-on: ubuntu-latest
+    needs: [smoke-tests, api-health-check]
+    if: github.event.pull_request.base.ref == 'main'
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      
+      - name: Install dependencies
+        run: poetry install --no-interaction
+      
+      - name: Run regression tests (subset)
+        env:
+          BASE_URL: ${{ secrets.RAILWAY_API_URL || 'https://your-wiremock-app.railway.app' }}
+          AUTH_TOKEN: ${{ secrets.API_AUTH_TOKEN || 'banking-api-key-2024' }}
+          TEST_ENVIRONMENT: test
+        run: |
+          poetry run behave \
+            --tags=@regression \
+            --tags=@happy_path \
+            --format=allure_behave.formatter:AllureFormatter \
+            --outdir=reports/allure-results \
+            --junit \
+            --junit-directory=reports/junit
+      
+      - name: Upload regression results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: regression-results
+          path: reports/
+          retention-days: 30
+
+  notify-results:
+    name: Notify Test Results
+    runs-on: ubuntu-latest
+    needs: [smoke-tests, regression-subset]
+    if: always()
+    
+    steps:
+      - name: PR Comment with Results
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const smokePassed = '${{ needs.smoke-tests.result }}' === 'success';
+            const regressionPassed = '${{ needs.regression-subset.result }}' === 'success' || '${{ needs.regression-subset.result }}' === 'skipped';
+            
+            let comment = '## 🧪 Banking API BDD Test Results\n\n';
+            comment += `**Smoke Tests**: ${smokePassed ? '✅ PASSED' : '❌ FAILED'}\n`;
+            comment += `**Regression Tests**: ${regressionPassed ? '✅ PASSED' : '❌ FAILED'}\n\n`;
+            
+            if (smokePassed && regressionPassed) {
+              comment += '✅ All tests passed! Ready for review.\n';
+            } else {
+              comment += '❌ Some tests failed. Please check the test results and fix issues before merging.\n';
+            }
+            
+            comment += '\n📊 [View detailed test reports in Actions artifacts](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})';
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

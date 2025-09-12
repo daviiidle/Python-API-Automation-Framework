@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  banking-api-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TEST_ENVIRONMENT=docker
+      - BASE_URL=${BASE_URL:-https://your-wiremock-app.railway.app}
+      - AUTH_TOKEN=${AUTH_TOKEN:-banking-api-key-2024}
+      - PYTHONPATH=/app
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+    command: >
+      sh -c "
+        echo 'Starting Banking API BDD Tests...' &&
+        poetry run behave --tags=@smoke --format=pretty &&
+        echo 'Smoke tests completed successfully!'
+      "
+    profiles:
+      - smoke
+
+  banking-api-regression:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TEST_ENVIRONMENT=docker
+      - BASE_URL=${BASE_URL:-https://your-wiremock-app.railway.app}
+      - AUTH_TOKEN=${AUTH_TOKEN:-banking-api-key-2024}
+      - PYTHONPATH=/app
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+    command: >
+      sh -c "
+        echo 'Starting Banking API Regression Tests...' &&
+        poetry run behave --tags=@regression 
+          --format=allure_behave.formatter:AllureFormatter 
+          --outdir=reports/allure-results 
+          --junit 
+          --junit-directory=reports/junit &&
+        echo 'Regression tests completed!'
+      "
+    profiles:
+      - regression
+
+  allure-serve:
+    image: frankescobar/allure-docker-service
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: 1
+      KEEP_HISTORY: 1
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./reports/allure-results:/app/allure-results
+      - ./reports/allure-reports:/app/default-reports
+    profiles:
+      - reporting
