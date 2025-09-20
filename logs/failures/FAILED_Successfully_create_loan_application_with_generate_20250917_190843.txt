@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T19:08:43.871898
+[TEST] Scenario: Successfully create loan application with generated data
+[FILE] Feature: Loan Management
+[LOCATION] Location: features/loans/loan_management.feature:12
+[TIME]  Duration: 0:00:00.156502
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Key assertion failed - 'term' not found. Available keys: ['loanId', 'customerId', 'amount', 'loanType', 'interestRate', 'termMonths', 'repaymentFrequency', 'nextPaymentDate', 'createdAt']
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/loans
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "95fd85ae-30e1-4415-8083-062c44565bc4",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"loanId":"LOAN501489","customerId":"CUST251081","amount":"333671.27","loanType":"HOME","interestRate":"12.09","termMonths":"36","repaymentFrequency":"monthly","nextPaymentDate":"2025-10-17","createdAt":"2025-09-17 19:08:43"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.013s
+Errors: ["Key assertion failed - 'term' not found. Available keys: ['loanId', 'customerId', 'amount', 'loanType', 'interestRate', 'termMonths', 'repaymentFrequency', 'nextPaymentDate', 'createdAt']"]
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

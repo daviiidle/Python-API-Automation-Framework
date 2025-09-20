@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T18:31:30.983152
+[TEST] Scenario: Attempt to create conflicting bookings
+[FILE] Feature: Booking Management
+[LOCATION] Location: features/bookings/booking_management.feature:34
+[TIME]  Duration: 0:00:00.166498
+[TAGS]  Tags: conflict_handling, error_handling
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 409, Actual: 201 | JSON Error: {"bookingId": "BOOK717117", "customerId": "CUST432602", "productType": "APPOINTMENT", "productId": "PROD417282", "bookingDate": "2025-10-03", "bookingTime": "13:22", "status": "active", "createdAt": "2025-09-17 18:31:30"}
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/bookings
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "482986db-abd8-4a9b-a4e4-9ea1a5209c2c",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"bookingId":"BOOK717117","customerId":"CUST432602","productType":"APPOINTMENT","productId":"PROD417282","bookingDate":"2025-10-03","bookingTime":"13:22","status":"active","createdAt":"2025-09-17 18:31:30"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 2
+Total Response Time: 0.028s
+Errors: ['Status code assertion failed - Expected: 409, Actual: 201']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

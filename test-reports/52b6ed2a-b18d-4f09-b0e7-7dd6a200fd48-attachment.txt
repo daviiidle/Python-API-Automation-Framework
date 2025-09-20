@@ -1,0 +1,6 @@
+{
+  "customerId": "CUST001",
+  "accountType": "SAVINGS",
+  "currency": "invalid",
+  "initialBalance": 1000.00
+}

@@ -1,0 +1,26 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T18:22:50.143662
+[TEST] Scenario: API access denied with invalid token
+[FILE] Feature: Authentication and Security
+[LOCATION] Location: features/authentication/auth_security.feature:27
+[TIME]  Duration: 0:00:00.136164
+[TAGS]  Tags: authentication, error_handling, FAILED
+[INFO] Status: failed
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.014s
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

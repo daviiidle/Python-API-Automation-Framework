@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-16T14:20:22.646548
+[TEST] Scenario: Retrieve accounts with boundary ID values -- @1.1 
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:60
+[TIME]  Duration: 0:00:00.153168
+[TAGS]  Tags: boundary_testing
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 200, Actual: 400 | JSON Error: {"error": "DEBUG: Caught by catch-all mapping", "url": "/accounts/ACC001", "method": "GET", "headers": "{Accept=application/json, Accept-Encoding=gzip, deflate, Authorization=Bearer banking-api-key-2024, Connection=keep-alive, Content-Type=application/json, Host=localhost:8081, User-Agent=python-requests/2.32.5}"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.015s
+Errors: ['Status code assertion failed - Expected: 200, Actual: 400']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

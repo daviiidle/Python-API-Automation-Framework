@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T17:45:08.730582
+[TEST] Scenario: Attempt to create account with incorrect content type
+[FILE] Feature: Account Creation
+[LOCATION] Location: features/accounts/account_creation.feature:243
+[TIME]  Duration: 0:00:00.139248
+[TAGS]  Tags: content_type_validation
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 400, Actual: 409 | JSON Error: {"error": "Conflict", "code": "DUPLICATE_ACCOUNT", "message": "Account already exists for customer CUST001 with type SAVINGS", "timestamp": "2025-09-17 17:45:08"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.016s
+Errors: ['Status code assertion failed - Expected: 400, Actual: 409']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

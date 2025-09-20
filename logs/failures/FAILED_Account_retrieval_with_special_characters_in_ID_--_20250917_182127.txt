@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T18:21:27.716626
+[TEST] Scenario: Account retrieval with special characters in ID -- @1.4 
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:118
+[TIME]  Duration: 0:00:00.141999
+[TAGS]  Tags: edge_cases
+[INFO] Status: failed
+
+[ERROR] Last Error: JSON decode error and no error text found: Expecting value: line 1 column 1 (char 0)
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.017s
+Errors: ['JSON decode error and no error text found: Expecting value: line 1 column 1 (char 0)']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

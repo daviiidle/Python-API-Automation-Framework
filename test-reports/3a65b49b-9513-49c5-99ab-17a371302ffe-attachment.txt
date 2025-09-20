@@ -1,0 +1,6 @@
+{
+  "customerId": "CUST001",
+  "accountType": "SAVINGS",
+  "currency": "AUD",
+  "description": "<script>alert('xss')</script>"
+}

@@ -1,0 +1,6 @@
+accountType,currency,initialBalance,description
+SAVINGS,AUD,1000.50,Primary savings
+CHECKING,USD,2500.00,USD checking account
+TERM_DEPOSIT,EUR,10000.00,Euro term deposit
+CREDIT_CARD,GBP,0.00,GBP credit card
+SAVINGS,AUD,0.01,Minimum balance test

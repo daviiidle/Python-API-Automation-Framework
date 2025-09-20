@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T11:42:21.651729
+[TEST] Scenario: Account operations with SQL injection attempts
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:152
+[TIME]  Duration: 0:00:01.634853
+[TAGS]  Tags: sql_injection_protection
+[INFO] Status: failed
+
+[ERROR] Last Error: JSON decode error and no error text found: Expecting value: line 2 column 48 (char 48)
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.752s
+Errors: ['JSON decode error and no error text found: Expecting value: line 2 column 48 (char 48)']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

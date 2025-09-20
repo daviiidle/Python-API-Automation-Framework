@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T11:42:34.671690
+[TEST] Scenario: Verify error response format consistency
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:217
+[TIME]  Duration: 0:00:01.723977
+[TAGS]  Tags: error_response_format
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 500 | JSON Error: {"servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d", "cause0": "java.io.FileNotFoundException: /app/./__files/account-NONEXISTENT.json (No such file or directory)", "message": "java.io.FileNotFoundException: /app/./__files/account-NONEXISTENT.json (No such file or directory)", "url": "/accounts/NONEXISTENT", "status": "500"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.792s
+Errors: ['Status code assertion failed - Expected: 404, Actual: 500']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

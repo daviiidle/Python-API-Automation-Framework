@@ -1,0 +1,475 @@
+2025-09-16 12:39:22,167 - banking_api_tests - INFO - [environment.py:276] - [FRAMEWORK] ================================================================================
+2025-09-16 12:39:22,167 - banking_api_tests - INFO - [environment.py:277] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION START
+2025-09-16 12:39:22,167 - banking_api_tests - INFO - [environment.py:278] - [FRAMEWORK] ================================================================================
+2025-09-16 12:39:22,168 - banking_api_tests - DEBUG - [environment.py:283] - [FILE] Created reports directories
+2025-09-16 12:39:22,168 - banking_api_tests - INFO - [environment.py:242] - [ENV] Loading environment: test
+2025-09-16 12:39:22,168 - banking_api_tests - INFO - [environment.py:243] - [FILE] Environment file: environments/.env.test
+2025-09-16 12:39:22,168 - banking_api_tests - INFO - [environment.py:261] - [ENV] Successfully loaded environments/.env.test
+2025-09-16 12:39:22,169 - banking_api_tests - INFO - [environment.py:300] - [ENV] Configuration loaded successfully for environment: test
+2025-09-16 12:39:22,169 - banking_api_tests - INFO - [environment.py:311] - [ENV] Test Environment: test
+2025-09-16 12:39:22,169 - banking_api_tests - INFO - [environment.py:312] - [URL] API Base URL: http://localhost:8081
+2025-09-16 12:39:22,169 - banking_api_tests - INFO - [environment.py:313] - [AUTH] Auth Token: ****************2024
+2025-09-16 12:39:22,169 - banking_api_tests - INFO - [environment.py:314] - [FILE] Log File: logs/banking_api_tests_20250916_123922.log
+2025-09-16 12:39:22,169 - banking_api_tests - INFO - [environment.py:317] - [PLATFORM]  Platform: nt
+2025-09-16 12:39:22,169 - banking_api_tests - INFO - [environment.py:318] - [TIME] Start Time: 2025-09-16T12:39:22.169643
+2025-09-16 12:39:22,169 - banking_api_tests - INFO - [environment.py:319] - [USER] User: D
+2025-09-16 12:39:22,169 - banking_api_tests - INFO - [environment.py:320] - [DIR] Working Directory: C:\Users\D\python api automation framework
+2025-09-16 12:39:22,169 - banking_api_tests - INFO - [environment.py:321] - [TIMEOUT] Request Timeout: 15s
+2025-09-16 12:39:22,170 - banking_api_tests - INFO - [environment.py:322] - [PERFORMANCE] Performance Threshold: 3000ms
+2025-09-16 12:39:22,170 - banking_api_tests - INFO - [environment.py:335] - [START] Framework initialization complete - Ready to execute tests
+2025-09-16 12:39:22,171 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:39:22,171 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create account with valid generated data
+2025-09-16 12:39:22,171 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Creation
+2025-09-16 12:39:22,171 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_creation.feature:12
+2025-09-16 12:39:22,171 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-16 12:39:22,171 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:39:22.171250
+2025-09-16 12:39:22,171 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:39:22,172 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:39:26,292 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC566BCB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:26,294 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_account_with_valid_generated_d_20250916_123926.txt
+2025-09-16 12:39:26,295 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:39:26,295 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create account with valid generated data
+2025-09-16 12:39:26,295 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:39:26,295 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.122940
+2025-09-16 12:39:26,295 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:39:26,295 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC566BCB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:26,296 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:39:26,320 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:39:26,321 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create account with generated data
+2025-09-16 12:39:26,321 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Creation with Dynamic Data
+2025-09-16 12:39:26,321 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_creation_dynamic.feature:12
+2025-09-16 12:39:26,321 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-16 12:39:26,321 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:39:26.320805
+2025-09-16 12:39:26,321 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:39:26,322 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:39:30,422 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5781590>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:30,423 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_account_with_generated_data_20250916_123930.txt
+2025-09-16 12:39:30,423 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:39:30,424 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create account with generated data
+2025-09-16 12:39:30,424 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:39:30,424 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.102292
+2025-09-16 12:39:30,424 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:39:30,424 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5781590>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:30,424 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:39:30,462 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:39:30,462 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully retrieve account by valid ID
+2025-09-16 12:39:30,462 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:39:30,462 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:12
+2025-09-16 12:39:30,462 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, regression
+2025-09-16 12:39:30,462 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:39:30.462079
+2025-09-16 12:39:30,462 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:39:30,463 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:39:34,548 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5781F90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:34,550 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_retrieve_account_by_valid_ID_20250916_123934.txt
+2025-09-16 12:39:34,550 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:39:34,550 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully retrieve account by valid ID
+2025-09-16 12:39:34,550 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:39:34,550 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.087311
+2025-09-16 12:39:34,550 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:39:34,550 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5781F90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:34,550 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:39:34,551 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:39:34,552 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully retrieve account with different valid ID
+2025-09-16 12:39:34,552 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:39:34,552 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:24
+2025-09-16 12:39:34,552 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, regression
+2025-09-16 12:39:34,552 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:39:34.551856
+2025-09-16 12:39:34,552 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:39:34,552 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:39:38,629 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC57C50F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:38,630 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_retrieve_account_with_different_valid_20250916_123938.txt
+2025-09-16 12:39:38,631 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:39:38,631 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully retrieve account with different valid ID
+2025-09-16 12:39:38,631 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:39:38,631 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.078178
+2025-09-16 12:39:38,631 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:39:38,631 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC57C50F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:38,631 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:39:38,632 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:39:38,632 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Attempt to retrieve non-existent account
+2025-09-16 12:39:38,633 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:39:38,633 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:39
+2025-09-16 12:39:38,633 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: error_handling, regression
+2025-09-16 12:39:38,633 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:39:38.632761
+2025-09-16 12:39:38,633 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:39:38,634 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:39:42,711 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC57C5940>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:42,713 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Attempt_to_retrieve_non-existent_account_20250916_123942.txt
+2025-09-16 12:39:42,713 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:39:42,713 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Attempt to retrieve non-existent account
+2025-09-16 12:39:42,713 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:39:42,713 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.080018
+2025-09-16 12:39:42,714 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:39:42,714 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC57C5940>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:42,714 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:39:42,715 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:39:42,715 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Attempt to retrieve account with invalid ID format
+2025-09-16 12:39:42,715 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:39:42,715 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:47
+2025-09-16 12:39:42,715 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: error_handling, regression
+2025-09-16 12:39:42,715 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:39:42.715127
+2025-09-16 12:39:42,715 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:39:42,716 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:39:46,800 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC573BE30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:46,801 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Attempt_to_retrieve_account_with_invalid_ID_format_20250916_123946.txt
+2025-09-16 12:39:46,802 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:39:46,802 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Attempt to retrieve account with invalid ID format
+2025-09-16 12:39:46,802 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:39:46,802 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.086206
+2025-09-16 12:39:46,802 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:39:46,802 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC573BE30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:46,802 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:39:46,804 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:39:46,804 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Retrieve accounts with boundary ID values -- @1.1 
+2025-09-16 12:39:46,804 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:39:46,804 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:60
+2025-09-16 12:39:46,804 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: boundary_testing
+2025-09-16 12:39:46,804 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:39:46.804309
+2025-09-16 12:39:46,805 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:39:46,805 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:39:50,892 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC57CB680>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:50,893 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Retrieve_accounts_with_boundary_ID_values_--__1_1__20250916_123950.txt
+2025-09-16 12:39:50,893 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:39:50,893 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Retrieve accounts with boundary ID values -- @1.1 
+2025-09-16 12:39:50,894 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:39:50,894 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.088587
+2025-09-16 12:39:50,894 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:39:50,894 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC57CB680>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:50,894 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:39:50,895 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:39:50,895 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Retrieve accounts with boundary ID values -- @1.2 
+2025-09-16 12:39:50,895 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:39:50,895 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:61
+2025-09-16 12:39:50,895 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: boundary_testing
+2025-09-16 12:39:50,895 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:39:50.895192
+2025-09-16 12:39:50,895 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:39:50,896 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:39:54,951 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC57CBAC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:54,953 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Retrieve_accounts_with_boundary_ID_values_--__1_2__20250916_123954.txt
+2025-09-16 12:39:54,953 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:39:54,953 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Retrieve accounts with boundary ID values -- @1.2 
+2025-09-16 12:39:54,954 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:39:54,954 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.057415
+2025-09-16 12:39:54,954 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:39:54,954 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC57CBAC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:54,954 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:39:54,955 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:39:54,955 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Retrieve accounts with boundary ID values -- @1.3 
+2025-09-16 12:39:54,955 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:39:54,955 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:62
+2025-09-16 12:39:54,955 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: boundary_testing
+2025-09-16 12:39:54,955 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:39:54.955248
+2025-09-16 12:39:54,955 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:39:54,956 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:39:59,037 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5810160>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:59,039 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Retrieve_accounts_with_boundary_ID_values_--__1_3__20250916_123959.txt
+2025-09-16 12:39:59,039 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:39:59,039 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Retrieve accounts with boundary ID values -- @1.3 
+2025-09-16 12:39:59,039 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:39:59,039 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.083392
+2025-09-16 12:39:59,039 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:39:59,040 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5810160>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:39:59,040 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:39:59,040 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:39:59,041 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Retrieve accounts with boundary ID values -- @1.4 
+2025-09-16 12:39:59,041 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:39:59,041 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:63
+2025-09-16 12:39:59,041 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: boundary_testing
+2025-09-16 12:39:59,041 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:39:59.040892
+2025-09-16 12:39:59,041 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:39:59,042 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:03,126 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58105A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:03,127 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Retrieve_accounts_with_boundary_ID_values_--__1_4__20250916_124003.txt
+2025-09-16 12:40:03,127 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:03,127 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Retrieve accounts with boundary ID values -- @1.4 
+2025-09-16 12:40:03,128 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:03,128 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.086033
+2025-09-16 12:40:03,128 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:03,128 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58105A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:03,128 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:03,129 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:03,129 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Multiple concurrent account retrievals
+2025-09-16 12:40:03,129 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:40:03,129 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:66
+2025-09-16 12:40:03,129 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: performance, load_testing
+2025-09-16 12:40:03,129 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:03.129200
+2025-09-16 12:40:03,129 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:03,130 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:07,212 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58109E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:07,214 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Multiple_concurrent_account_retrievals_20250916_124007.txt
+2025-09-16 12:40:07,214 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:07,214 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Multiple concurrent account retrievals
+2025-09-16 12:40:07,214 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:07,214 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.084255
+2025-09-16 12:40:07,215 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:07,215 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58109E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:07,215 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:07,216 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:07,216 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Verify account response data types and formats
+2025-09-16 12:40:07,216 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:40:07,216 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:73
+2025-09-16 12:40:07,216 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: data_validation
+2025-09-16 12:40:07,217 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:07.216391
+2025-09-16 12:40:07,217 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:07,217 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:11,297 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5810D10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:11,298 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Verify_account_response_data_types_and_formats_20250916_124011.txt
+2025-09-16 12:40:11,298 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:11,299 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Verify account response data types and formats
+2025-09-16 12:40:11,299 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:11,299 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.081728
+2025-09-16 12:40:11,299 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:11,299 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5810D10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:11,299 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:11,300 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:11,300 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Verify correlation ID is propagated in account retrieval
+2025-09-16 12:40:11,300 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:40:11,301 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:84
+2025-09-16 12:40:11,301 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: correlation_tracking
+2025-09-16 12:40:11,301 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:11.300705
+2025-09-16 12:40:11,301 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:11,301 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:15,388 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5811040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:15,389 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Verify_correlation_ID_is_propagated_in_account_ret_20250916_124015.txt
+2025-09-16 12:40:15,390 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:15,390 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Verify correlation ID is propagated in account retrieval
+2025-09-16 12:40:15,390 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:15,390 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.088475
+2025-09-16 12:40:15,390 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:15,390 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5811040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:15,390 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:15,391 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:15,391 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Verify consistent response for repeated requests
+2025-09-16 12:40:15,391 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:40:15,391 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:91
+2025-09-16 12:40:15,391 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: caching_behavior
+2025-09-16 12:40:15,391 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:15.391429
+2025-09-16 12:40:15,392 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:15,392 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:19,497 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5811370>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:19,498 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Verify_consistent_response_for_repeated_requests_20250916_124019.txt
+2025-09-16 12:40:19,499 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:19,499 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Verify consistent response for repeated requests
+2025-09-16 12:40:19,499 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:19,499 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.106773
+2025-09-16 12:40:19,499 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:19,499 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5811370>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:19,499 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:19,500 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:19,500 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Verify account retrieval response headers
+2025-09-16 12:40:19,500 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:40:19,500 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:101
+2025-09-16 12:40:19,500 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: response_headers
+2025-09-16 12:40:19,501 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:19.500550
+2025-09-16 12:40:19,501 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:19,501 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:23,592 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58116A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:23,594 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Verify_account_retrieval_response_headers_20250916_124023.txt
+2025-09-16 12:40:23,594 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:23,594 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Verify account retrieval response headers
+2025-09-16 12:40:23,594 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:23,594 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.092940
+2025-09-16 12:40:23,594 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:23,594 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58116A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:23,595 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:23,599 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:23,599 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Account retrieval with special characters in ID -- @1.1 
+2025-09-16 12:40:23,599 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:40:23,599 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:115
+2025-09-16 12:40:23,599 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: edge_cases
+2025-09-16 12:40:23,599 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:23.598947
+2025-09-16 12:40:23,599 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:23,600 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:27,685 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58117B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:27,686 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Account_retrieval_with_special_characters_in_ID_--_20250916_124027.txt
+2025-09-16 12:40:27,687 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:27,687 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Account retrieval with special characters in ID -- @1.1 
+2025-09-16 12:40:27,687 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:27,687 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.087237
+2025-09-16 12:40:27,687 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:27,687 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58117B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:27,687 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:27,688 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:27,688 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Account retrieval with special characters in ID -- @1.2 
+2025-09-16 12:40:27,688 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:40:27,688 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:116
+2025-09-16 12:40:27,689 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: edge_cases
+2025-09-16 12:40:27,689 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:27.688614
+2025-09-16 12:40:27,689 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:27,689 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:31,767 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5812030>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:31,769 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Account_retrieval_with_special_characters_in_ID_--_20250916_124031.txt
+2025-09-16 12:40:31,769 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:31,769 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Account retrieval with special characters in ID -- @1.2 
+2025-09-16 12:40:31,769 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:31,769 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.079874
+2025-09-16 12:40:31,769 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:31,769 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5812030>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:31,769 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:31,770 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:31,770 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Account retrieval with special characters in ID -- @1.3 
+2025-09-16 12:40:31,771 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:40:31,771 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:117
+2025-09-16 12:40:31,771 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: edge_cases
+2025-09-16 12:40:31,771 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:31.770776
+2025-09-16 12:40:31,771 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:31,771 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:35,849 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5812360>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:35,851 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Account_retrieval_with_special_characters_in_ID_--_20250916_124035.txt
+2025-09-16 12:40:35,851 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:35,851 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Account retrieval with special characters in ID -- @1.3 
+2025-09-16 12:40:35,851 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:35,851 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.079652
+2025-09-16 12:40:35,851 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:35,851 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5812360>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:35,851 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:35,852 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:35,852 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Account retrieval with special characters in ID -- @1.4 
+2025-09-16 12:40:35,853 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-16 12:40:35,853 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:118
+2025-09-16 12:40:35,853 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: edge_cases
+2025-09-16 12:40:35,853 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:35.852716
+2025-09-16 12:40:35,853 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:35,854 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:39,954 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58127A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:39,955 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Account_retrieval_with_special_characters_in_ID_--_20250916_124039.txt
+2025-09-16 12:40:39,955 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:39,955 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Account retrieval with special characters in ID -- @1.4 
+2025-09-16 12:40:39,955 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:39,956 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.102124
+2025-09-16 12:40:39,956 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:39,956 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58127A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:39,956 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:39,959 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:39,959 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successful API access with valid bearer token
+2025-09-16 12:40:39,959 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Authentication and Security
+2025-09-16 12:40:39,960 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/authentication/auth_security.feature:11
+2025-09-16 12:40:39,960 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: authentication, smoke
+2025-09-16 12:40:39,960 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:39.959632
+2025-09-16 12:40:39,960 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:39,960 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:44,041 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5812AD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:44,042 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successful_API_access_with_valid_bearer_token_20250916_124044.txt
+2025-09-16 12:40:44,042 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:44,043 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successful API access with valid bearer token
+2025-09-16 12:40:44,043 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:44,043 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.082387
+2025-09-16 12:40:44,043 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:44,043 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5812AD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:44,043 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:44,048 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:44,048 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create booking with generated data
+2025-09-16 12:40:44,049 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Booking Management
+2025-09-16 12:40:44,049 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/bookings/booking_management.feature:12
+2025-09-16 12:40:44,049 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-16 12:40:44,049 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:44.048744
+2025-09-16 12:40:44,049 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:44,050 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:48,117 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58128B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:48,118 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_booking_with_generated_data_20250916_124048.txt
+2025-09-16 12:40:48,118 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:48,119 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create booking with generated data
+2025-09-16 12:40:48,119 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:48,119 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.069305
+2025-09-16 12:40:48,119 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:48,119 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC58128B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:48,119 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:48,123 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:48,123 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create customer with generated data
+2025-09-16 12:40:48,123 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Customer Management
+2025-09-16 12:40:48,124 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/customers/customer_management.feature:12
+2025-09-16 12:40:48,124 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-16 12:40:48,124 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:48.123654
+2025-09-16 12:40:48,124 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:48,124 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:52,221 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5812BE0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:52,222 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_customer_with_generated_data_20250916_124052.txt
+2025-09-16 12:40:52,222 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:52,222 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create customer with generated data
+2025-09-16 12:40:52,223 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:52,223 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.098385
+2025-09-16 12:40:52,223 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:52,223 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5812BE0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:52,223 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:52,224 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:52,224 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully retrieve customer with generated ID
+2025-09-16 12:40:52,224 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Customer Management
+2025-09-16 12:40:52,224 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/customers/customer_management.feature:25
+2025-09-16 12:40:52,224 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-16 12:40:52,225 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:52.224546
+2025-09-16 12:40:52,225 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:52,225 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:40:56,317 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5813460>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:56,319 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_retrieve_customer_with_generated_ID_20250916_124056.txt
+2025-09-16 12:40:56,319 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:40:56,319 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully retrieve customer with generated ID
+2025-09-16 12:40:56,319 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:40:56,319 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.094023
+2025-09-16 12:40:56,320 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:40:56,320 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5813460>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:40:56,320 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:40:56,326 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:40:56,326 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Complete customer onboarding workflow
+2025-09-16 12:40:56,326 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: End-to-End Banking Workflows
+2025-09-16 12:40:56,326 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/integration/end_to_end_workflows.feature:12
+2025-09-16 12:40:56,326 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: workflow, smoke
+2025-09-16 12:40:56,326 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:40:56.326286
+2025-09-16 12:40:56,327 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:40:56,327 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:41:00,424 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5813240>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:41:00,425 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Complete_customer_onboarding_workflow_20250916_124100.txt
+2025-09-16 12:41:00,426 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:41:00,426 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Complete customer onboarding workflow
+2025-09-16 12:41:00,426 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:41:00,426 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.098960
+2025-09-16 12:41:00,426 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:41:00,426 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5813240>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:41:00,426 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:41:00,431 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:41:00,432 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create loan application with generated data
+2025-09-16 12:41:00,432 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Loan Management
+2025-09-16 12:41:00,432 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/loans/loan_management.feature:12
+2025-09-16 12:41:00,432 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-16 12:41:00,432 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:41:00.431794
+2025-09-16 12:41:00,432 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:41:00,433 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:41:04,514 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5813570>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:41:04,515 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_loan_application_with_generate_20250916_124104.txt
+2025-09-16 12:41:04,516 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:41:04,516 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create loan application with generated data
+2025-09-16 12:41:04,516 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:41:04,516 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.083470
+2025-09-16 12:41:04,516 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:41:04,516 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5813570>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:41:04,517 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:41:04,519 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-16 12:41:04,520 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create term deposit with generated data
+2025-09-16 12:41:04,520 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Term Deposit Management
+2025-09-16 12:41:04,520 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/term_deposits/term_deposit_management.feature:12
+2025-09-16 12:41:04,520 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-16 12:41:04,520 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-16T12:41:04.519906
+2025-09-16 12:41:04,520 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-16 12:41:04,521 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-16 12:41:08,613 - banking_api_tests - ERROR - [common_steps.py:178] - [CONNECTION] Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5813DF0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:41:08,615 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_term_deposit_with_generated_da_20250916_124108.txt
+2025-09-16 12:41:08,615 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-16 12:41:08,615 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create term deposit with generated data
+2025-09-16 12:41:08,615 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-16 12:41:08,615 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:04.094461
+2025-09-16 12:41:08,615 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 0
+2025-09-16 12:41:08,616 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFC5813DF0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-09-16 12:41:08,616 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-16 12:41:08,619 - banking_api_tests - INFO - [environment.py:429] - [RESULTS] ================================================================================
+2025-09-16 12:41:08,619 - banking_api_tests - INFO - [environment.py:430] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION COMPLETE
+2025-09-16 12:41:08,619 - banking_api_tests - INFO - [environment.py:431] - [RESULTS] ================================================================================
+2025-09-16 12:41:08,619 - banking_api_tests - INFO - [environment.py:432] - [TIMEOUT] Total Execution Time: 0:01:46.448934
+2025-09-16 12:41:08,619 - banking_api_tests - INFO - [environment.py:433] - [INFO] Total Scenarios: 26
+2025-09-16 12:41:08,619 - banking_api_tests - INFO - [environment.py:434] - [PASSED] Passed: 0
+2025-09-16 12:41:08,619 - banking_api_tests - INFO - [environment.py:435] - [FAILED] Failed: 26
+2025-09-16 12:41:08,619 - banking_api_tests - INFO - [environment.py:436] - [SKIPPED]  Skipped: 0
+2025-09-16 12:41:08,620 - banking_api_tests - INFO - [environment.py:437] - [PERFORMANCE] Pass Rate: 0.00%
+2025-09-16 12:41:08,620 - banking_api_tests - INFO - [environment.py:438] - [URL] Total API Calls: 0
+2025-09-16 12:41:08,620 - banking_api_tests - INFO - [environment.py:445] - [FILE] Detailed Logs: logs/banking_api_tests_20250916_123922.log
+2025-09-16 12:41:08,620 - banking_api_tests - INFO - [environment.py:446] - [TIME] End Time: 2025-09-16T12:41:08.619040
+2025-09-16 12:41:08,620 - banking_api_tests - ERROR - [environment.py:460] - [ERROR] LOW SUCCESS RATE. Significant issues need attention.
+2025-09-16 12:41:08,620 - banking_api_tests - INFO - [environment.py:469] - [RESULTS] ================================================================================

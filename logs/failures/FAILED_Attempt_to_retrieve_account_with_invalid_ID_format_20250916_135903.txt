@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-16T13:59:03.760428
+[TEST] Scenario: Attempt to retrieve account with invalid ID format
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:47
+[TIME]  Duration: 0:00:00.122835
+[TAGS]  Tags: error_handling, regression
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 500 | JSON Error: {"servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-1dab9dd6", "cause0": "java.io.FileNotFoundException: C:\\Users\\D\\Wiremock\\scripts\\..\\__files\\account-123invalid.json (The system cannot find the file specified)", "message": "java.io.FileNotFoundException: C:\\Users\\D\\Wiremock\\scripts\\..\\__files\\account-123invalid.json (The system cannot find the file specified)", "url": "/accounts/123invalid", "status": "500"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.004s
+Errors: ['Status code assertion failed - Expected: 404, Actual: 500']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

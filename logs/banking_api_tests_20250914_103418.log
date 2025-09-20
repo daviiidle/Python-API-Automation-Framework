@@ -1,0 +1,56 @@
+2025-09-14 10:34:18,225 - banking_api_tests - INFO - [environment.py:276] - [FRAMEWORK] ================================================================================
+2025-09-14 10:34:18,225 - banking_api_tests - INFO - [environment.py:277] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION START
+2025-09-14 10:34:18,225 - banking_api_tests - INFO - [environment.py:278] - [FRAMEWORK] ================================================================================
+2025-09-14 10:34:18,225 - banking_api_tests - DEBUG - [environment.py:283] - [FILE] Created reports directories
+2025-09-14 10:34:18,226 - banking_api_tests - INFO - [environment.py:242] - [ENV] Loading environment: test
+2025-09-14 10:34:18,226 - banking_api_tests - INFO - [environment.py:243] - [FILE] Environment file: environments/.env.test
+2025-09-14 10:34:18,226 - banking_api_tests - INFO - [environment.py:261] - [ENV] Successfully loaded environments/.env.test
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:300] - [ENV] Configuration loaded successfully for environment: test
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:311] - [ENV] Test Environment: test
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:312] - [URL] API Base URL: http://wiremock-production.up.railway.app
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:313] - [AUTH] Auth Token: ****************2024
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:314] - [FILE] Log File: logs/banking_api_tests_20250914_103418.log
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:317] - [PLATFORM]  Platform: nt
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:318] - [TIME] Start Time: 2025-09-14T10:34:18.227473
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:319] - [USER] User: D
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:320] - [DIR] Working Directory: C:\Users\D\python api automation framework
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:321] - [TIMEOUT] Request Timeout: 15s
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:322] - [PERFORMANCE] Performance Threshold: 3000ms
+2025-09-14 10:34:18,227 - banking_api_tests - INFO - [environment.py:335] - [START] Framework initialization complete - Ready to execute tests
+2025-09-14 10:34:18,228 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-14 10:34:18,229 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create account with valid generated data
+2025-09-14 10:34:18,229 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Creation
+2025-09-14 10:34:18,229 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_creation.feature:12
+2025-09-14 10:34:18,229 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-14 10:34:18,229 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-14T10:34:18.228846
+2025-09-14 10:34:18,229 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-14 10:34:18,229 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-14 10:34:19,794 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-14 10:34:19,794 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-14 10:34:19,796 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-14 10:34:19,796 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-14 10:34:19,796 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-14 10:34:19,874 - banking_api_tests - INFO - [data_steps.py:37] - [DATA] Generating dynamic test data for: account
+2025-09-14 10:34:19,876 - banking_api_tests - INFO - [data_steps.py:98] - [DATA] Using customer ID: CUST401069
+2025-09-14 10:34:19,876 - banking_api_tests - INFO - [data_steps.py:256] - [REQUEST] Creating account using generated data
+2025-09-14 10:34:21,055 - banking_api_tests - INFO - [data_steps.py:276] - [RESPONSE] Create account Response: 404
+2025-09-14 10:34:21,055 - banking_api_tests - INFO - [data_steps.py:277] - [TIME]  Response Time: 1.178s
+2025-09-14 10:34:21,056 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 201
+2025-09-14 10:34:21,056 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 201, Actual: 404
+2025-09-14 10:34:21,056 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 201, got 404
+2025-09-14 10:34:21,056 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                      ...
+2025-09-14 10:34:21,057 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_account_with_valid_generated_d_20250914_103421.txt
+2025-09-14 10:34:21,057 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-14 10:34:21,058 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create account with valid generated data
+2025-09-14 10:34:21,058 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-14 10:34:21,058 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:02.828071
+2025-09-14 10:34:21,058 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-14 10:34:21,058 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 1.178s
+2025-09-14 10:34:21,058 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 1.178s
+2025-09-14 10:34:21,058 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 404
+2025-09-14 10:34:21,058 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================

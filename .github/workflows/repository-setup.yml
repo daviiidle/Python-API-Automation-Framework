@@ -1,0 +1,268 @@
+name: Repository Setup & Branch Protection
+
+on:
+  workflow_dispatch:
+    inputs:
+      setup_type:
+        description: 'Setup type to run'
+        required: true
+        default: 'branch-protection'
+        type: choice
+        options:
+          - branch-protection
+          - repository-settings
+          - all
+
+permissions:
+  contents: write
+  pull-requests: write
+  repository-projects: write
+  actions: write
+
+jobs:
+  setup-branch-protection:
+    name: Setup Branch Protection Rules
+    runs-on: ubuntu-latest
+    if: contains(github.event.inputs.setup_type, 'branch-protection') || github.event.inputs.setup_type == 'all'
+
+    steps:
+      - name: Setup Branch Protection for main
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+
+            console.log(`Setting up branch protection for ${owner}/${repo}`);
+
+            try {
+              const protection = await github.rest.repos.updateBranchProtection({
+                owner,
+                repo,
+                branch: 'main',
+                required_status_checks: {
+                  strict: true,
+                  contexts: [
+                    'Code Quality Checks',
+                    'API Health Check',
+                    'Smoke Tests (authentication)',
+                    'Smoke Tests (accounts)',
+                    'Smoke Tests (customers)',
+                    'Security Scan',
+                    'Code Coverage'
+                  ]
+                },
+                enforce_admins: false,
+                required_pull_request_reviews: {
+                  required_approving_review_count: 1,
+                  dismiss_stale_reviews: true,
+                  require_code_owner_reviews: false,
+                  require_last_push_approval: false
+                },
+                restrictions: null,
+                allow_force_pushes: false,
+                allow_deletions: false,
+                block_creations: false,
+                required_conversation_resolution: true
+              });
+
+              console.log('✅ Branch protection rules set successfully');
+
+              // Add to step summary
+              await core.summary
+                .addHeading('🛡️ Branch Protection Setup Complete')
+                .addList([
+                  'Required status checks configured',
+                  'Pull request reviews required',
+                  'Force pushes disabled',
+                  'Stale review dismissal enabled'
+                ])
+                .write();
+
+            } catch (error) {
+              console.error('❌ Failed to setup branch protection:', error.message);
+              core.setFailed(`Failed to setup branch protection: ${error.message}`);
+            }
+
+  setup-repository-settings:
+    name: Setup Repository Settings
+    runs-on: ubuntu-latest
+    if: contains(github.event.inputs.setup_type, 'repository-settings') || github.event.inputs.setup_type == 'all'
+
+    steps:
+      - name: Configure Repository Settings
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+
+            try {
+              // Update repository settings
+              await github.rest.repos.update({
+                owner,
+                repo,
+                description: 'Banking API BDD Test Framework with Behave and Railway Wiremock',
+                homepage: 'https://wiremock-production.up.railway.app',
+                has_issues: true,
+                has_projects: true,
+                has_wiki: false,
+                has_downloads: true,
+                auto_init: false,
+                allow_squash_merge: true,
+                allow_merge_commit: true,
+                allow_rebase_merge: false,
+                delete_branch_on_merge: true,
+                allow_auto_merge: true,
+                allow_update_branch: true,
+                use_squash_pr_title_as_default: true,
+                security_and_analysis: {
+                  secret_scanning: { status: 'enabled' },
+                  secret_scanning_push_protection: { status: 'enabled' },
+                  dependabot_security_updates: { status: 'enabled' }
+                }
+              });
+
+              console.log('✅ Repository settings updated successfully');
+
+              // Add to step summary
+              await core.summary
+                .addHeading('⚙️ Repository Settings Updated')
+                .addList([
+                  'Description and homepage set',
+                  'Security scanning enabled',
+                  'Auto-merge and branch deletion enabled',
+                  'Dependabot security updates enabled'
+                ])
+                .write();
+
+            } catch (error) {
+              console.error('❌ Failed to update repository settings:', error.message);
+              core.setFailed(`Failed to update repository settings: ${error.message}`);
+            }
+
+  setup-environments:
+    name: Setup GitHub Environments
+    runs-on: ubuntu-latest
+    if: github.event.inputs.setup_type == 'all'
+
+    steps:
+      - name: Create Development Environment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+
+            const environments = ['development', 'railway', 'staging'];
+
+            for (const env of environments) {
+              try {
+                await github.rest.repos.createOrUpdateEnvironment({
+                  owner,
+                  repo,
+                  environment_name: env,
+                  wait_timer: 0,
+                  reviewers: [],
+                  deployment_branch_policy: {
+                    protected_branches: env === 'staging',
+                    custom_branch_policies: env !== 'staging'
+                  }
+                });
+
+                console.log(`✅ Environment '${env}' created/updated successfully`);
+              } catch (error) {
+                console.log(`⚠️ Environment '${env}' may already exist or insufficient permissions`);
+              }
+            }
+
+  setup-labels:
+    name: Setup Repository Labels
+    runs-on: ubuntu-latest
+    if: github.event.inputs.setup_type == 'all'
+
+    steps:
+      - name: Create Standard Labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+
+            const labels = [
+              { name: 'ci/cd', color: '0366d6', description: 'Continuous Integration/Deployment related' },
+              { name: 'test-automation', color: '7057ff', description: 'Test automation and BDD related' },
+              { name: 'railway', color: 'f9d71c', description: 'Railway deployment related' },
+              { name: 'wiremock', color: '0052cc', description: 'Wiremock configuration or issues' },
+              { name: 'performance', color: 'd93f0b', description: 'Performance testing related' },
+              { name: 'security', color: 'b60205', description: 'Security testing or vulnerabilities' },
+              { name: 'needs-review', color: 'fbca04', description: 'Requires code review' },
+              { name: 'ready-to-merge', color: '0e8a16', description: 'Ready for merge after approval' }
+            ];
+
+            for (const label of labels) {
+              try {
+                await github.rest.issues.createLabel({
+                  owner,
+                  repo,
+                  ...label
+                });
+                console.log(`✅ Label '${label.name}' created`);
+              } catch (error) {
+                if (error.status === 422) {
+                  // Label already exists, update it
+                  await github.rest.issues.updateLabel({
+                    owner,
+                    repo,
+                    name: label.name,
+                    color: label.color,
+                    description: label.description
+                  });
+                  console.log(`🔄 Label '${label.name}' updated`);
+                }
+              }
+            }
+
+  validation:
+    name: Validate Setup
+    runs-on: ubuntu-latest
+    needs: [setup-branch-protection, setup-repository-settings]
+    if: always()
+
+    steps:
+      - name: Validate Branch Protection
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+
+            try {
+              const protection = await github.rest.repos.getBranchProtection({
+                owner,
+                repo,
+                branch: 'main'
+              });
+
+              console.log('✅ Branch protection is active');
+              console.log(`Required status checks: ${protection.data.required_status_checks.contexts.length}`);
+              console.log(`Required reviews: ${protection.data.required_pull_request_reviews.required_approving_review_count}`);
+
+            } catch (error) {
+              console.log('⚠️ Could not validate branch protection - may need manual verification');
+            }
+
+      - name: Setup Complete Summary
+        run: |
+          echo "## 🎉 Repository Setup Complete!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### ✅ Completed Tasks:" >> $GITHUB_STEP_SUMMARY
+          echo "- Branch protection rules configured" >> $GITHUB_STEP_SUMMARY
+          echo "- Repository settings optimized" >> $GITHUB_STEP_SUMMARY
+          echo "- Security features enabled" >> $GITHUB_STEP_SUMMARY
+          echo "- Standard labels created" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔧 Next Steps:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Configure repository secrets (see docs/GITHUB_SETUP.md)" >> $GITHUB_STEP_SUMMARY
+          echo "2. Create a test pull request to verify workflows" >> $GITHUB_STEP_SUMMARY
+          echo "3. Review and adjust branch protection rules if needed" >> $GITHUB_STEP_SUMMARY
+          echo "4. Set up team access and notifications" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📚 Documentation:" >> $GITHUB_STEP_SUMMARY
+          echo "- [GitHub Setup Guide](docs/GITHUB_SETUP.md)" >> $GITHUB_STEP_SUMMARY
+          echo "- [CI/CD Workflows](.github/workflows/)" >> $GITHUB_STEP_SUMMARY

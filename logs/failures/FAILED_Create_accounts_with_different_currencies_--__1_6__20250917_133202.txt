@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:32:02.351746
+[TEST] Scenario: Create accounts with different currencies -- @1.6 
+[FILE] Feature: Account Creation
+[LOCATION] Location: features/accounts/account_creation.feature:163
+[TIME]  Duration: 0:00:00.140382
+[TAGS]  Tags: currency_validation
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 400, Actual: 201 | JSON Error: {"accountId": "ACC183599", "customerId": "CUST001", "bsb": "050736", "accountNumber": "27985762", "accountType": "SAVINGS", "currency": "invalid", "initialBalance": "1000.0", "description": "", "branch": "", "createdAt": "2025-09-17 13:32:02"}
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/accounts
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "5cad9ee9-1ecb-440e-a70e-6c204f9d6e07",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC183599","customerId":"CUST001","bsb":"050736","accountNumber":"27985762","accountType":"SAVINGS","currency":"invalid","initialBalance":"1000.0","description":"","branch":"","createdAt":"2025-09-17 13:32:02"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.017s
+Errors: ['Status code assertion failed - Expected: 400, Actual: 201']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

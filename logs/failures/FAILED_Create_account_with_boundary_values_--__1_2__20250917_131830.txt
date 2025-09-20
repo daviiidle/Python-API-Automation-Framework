@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:18:30.762699
+[TEST] Scenario: Create account with boundary values -- @1.2 
+[FILE] Feature: Account Creation
+[LOCATION] Location: features/accounts/account_creation.feature:125
+[TIME]  Duration: 0:00:00.153504
+[TAGS]  Tags: boundary_testing
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 400, Actual: 201 | JSON Error: {"accountId": "ACC169301", "customerId": "CUST001", "bsb": "756358", "accountNumber": "19265903", "accountType": "SAVINGS", "currency": "AUD", "initialBalance": "-100.0", "createdAt": "2025-09-17 13:18:30"}
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/accounts
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "d0512559-92d3-4b5f-b08e-1844303006ab",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC169301","customerId":"CUST001","bsb":"756358","accountNumber":"19265903","accountType":"SAVINGS","currency":"AUD","initialBalance":"-100.0","createdAt":"2025-09-17 13:18:30"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.014s
+Errors: ['Status code assertion failed - Expected: 400, Actual: 201']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

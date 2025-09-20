@@ -1,0 +1,47 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T20:35:34.448349
+[TEST] Scenario: Attempt to create conflicting bookings
+[FILE] Feature: Booking Management
+[LOCATION] Location: features/bookings/booking_management.feature:34
+[TIME]  Duration: 0:00:02.310952
+[TAGS]  Tags: conflict_handling, error_handling
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 409, Actual: 201 | JSON Error: {"bookingId": "BOOK099252", "customerId": "CUST99456", "productType": "MEETING", "productId": "PROD741799", "status": "active", "createdAt": "2025-09-14 10:35:34"}
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: https://wiremock-production.up.railway.app/bookings
+Headers: {
+  "Content-Encoding": "gzip",
+  "Content-Type": "application/json",
+  "Matched-Stub-Id": "4c8a126b-a723-4fe3-bbe6-bc825f0e8e8a",
+  "Server": "railway-edge",
+  "X-Correlation-Id": "",
+  "X-Railway-Edge": "railway/us-west2",
+  "X-Railway-Request-Id": "SSz8uV5kQbmeFwQ4npoFkQ",
+  "Date": "Sun, 14 Sep 2025 10:35:34 GMT",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"bookingId":"BOOK099252","customerId":"CUST99456","productType":"MEETING","productId":"PROD741799","status":"active","createdAt":"2025-09-14 10:35:34"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 2
+Total Response Time: 1.476s
+Errors: ['Status code assertion failed - Expected: 409, Actual: 201']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

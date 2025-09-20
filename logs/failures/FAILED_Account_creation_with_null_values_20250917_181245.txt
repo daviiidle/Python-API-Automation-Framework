@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T18:12:45.052582
+[TEST] Scenario: Account creation with null values
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:68
+[TIME]  Duration: 0:00:00.151513
+[TAGS]  Tags: validation_errors, regression, FAILED
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 400, Actual: 404
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.016s
+Errors: ['Status code assertion failed - Expected: 400, Actual: 404']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

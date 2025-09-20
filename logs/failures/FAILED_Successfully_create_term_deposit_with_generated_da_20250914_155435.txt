@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T15:54:35.561685
+[TEST] Scenario: Successfully create term deposit with generated data
+[FILE] Feature: Term Deposit Management
+[LOCATION] Location: features/term_deposits/term_deposit_management.feature:12
+[TIME]  Duration: 0:00:01.588374
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 500 | JSON Error: {"cause1": "wiremock.com.github.jknack.handlebars.HandlebarsException: inline@10dfc0f8:1:476: found: &apos;$.termMonths&apos;&apos;, expected: &apos;}}&apos;\n{{randomValue length=6 type=&apos;NUMERIC&apos;}}&quot;,&quot;customerId&quot;:&quot;{{jsonPath request.body &apos;$.customerId&apos;}}&quot;,&quot;principal&quot;:&quot;{{jsonPath request.body &apos;$.principal&apos;}}&quot;,&quot;interestRate&quot;:&quot;{{#if (jsonPath request.body &apos;$.interestRate&apos;)}}{{jsonPath request.body &apos;$.interestRate&apos;}}{{else}}{{randomValue type=&apos;DECIMAL&apos; min=2.50 max=8.99}}{{/if}}&quot;,&quot;termMonths&quot;:&quot;{{jsonPath request.body &apos;$.termMonths&apos;}}&quot;,&quot;startDate&quot;:&quot;{{now format=&apos;yyyy-MM-dd&apos;}}&quot;,&quot;maturityDate&quot;:&quot;{{now offset=&apos;P{{jsonPath request.body &apos;$.termMonths&apos;}}M&apos; format=&apos;yyyy-MM-dd&apos;}}&quot;,&quot;createdAt&quot;:&quot;{{now format=&apos;yyyy-MM-dd HH:mm:ss&apos;}}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^", "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-7cc9ce8", "cause0": "wiremock.com.google.common.util.concurrent.UncheckedExecutionException: wiremock.com.github.jknack.handlebars.HandlebarsException: inline@10dfc0f8:1:476: found: &apos;$.termMonths&apos;&apos;, expected: &apos;}}&apos;\n{{randomValue length=6 type=&apos;NUMERIC&apos;}}&quot;,&quot;customerId&quot;:&quot;{{jsonPath request.body &apos;$.customerId&apos;}}&quot;,&quot;principal&quot;:&quot;{{jsonPath request.body &apos;$.principal&apos;}}&quot;,&quot;interestRate&quot;:&quot;{{#if (jsonPath request.body &apos;$.interestRate&apos;)}}{{jsonPath request.body &apos;$.interestRate&apos;}}{{else}}{{randomValue type=&apos;DECIMAL&apos; min=2.50 max=8.99}}{{/if}}&quot;,&quot;termMonths&quot;:&quot;{{jsonPath request.body &apos;$.termMonths&apos;}}&quot;,&quot;startDate&quot;:&quot;{{now format=&apos;yyyy-MM-dd&apos;}}&quot;,&quot;maturityDate&quot;:&quot;{{now offset=&apos;P{{jsonPath request.body &apos;$.termMonths&apos;}}M&apos; format=&apos;yyyy-MM-dd&apos;}}&quot;,&quot;createdAt&quot;:&quot;{{now format=&apos;yyyy-MM-dd HH:mm:ss&apos;}}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^", "message": "wiremock.com.google.common.util.concurrent.UncheckedExecutionException: wiremock.com.github.jknack.handlebars.HandlebarsException: inline@10dfc0f8:1:476: found: &apos;$.termMonths&apos;&apos;, expected: &apos;}}&apos;\n{{randomValue length=6 type=&apos;NUMERIC&apos;}}&quot;,&quot;customerId&quot;:&quot;{{jsonPath request.body &apos;$.customerId&apos;}}&quot;,&quot;principal&quot;:&quot;{{jsonPath request.body &apos;$.principal&apos;}}&quot;,&quot;interestRate&quot;:&quot;{{#if (jsonPath request.body &apos;$.interestRate&apos;)}}{{jsonPath request.body &apos;$.interestRate&apos;}}{{else}}{{randomValue type=&apos;DECIMAL&apos; min=2.50 max=8.99}}{{/if}}&quot;,&quot;termMonths&quot;:&quot;{{jsonPath request.body &apos;$.termMonths&apos;}}&quot;,&quot;startDate&quot;:&quot;{{now format=&apos;yyyy-MM-dd&apos;}}&quot;,&quot;maturityDate&quot;:&quot;{{now offset=&apos;P{{jsonPath request.body &apos;$.termMonths&apos;}}M&apos; format=&apos;yyyy-MM-dd&apos;}}&quot;,&quot;createdAt&quot;:&quot;{{now format=&apos;yyyy-MM-dd HH:mm:ss&apos;}}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^", "url": "/term-deposits", "status": "500"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.756s
+Errors: ['Status code assertion failed - Expected: 201, Actual: 500']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

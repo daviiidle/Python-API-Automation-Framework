@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T21:01:07.114594
+[TEST] Scenario: Successfully retrieve account by valid ID
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:12
+[TIME]  Duration: 0:00:00.161705
+[TAGS]  Tags: happy_path, regression
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 200, Actual: 500 | JSON Error: {"cause1": "com.github.tomakehurst.wiremock.common.JsonException: {\r\n  &quot;errors&quot; : [ {\r\n    &quot;code&quot; : 10,\r\n    &quot;source&quot; : { },\r\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\r\n    &quot;detail&quot; : &quot;Unexpected character (&apos;&amp;&apos; (code 38)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;ACC001\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST245309\\&quot;,\\&quot;bsb\\&quot;:\\&quot;578095\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;75310017\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;currency\\&quot;:\\&quot;AUD\\&quot;,\\&quot;balance\\&quot;:\\&quot;f}zy#b\\&quot;&amp; ]iybqm#,x**sx/,hh*vf7yuqmzo\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-14 21:01:07\\&quot;}\\&quot;; line: 1, column: 150]&quot;\r\n  } ]\r\n}", "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-72ed9aad", "cause0": "wiremock.com.fasterxml.jackson.databind.JsonMappingException: {\r\n  &quot;errors&quot; : [ {\r\n    &quot;code&quot; : 10,\r\n    &quot;source&quot; : { },\r\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\r\n    &quot;detail&quot; : &quot;Unexpected character (&apos;&amp;&apos; (code 38)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;ACC001\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST245309\\&quot;,\\&quot;bsb\\&quot;:\\&quot;578095\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;75310017\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;currency\\&quot;:\\&quot;AUD\\&quot;,\\&quot;balance\\&quot;:\\&quot;f}zy#b\\&quot;&amp; ]iybqm#,x**sx/,hh*vf7yuqmzo\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-14 21:01:07\\&quot;}\\&quot;; line: 1, column: 150]&quot;\r\n  } ]\r\n} (through reference chain: com.github.tomakehurst.wiremock.http.ResponseDefinition[&quot;jsonBody&quot;])", "message": "wiremock.com.fasterxml.jackson.databind.JsonMappingException: {\r\n  &quot;errors&quot; : [ {\r\n    &quot;code&quot; : 10,\r\n    &quot;source&quot; : { },\r\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\r\n    &quot;detail&quot; : &quot;Unexpected character (&apos;&amp;&apos; (code 38)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;ACC001\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST245309\\&quot;,\\&quot;bsb\\&quot;:\\&quot;578095\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;75310017\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;currency\\&quot;:\\&quot;AUD\\&quot;,\\&quot;balance\\&quot;:\\&quot;f}zy#b\\&quot;&amp; ]iybqm#,x**sx/,hh*vf7yuqmzo\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-14 21:01:07\\&quot;}\\&quot;; line: 1, column: 150]&quot;\r\n  } ]\r\n} (through reference chain: com.github.tomakehurst.wiremock.http.ResponseDefinition[&quot;jsonBody&quot;])", "url": "/accounts/ACC001", "status": "500"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.036s
+Errors: ['Status code assertion failed - Expected: 200, Actual: 500']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

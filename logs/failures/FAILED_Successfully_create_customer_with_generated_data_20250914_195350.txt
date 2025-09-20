@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T19:53:50.695600
+[TEST] Scenario: Successfully create customer with generated data
+[FILE] Feature: Customer Management
+[LOCATION] Location: features/customers/customer_management.feature:12
+[TIME]  Duration: 0:00:01.510075
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 502 | JSON Error: {"status": "error", "code": 502, "message": "Application failed to respond", "request_id": "lWSdCP6KRSicr3HULPU1MQ"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.764s
+Errors: ['Status code assertion failed - Expected: 201, Actual: 502']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

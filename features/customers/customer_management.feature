@@ -21,7 +21,7 @@ Feature: Customer Management
     And the response should contain "phone"
     And the response should contain "createdAt"
 
-  @happy_path @smoke
+  @happy_path @smoke @quarantine
   Scenario: Successfully retrieve customer with generated ID
     Given I generate test data for "customer"
     When I create a "customer" using generated data

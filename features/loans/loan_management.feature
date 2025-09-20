@@ -21,10 +21,10 @@ Feature: Loan Management
 
   @table_driven @regression
   Scenario: Create loans with various types and terms
-    When I create accounts with the following data:
+    When I create loans with the following data:
       | loanType  | amount   | term | interestRate |
       | PERSONAL  | 25000    | 36   | 8.5         |
       | HOME      | 450000   | 300  | 4.2         |
       | CAR       | 35000    | 60   | 6.8         |
       | BUSINESS  | 100000   | 84   | 9.5         |
-    Then all account creations should have the expected results
+    Then all loan creations should have the expected results

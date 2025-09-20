@@ -1,0 +1,40 @@
+<testsuite name="term_deposits.term_deposit_management.Term Deposit Management" tests="2" errors="0" failures="0" skipped="2" time="0.0" timestamp="2025-09-20T14:29:58.879853" hostname="DESKTOP-9TL42EO"><testcase classname="term_deposits.term_deposit_management.Term Deposit Management" name="Successfully create term deposit with generated data" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @happy_path @smoke
+  Scenario: Successfully create term deposit with generated data
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "term_deposit" ... skipped in 0.000s
+    When I create a "term_deposit" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should contain "depositId" ... skipped in 0.000s
+    And the response should contain "customerId" ... skipped in 0.000s
+    And the response should contain "principal" ... skipped in 0.000s
+    And the response should contain "termMonths" ... skipped in 0.000s
+    And the response should contain "interestRate" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="term_deposits.term_deposit_management.Term Deposit Management" name="Create term deposits with various terms and amounts" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @table_driven @regression
+  Scenario: Create term deposits with various terms and amounts
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I create term deposits with the following data: ... skipped in 0.000s
+      | principal | termMonths | interestRate | compoundingFrequency |
+      | 5000      | 6          | 3.5          | MONTHLY              |
+      | 25000     | 12         | 4.2          | QUARTERLY            |
+      | 50000     | 24         | 5.0          | ANNUALLY             |
+      | 100000    | 36         | 5.5          | QUARTERLY            |
+    Then all term deposit creations should have the expected results ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

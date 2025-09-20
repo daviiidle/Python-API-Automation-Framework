@@ -1,0 +1,532 @@
+<testsuite name="accounts.account_creation.Account Creation" tests="23" errors="0" failures="0" skipped="23" time="0.0" timestamp="2025-09-20T14:30:13.364306" hostname="DESKTOP-9TL42EO"><testcase classname="accounts.account_creation.Account Creation" name="Successfully create account with valid generated data" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @happy_path @smoke
+  Scenario: Successfully create account with valid generated data
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "account" ... skipped in 0.000s
+    When I create a "account" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should be valid JSON ... skipped in 0.000s
+    And the response should contain "accountId" ... skipped in 0.000s
+    And the response should contain "customerId" ... skipped in 0.000s
+    And the response should contain "accountType" ... skipped in 0.000s
+    And the response should contain "currency" ... skipped in 0.000s
+    And the response should contain "createdAt" ... skipped in 0.000s
+    And the response should contain the correlation ID ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create account with minimum required fields" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @happy_path @regression
+  Scenario: Create account with minimum required fields
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate a unique customer ID for account creation ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST002",
+        "accountType": "CHECKING",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should contain "accountId" ... skipped in 0.000s
+    And the response should contain "customerId" ... skipped in 0.000s
+    And the response "accountType" should be "CHECKING" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create account with all optional fields" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @data_validation @regression
+  Scenario: Create account with all optional fields
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate a unique customer ID for account creation ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST003",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 5000.00,
+        "description": "Primary savings account",
+        "branch": "Melbourne CBD"
+      }
+      """
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should contain "accountId" ... skipped in 0.000s
+    And the response should contain "description" ... skipped in 0.000s
+    And the response should contain "branch" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Attempt to create account without authentication" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @error_handling @regression @FAILED
+  Scenario: Attempt to create account without authentication
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I have no authentication token ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then I should receive an unauthorized error ... skipped in 0.000s
+    And the error message should indicate missing authorization ... skipped in 0.000s
+    Then I restore the original authentication ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Attempt to create account with missing required fields" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @error_handling @regression @FAILED
+  Scenario: Attempt to create account with missing required fields
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "accountType": "SAVINGS"
+      }
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Attempt to create account with invalid customer ID" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @error_handling @regression @FAILED
+  Scenario: Attempt to create account with invalid customer ID
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Attempt to create account with invalid account type" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @error_handling @regression @FAILED
+  Scenario: Attempt to create account with invalid account type
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "INVALID_TYPE",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create account with boundary values -- @1.1 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @boundary_testing @FAILED
+  Scenario Outline: Create account with boundary values -- @1.1 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 0.00
+      }
+      """
+    Then the response status code should be 201 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create account with boundary values -- @1.2 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @boundary_testing @FAILED
+  Scenario Outline: Create account with boundary values -- @1.2 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": -100.00
+      }
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create account with boundary values -- @1.3 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @boundary_testing @FAILED
+  Scenario Outline: Create account with boundary values -- @1.3 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 999999
+      }
+      """
+    Then the response status code should be 201 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create account with boundary values -- @1.4 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @boundary_testing @FAILED
+  Scenario Outline: Create account with boundary values -- @1.4 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "VERYLONGCUSTOMERID123456789",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000
+      }
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Attempt to create account with invalid data types" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @data_types_validation @FAILED @quarantine
+  Scenario: Attempt to create account with invalid data types
+    Given the banking API is available ... untested in 0.000s
+    And I have valid authentication credentials ... untested in 0.000s
+    When I send a POST request to "/accounts" with data: ... untested in 0.000s
+      """
+      {
+        "customerId": 123,
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": "invalid_number"
+      }
+      """
+    Then the response status code should be 400 ... untested in 0.000s
+    And the response should contain an error message ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create accounts with different currencies -- @1.1 " status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @currency_validation @FAILED @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.1 
+    Given the banking API is available ... untested in 0.000s
+    And I have valid authentication credentials ... untested in 0.000s
+    When I send a POST request to "/accounts" with data: ... untested in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201 ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create accounts with different currencies -- @1.2 " status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @currency_validation @FAILED @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.2 
+    Given the banking API is available ... untested in 0.000s
+    And I have valid authentication credentials ... untested in 0.000s
+    When I send a POST request to "/accounts" with data: ... untested in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "USD",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201 ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create accounts with different currencies -- @1.3 " status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @currency_validation @FAILED @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.3 
+    Given the banking API is available ... untested in 0.000s
+    And I have valid authentication credentials ... untested in 0.000s
+    When I send a POST request to "/accounts" with data: ... untested in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "EUR",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201 ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create accounts with different currencies -- @1.4 " status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @currency_validation @FAILED @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.4 
+    Given the banking API is available ... untested in 0.000s
+    And I have valid authentication credentials ... untested in 0.000s
+    When I send a POST request to "/accounts" with data: ... untested in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "GBP",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201 ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create accounts with different currencies -- @1.5 " status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @currency_validation @FAILED @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.5 
+    Given the banking API is available ... untested in 0.000s
+    And I have valid authentication credentials ... untested in 0.000s
+    When I send a POST request to "/accounts" with data: ... untested in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "XXX",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 400 ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create accounts with different currencies -- @1.6 " status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @currency_validation @FAILED @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.6 
+    Given the banking API is available ... untested in 0.000s
+    And I have valid authentication credentials ... untested in 0.000s
+    When I send a POST request to "/accounts" with data: ... untested in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "invalid",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 400 ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Attempt to create duplicate account for same customer" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @duplicate_handling
+  Scenario: Attempt to create duplicate account for same customer
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate a unique account conflict test dataset ... skipped in 0.000s
+    When I create an account using the conflict dataset ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    When I create an account using the conflict dataset ... skipped in 0.000s
+    Then the response status code should be 409 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Account creation performance validation" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @performance @FAILED
+  Scenario: Account creation performance validation
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response time should be under 3000 milliseconds ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Verify account creation response schema" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @schema_validation @FAILED
+  Scenario: Verify account creation response schema
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should match the schema ... skipped in 0.000s
+    And the response should contain the following fields: ... skipped in 0.000s
+      | field          |
+      | accountId      |
+      | customerId     |
+      | accountType    |
+      | currency       |
+      | initialBalance |
+      | createdAt      |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Create account with special characters in description" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @special_characters
+  Scenario: Create account with special characters in description
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000.00,
+        "description": "Savings account with special chars !@#$%"
+      }
+      """
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should contain "description" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation.Account Creation" name="Attempt to create account with incorrect content type" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @content_type_validation
+  Scenario: Attempt to create account with incorrect content type
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I set the "Content-Type" header to "text/plain" ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

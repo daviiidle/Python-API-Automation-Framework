@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T11:43:11.030699
+[TEST] Scenario: Verify correlation ID is propagated in account retrieval
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:84
+[TIME]  Duration: 0:00:01.577788
+[TAGS]  Tags: correlation_tracking
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 200, Actual: 404 | JSON Error: {"status": "error", "code": 404, "message": "Application not found", "request_id": "ks4_NnzSS1WipNNln6XIxQ"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.783s
+Errors: ['Status code assertion failed - Expected: 200, Actual: 404']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

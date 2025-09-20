@@ -1,0 +1,61 @@
+<testsuite name="bookings.booking_management.Booking Management" tests="3" errors="0" failures="0" skipped="3" time="0.0" timestamp="2025-09-20T14:29:58.851589" hostname="DESKTOP-9TL42EO"><testcase classname="bookings.booking_management.Booking Management" name="Successfully create booking with generated data" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @happy_path @smoke
+  Scenario: Successfully create booking with generated data
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "booking" ... skipped in 0.000s
+    When I create a "booking" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should be valid JSON ... skipped in 0.000s
+    And the response should contain "bookingId" ... skipped in 0.000s
+    And the response should contain "customerId" ... skipped in 0.000s
+    And the response should contain "productType" ... skipped in 0.000s
+    And the response should contain "bookingDate" ... skipped in 0.000s
+    And the response should contain "bookingTime" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="bookings.booking_management.Booking Management" name="Create bookings with various service types" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @table_driven @regression
+  Scenario: Create bookings with various service types
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I create bookings with the following data: ... skipped in 0.000s
+      | productType       | bookingDate | bookingTime | branch         |
+      | APPOINTMENT       | 2024-02-15  | 10:00       | Melbourne CBD  |
+      | CONSULTATION      | 2024-02-16  | 14:30       | Sydney North   |
+      | LOAN_MEETING      | 2024-02-17  | 09:00       | Brisbane South |
+      | INVESTMENT_ADVICE | 2024-02-18  | 15:00       | Perth Central  |
+    Then all booking creations should have the expected results ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="bookings.booking_management.Booking Management" name="Attempt to create conflicting bookings" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @conflict_handling @error_handling
+  Scenario: Attempt to create conflicting bookings
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate a unique booking conflict test dataset ... skipped in 0.000s
+    When I create a booking using the conflict dataset ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    When I create a booking using the conflict dataset ... skipped in 0.000s
+    Then the response status code should be 409 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

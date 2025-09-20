@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:14:45.900837
+[TEST] Scenario: Create accounts with different currencies -- @1.6 
+[FILE] Feature: Account Creation
+[LOCATION] Location: features/accounts/account_creation.feature:163
+[TIME]  Duration: 0:00:00.152822
+[TAGS]  Tags: currency_validation
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 400, Actual: 201 | JSON Error: {"accountId": "ACC180277", "customerId": "CUST001", "bsb": "811977", "accountNumber": "85893169", "accountType": "SAVINGS", "currency": "invalid", "initialBalance": "1000.0", "createdAt": "2025-09-17 13:14:45"}
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/accounts
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "d0512559-92d3-4b5f-b08e-1844303006ab",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC180277","customerId":"CUST001","bsb":"811977","accountNumber":"85893169","accountType":"SAVINGS","currency":"invalid","initialBalance":"1000.0","createdAt":"2025-09-17 13:14:45"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.015s
+Errors: ['Status code assertion failed - Expected: 400, Actual: 201']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T15:49:58.182445
+[TEST] Scenario: Verify correlation ID is propagated in account retrieval
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:84
+[TIME]  Duration: 0:00:01.593268
+[TAGS]  Tags: correlation_tracking
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 200, Actual: 500 | JSON Error: {"cause1": "com.github.tomakehurst.wiremock.common.JsonException: {\n  &quot;errors&quot; : [ {\n    &quot;code&quot; : 10,\n    &quot;source&quot; : { },\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\n    &quot;detail&quot; : &quot;Unrecognized character escape &apos;g&apos; (code 103)\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;ACC001\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST473857\\&quot;,\\&quot;bsb\\&quot;:\\&quot;516780\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;60117280\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;currency\\&quot;:\\&quot;AUD\\&quot;,\\&quot;balance\\&quot;:\\&quot;&gt;\\\\ge:eo;r|k&amp; e%hn$&lt;^dh/\\\\&gt;z9x8lmuw:#$\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-14 05:49:55\\&quot;}\\&quot;; line: 1, column: 145]&quot;\n  } ]\n}", "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-7cc9ce8", "cause0": "wiremock.com.fasterxml.jackson.databind.JsonMappingException: {\n  &quot;errors&quot; : [ {\n    &quot;code&quot; : 10,\n    &quot;source&quot; : { },\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\n    &quot;detail&quot; : &quot;Unrecognized character escape &apos;g&apos; (code 103)\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;ACC001\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST473857\\&quot;,\\&quot;bsb\\&quot;:\\&quot;516780\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;60117280\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;currency\\&quot;:\\&quot;AUD\\&quot;,\\&quot;balance\\&quot;:\\&quot;&gt;\\\\ge:eo;r|k&amp; e%hn$&lt;^dh/\\\\&gt;z9x8lmuw:#$\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-14 05:49:55\\&quot;}\\&quot;; line: 1, column: 145]&quot;\n  } ]\n} (through reference chain: com.github.tomakehurst.wiremock.http.ResponseDefinition[&quot;jsonBody&quot;])", "message": "wiremock.com.fasterxml.jackson.databind.JsonMappingException: {\n  &quot;errors&quot; : [ {\n    &quot;code&quot; : 10,\n    &quot;source&quot; : { },\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\n    &quot;detail&quot; : &quot;Unrecognized character escape &apos;g&apos; (code 103)\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;ACC001\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST473857\\&quot;,\\&quot;bsb\\&quot;:\\&quot;516780\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;60117280\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;currency\\&quot;:\\&quot;AUD\\&quot;,\\&quot;balance\\&quot;:\\&quot;&gt;\\\\ge:eo;r|k&amp; e%hn$&lt;^dh/\\\\&gt;z9x8lmuw:#$\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-14 05:49:55\\&quot;}\\&quot;; line: 1, column: 145]&quot;\n  } ]\n} (through reference chain: com.github.tomakehurst.wiremock.http.ResponseDefinition[&quot;jsonBody&quot;])", "url": "/accounts/ACC001", "status": "500"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.745s
+Errors: ['Status code assertion failed - Expected: 200, Actual: 500']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T15:50:01.412099
+[TEST] Scenario: Verify account retrieval response headers
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:101
+[TIME]  Duration: 0:00:01.612355
+[TAGS]  Tags: response_headers
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 200, Actual: 500 | JSON Error: {"cause1": "com.github.tomakehurst.wiremock.common.JsonException: {\n  &quot;errors&quot; : [ {\n    &quot;code&quot; : 10,\n    &quot;source&quot; : { },\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\n    &quot;detail&quot; : &quot;Unexpected character (&apos;e&apos; (code 101)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;ACC001\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST675901\\&quot;,\\&quot;bsb\\&quot;:\\&quot;944380\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;40099853\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;currency\\&quot;:\\&quot;AUD\\&quot;,\\&quot;balance\\&quot;:\\&quot;k7{.g&lt;r2j$g!2g.cu;|t&amp;\\&quot;e@5vee)*ddhgsn\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-14 05:49:58\\&quot;}\\&quot;; line: 1, column: 165]&quot;\n  } ]\n}", "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-7cc9ce8", "cause0": "wiremock.com.fasterxml.jackson.databind.JsonMappingException: {\n  &quot;errors&quot; : [ {\n    &quot;code&quot; : 10,\n    &quot;source&quot; : { },\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\n    &quot;detail&quot; : &quot;Unexpected character (&apos;e&apos; (code 101)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;ACC001\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST675901\\&quot;,\\&quot;bsb\\&quot;:\\&quot;944380\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;40099853\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;currency\\&quot;:\\&quot;AUD\\&quot;,\\&quot;balance\\&quot;:\\&quot;k7{.g&lt;r2j$g!2g.cu;|t&amp;\\&quot;e@5vee)*ddhgsn\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-14 05:49:58\\&quot;}\\&quot;; line: 1, column: 165]&quot;\n  } ]\n} (through reference chain: com.github.tomakehurst.wiremock.http.ResponseDefinition[&quot;jsonBody&quot;])", "message": "wiremock.com.fasterxml.jackson.databind.JsonMappingException: {\n  &quot;errors&quot; : [ {\n    &quot;code&quot; : 10,\n    &quot;source&quot; : { },\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\n    &quot;detail&quot; : &quot;Unexpected character (&apos;e&apos; (code 101)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;ACC001\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST675901\\&quot;,\\&quot;bsb\\&quot;:\\&quot;944380\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;40099853\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;currency\\&quot;:\\&quot;AUD\\&quot;,\\&quot;balance\\&quot;:\\&quot;k7{.g&lt;r2j$g!2g.cu;|t&amp;\\&quot;e@5vee)*ddhgsn\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-14 05:49:58\\&quot;}\\&quot;; line: 1, column: 165]&quot;\n  } ]\n} (through reference chain: com.github.tomakehurst.wiremock.http.ResponseDefinition[&quot;jsonBody&quot;])", "url": "/accounts/ACC001", "status": "500"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.748s
+Errors: ['Status code assertion failed - Expected: 200, Actual: 500']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

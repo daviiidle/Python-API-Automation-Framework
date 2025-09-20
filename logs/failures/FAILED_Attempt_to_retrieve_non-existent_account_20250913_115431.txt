@@ -1,0 +1,26 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-13T11:54:31.837844
+[TEST] Scenario: Attempt to retrieve non-existent account
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:39
+[TIME]  Duration: 0:00:01.025738
+[TAGS]  Tags: error_handling, regression
+[INFO] Status: failed
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.522s
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://your-wiremock-app.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

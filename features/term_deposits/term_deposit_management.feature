@@ -15,16 +15,16 @@ Feature: Term Deposit Management
     Then the response status code should be 201
     And the response should contain "depositId"
     And the response should contain "customerId"
-    And the response should contain "amount"
-    And the response should contain "term"
+    And the response should contain "principal"
+    And the response should contain "termMonths"
     And the response should contain "interestRate"
 
   @table_driven @regression
   Scenario: Create term deposits with various terms and amounts
-    When I create accounts with the following data:
-      | amount  | term | interestRate | compoundingFrequency |
-      | 5000    | 6    | 3.5         | MONTHLY             |
-      | 25000   | 12   | 4.2         | QUARTERLY           |
-      | 50000   | 24   | 5.0         | ANNUALLY            |
-      | 100000  | 36   | 5.5         | QUARTERLY           |
-    Then all account creations should have the expected results
+    When I create term deposits with the following data:
+      | principal | termMonths | interestRate | compoundingFrequency |
+      | 5000      | 6          | 3.5         | MONTHLY             |
+      | 25000     | 12         | 4.2         | QUARTERLY           |
+      | 50000     | 24         | 5.0         | ANNUALLY            |
+      | 100000    | 36         | 5.5         | QUARTERLY           |
+    Then all term deposit creations should have the expected results

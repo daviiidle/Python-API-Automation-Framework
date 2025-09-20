@@ -1,0 +1,65 @@
+2025-09-17 17:46:47,737 - banking_api_tests - INFO - [environment.py:276] - [FRAMEWORK] ================================================================================
+2025-09-17 17:46:47,737 - banking_api_tests - INFO - [environment.py:277] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION START
+2025-09-17 17:46:47,737 - banking_api_tests - INFO - [environment.py:278] - [FRAMEWORK] ================================================================================
+2025-09-17 17:46:47,737 - banking_api_tests - DEBUG - [environment.py:283] - [FILE] Created reports directories
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:242] - [ENV] Loading environment: test
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:243] - [FILE] Environment file: environments/.env.test
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:261] - [ENV] Successfully loaded environments/.env.test
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:300] - [ENV] Configuration loaded successfully for environment: test
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:311] - [ENV] Test Environment: test
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:312] - [URL] API Base URL: http://localhost:8081
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:313] - [AUTH] Auth Token: ****************2024
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:314] - [FILE] Log File: logs/banking_api_tests_20250917_174647.log
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:317] - [PLATFORM]  Platform: nt
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:318] - [TIME] Start Time: 2025-09-17T17:46:47.738902
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:319] - [USER] User: D
+2025-09-17 17:46:47,738 - banking_api_tests - INFO - [environment.py:320] - [DIR] Working Directory: C:\Users\D\python api automation framework
+2025-09-17 17:46:47,739 - banking_api_tests - INFO - [environment.py:321] - [TIMEOUT] Request Timeout: 15s
+2025-09-17 17:46:47,739 - banking_api_tests - INFO - [environment.py:322] - [PERFORMANCE] Performance Threshold: 3000ms
+2025-09-17 17:46:47,739 - banking_api_tests - INFO - [environment.py:335] - [START] Framework initialization complete - Ready to execute tests
+2025-09-17 17:46:47,745 - banking_api_tests - INFO - [environment.py:347] - [SCENARIO] ============================================================
+2025-09-17 17:46:47,745 - banking_api_tests - INFO - [environment.py:348] - [TEST] SCENARIO START: Attempt to create account with incorrect content type
+2025-09-17 17:46:47,745 - banking_api_tests - INFO - [environment.py:349] - [FILE] Feature: Account Creation
+2025-09-17 17:46:47,745 - banking_api_tests - INFO - [environment.py:350] - [LOCATION] Location: features/accounts/account_creation.feature:243
+2025-09-17 17:46:47,745 - banking_api_tests - INFO - [environment.py:351] - [TAGS]  Tags: content_type_validation
+2025-09-17 17:46:47,745 - banking_api_tests - INFO - [environment.py:352] - [TIME] Start Time: 2025-09-17T17:46:47.745303
+2025-09-17 17:46:47,745 - banking_api_tests - INFO - [environment.py:353] - [SCENARIO] ============================================================
+2025-09-17 17:46:47,745 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-17 17:46:47,859 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-17 17:46:47,859 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-17 17:46:47,860 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-17 17:46:47,860 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-17 17:46:47,861 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-17 17:46:47,861 - banking_api_tests - INFO - [common_steps.py:476] - [HEADER] Setting custom header: Content-Type = text/plain
+2025-09-17 17:46:47,861 - banking_api_tests - INFO - [common_steps.py:733] - [REQUEST] Sending POST request to: /accounts
+2025-09-17 17:46:47,876 - banking_api_tests - INFO - [common_steps.py:754] - [RESPONSE] POST Response: 400
+2025-09-17 17:46:47,876 - banking_api_tests - INFO - [common_steps.py:755] - [TIME] Response Time: 0.015s
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [common_steps.py:516] - [VERIFY] Verifying response status code should be 400
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [common_steps.py:523] - [INFO] Expected: 400, Actual: 400
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [common_steps.py:526] - [SUCCESS] Status code assertion PASSED: 400
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [common_steps.py:982] - [VERIFY] Verifying response contains error message
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [common_steps.py:1002] - [SUCCESS] Error message assertion PASSED: Found 'error': Bad Request
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [environment.py:387] - [END] ============================================================
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [environment.py:388] - [PASSED] SCENARIO COMPLETE: Attempt to create account with incorrect content type
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [environment.py:389] - [INFO] Status: [PASSED] PASSED
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [environment.py:390] - [TIME]  Duration: 0:00:00.132350
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [environment.py:391] - [URL] API Calls Made: 1
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [environment.py:395] - [PERFORMANCE] Avg Response Time: 0.015s
+2025-09-17 17:46:47,877 - banking_api_tests - INFO - [environment.py:396] - [INFO] Total Response Time: 0.015s
+2025-09-17 17:46:47,878 - banking_api_tests - INFO - [environment.py:409] - [END] ============================================================
+2025-09-17 17:46:47,880 - banking_api_tests - INFO - [environment.py:432] - [RESULTS] ================================================================================
+2025-09-17 17:46:47,880 - banking_api_tests - INFO - [environment.py:433] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION COMPLETE
+2025-09-17 17:46:47,880 - banking_api_tests - INFO - [environment.py:434] - [RESULTS] ================================================================================
+2025-09-17 17:46:47,880 - banking_api_tests - INFO - [environment.py:435] - [TIMEOUT] Total Execution Time: 0:00:00.141557
+2025-09-17 17:46:47,880 - banking_api_tests - INFO - [environment.py:436] - [INFO] Total Scenarios: 1
+2025-09-17 17:46:47,880 - banking_api_tests - INFO - [environment.py:437] - [PASSED] Passed: 1
+2025-09-17 17:46:47,880 - banking_api_tests - INFO - [environment.py:438] - [FAILED] Failed: 0
+2025-09-17 17:46:47,880 - banking_api_tests - INFO - [environment.py:439] - [SKIPPED]  Skipped: 0
+2025-09-17 17:46:47,881 - banking_api_tests - INFO - [environment.py:440] - [PERFORMANCE] Pass Rate: 100.00%
+2025-09-17 17:46:47,881 - banking_api_tests - INFO - [environment.py:441] - [URL] Total API Calls: 1
+2025-09-17 17:46:47,881 - banking_api_tests - INFO - [environment.py:445] - [PERFORMANCE] Average Response Time: 0.015s
+2025-09-17 17:46:47,881 - banking_api_tests - INFO - [environment.py:446] - [INFO] Total Response Time: 0.015s
+2025-09-17 17:46:47,881 - banking_api_tests - INFO - [environment.py:448] - [FILE] Detailed Logs: logs/banking_api_tests_20250917_174647.log
+2025-09-17 17:46:47,881 - banking_api_tests - INFO - [environment.py:449] - [TIME] End Time: 2025-09-17T17:46:47.880671
+2025-09-17 17:46:47,881 - banking_api_tests - INFO - [environment.py:457] - [SUCCESS] ALL TESTS PASSED! Great job!
+2025-09-17 17:46:47,881 - banking_api_tests - INFO - [environment.py:472] - [RESULTS] ================================================================================

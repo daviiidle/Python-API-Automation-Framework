@@ -1,0 +1,515 @@
+<testsuite name="accounts.account_errors.Account Error Handling" tests="28" errors="0" failures="0" skipped="28" time="0.0" timestamp="2025-09-20T14:29:58.818234" hostname="DESKTOP-9TL42EO"><testcase classname="accounts.account_errors.Account Error Handling" name="Account retrieval without authentication" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @authentication_errors @regression @FAILED
+  Scenario: Account retrieval without authentication
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I have no authentication token ... skipped in 0.000s
+    When I send a GET request to "/accounts/ACC001" ... skipped in 0.000s
+    Then I should receive an unauthorized error ... skipped in 0.000s
+    And the error message should indicate missing authorization ... skipped in 0.000s
+    And the WWW-Authenticate header should be present ... skipped in 0.000s
+    Then I restore the original authentication ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account creation with invalid token" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @authentication_errors @regression @FAILED
+  Scenario: Account creation with invalid token
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I have an invalid bearer token ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then I should receive an unauthorized error ... skipped in 0.000s
+    And the error message should indicate invalid token ... skipped in 0.000s
+    Then I restore the original authentication ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account operations with malformed authorization header" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @authentication_errors @regression
+  Scenario: Account operations with malformed authorization header
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a request with malformed Authorization header ... skipped in 0.000s
+    And I send a GET request to "/accounts/ACC001" ... skipped in 0.000s
+    Then I should receive an unauthorized error ... skipped in 0.000s
+    Then I restore the original authentication ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account creation with invalid JSON -- @1.1 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @validation_errors @regression @FAILED
+  Scenario Outline: Account creation with invalid JSON -- @1.1 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {invalid json}
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account creation with invalid JSON -- @1.2 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @validation_errors @regression @FAILED
+  Scenario Outline: Account creation with invalid JSON -- @1.2 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {"missing": "quote}
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account creation with invalid JSON -- @1.3 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @validation_errors @regression @FAILED
+  Scenario Outline: Account creation with invalid JSON -- @1.3 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {"trailing": "comma",}
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account creation with invalid JSON -- @1.4 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @validation_errors @regression @FAILED
+  Scenario Outline: Account creation with invalid JSON -- @1.4 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {]
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account creation with empty request body" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @validation_errors @regression @FAILED
+  Scenario: Account creation with empty request body
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {}
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account creation with null values" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @validation_errors @regression @FAILED
+  Scenario: Account creation with null values
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": null,
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account retrieval for non-existent accounts -- @1.1 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @not_found_errors @regression @FAILED
+  Scenario Outline: Account retrieval for non-existent accounts -- @1.1 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/NONEXISTENT" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+    And the response should be valid JSON ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account retrieval for non-existent accounts -- @1.2 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @not_found_errors @regression @FAILED
+  Scenario Outline: Account retrieval for non-existent accounts -- @1.2 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/ACC999" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+    And the response should be valid JSON ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account retrieval for non-existent accounts -- @1.3 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @not_found_errors @regression @FAILED
+  Scenario Outline: Account retrieval for non-existent accounts -- @1.3 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/DELETED001" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+    And the response should be valid JSON ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account retrieval for non-existent accounts -- @1.4 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @not_found_errors @regression @FAILED
+  Scenario Outline: Account retrieval for non-existent accounts -- @1.4 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/""" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+    And the response should be valid JSON ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Unsupported HTTP methods on account endpoints" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @method_not_allowed @regression @FAILED
+  Scenario: Unsupported HTTP methods on account endpoints
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a PUT request to "/accounts/ACC001" ... skipped in 0.000s
+    Then the response status code should be 405 ... skipped in 0.000s
+    When I send a DELETE request to "/accounts/ACC001" ... skipped in 0.000s
+    Then the response status code should be 405 ... skipped in 0.000s
+    When I send a PATCH request to "/accounts/ACC001" ... skipped in 0.000s
+    Then the response status code should be 405 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account creation with oversized request" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @request_size_limits
+  Scenario: Account creation with oversized request
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "description": "This is an extremely long description that should exceed reasonable limits and test the API's ability to handle large request bodies. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      }
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Rapid consecutive account creation requests" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @rate_limiting
+  Scenario: Rapid consecutive account creation requests
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    And I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST002",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    And I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST003",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 201 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Concurrent requests with authentication errors" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @concurrent_errors
+  Scenario: Concurrent requests with authentication errors
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I have an invalid bearer token ... skipped in 0.000s
+    When I send concurrent requests with the same token ... skipped in 0.000s
+    Then all concurrent requests should be unauthorized ... skipped in 0.000s
+    Then I restore the original authentication ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account operations with SQL injection attempts" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @sql_injection_protection
+  Scenario: Account operations with SQL injection attempts
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/'; DROP TABLE accounts; --" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account creation with XSS payloads" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @xss_protection
+  Scenario: Account creation with XSS payloads
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "description": "<script>alert('xss')</script>"
+      }
+      """
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account operations with Unicode characters" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @unicode_handling
+  Scenario: Account operations with Unicode characters
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "description": "Account description with international chars and symbols"
+      }
+      """
+    Then the response status code should be 201 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account operation timeout simulation" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @timeout_handling
+  Scenario: Account operation timeout simulation
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/ACC001" ... skipped in 0.000s
+    Then the response time should be under 5000 milliseconds ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account operations with malformed URLs -- @1.1 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @malformed_urls
+  Scenario Outline: Account operations with malformed URLs -- @1.1 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts//ACC001" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account operations with malformed URLs -- @1.2 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @malformed_urls
+  Scenario Outline: Account operations with malformed URLs -- @1.2 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/ACC001/" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account operations with malformed URLs -- @1.3 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @malformed_urls
+  Scenario Outline: Account operations with malformed URLs -- @1.3 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/ACC001/extra" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account operations with malformed URLs -- @1.4 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @malformed_urls
+  Scenario Outline: Account operations with malformed URLs -- @1.4 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/%20" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Account creation with mismatched content length" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @content_length_mismatch
+  Scenario: Account creation with mismatched content length
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I set the "Content-Length" header to "50" ... skipped in 0.000s
+    When I send a POST request to "/accounts" with data: ... skipped in 0.000s
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be either 400 or 201 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Verify error response format consistency" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @error_response_format
+  Scenario: Verify error response format consistency
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/NONEXISTENT" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+    And the response should be valid JSON ... skipped in 0.000s
+    And the response should contain "error" ... skipped in 0.000s
+    And the response should contain "message" ... skipped in 0.000s
+    And the response should contain "timestamp" ... skipped in 0.000s
+    And the response should contain the correlation ID ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_errors.Account Error Handling" name="Verify security headers are present in error responses" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @security_headers_on_errors
+  Scenario: Verify security headers are present in error responses
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I send a GET request to "/accounts/NONEXISTENT" ... skipped in 0.000s
+    Then the response status code should be 404 ... skipped in 0.000s
+    And the response should include security headers ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

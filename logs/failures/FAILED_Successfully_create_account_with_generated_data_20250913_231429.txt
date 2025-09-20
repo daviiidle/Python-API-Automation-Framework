@@ -1,0 +1,47 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-13T23:14:29.222078
+[TEST] Scenario: Successfully create account with generated data
+[FILE] Feature: Account Creation with Dynamic Data
+[LOCATION] Location: features/accounts/account_creation_dynamic.feature:12
+[TIME]  Duration: 0:00:01.617701
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Key assertion failed - 'currency' not found. Available keys: ['accountId', 'customerId', 'bsb', 'accountNumber', 'accountType', 'createdAt']
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: https://wiremock-production.up.railway.app/accounts
+Headers: {
+  "Content-Encoding": "gzip",
+  "Content-Type": "application/json",
+  "Matched-Stub-Id": "c675423a-3e9a-408e-a984-70b4453fea43",
+  "Server": "railway-edge",
+  "X-Correlation-Id": "",
+  "X-Railway-Edge": "railway/us-west2",
+  "X-Railway-Request-Id": "O9CJZGIUS1u52SWi9I3ezw",
+  "Date": "Sat, 13 Sep 2025 13:14:27 GMT",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC760414","customerId":"CUST001","bsb":"318878","accountNumber":"34219489","accountType":"SAVINGS","createdAt":"2025-09-13 13:14:27"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.771s
+Errors: ["Key assertion failed - 'currency' not found. Available keys: ['accountId', 'customerId', 'bsb', 'accountNumber', 'accountType', 'createdAt']"]
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: railway
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

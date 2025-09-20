@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T18:58:27.488077
+[TEST] Scenario: Loan application workflow
+[FILE] Feature: End-to-End Banking Workflows
+[LOCATION] Location: features/integration/end_to_end_workflows.feature:43
+[TIME]  Duration: 0:00:00.184081
+[TAGS]  Tags: workflow, regression
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 200, Actual: 500
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 3
+Total Response Time: 0.041s
+Errors: ['Status code assertion failed - Expected: 200, Actual: 500']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

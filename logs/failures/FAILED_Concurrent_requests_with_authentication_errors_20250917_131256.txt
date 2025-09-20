@@ -1,0 +1,40 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:12:56.655335
+[TEST] Scenario: Concurrent requests with authentication errors
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:145
+[TIME]  Duration: 0:00:00.143114
+[TAGS]  Tags: concurrent_errors
+[INFO] Status: failed
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 200
+URL: http://localhost:8081/customers/CUST001
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "2d49efa0-3e87-4a96-955e-6e836b807e49",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"customerId":"CUST001","firstName":"John","lastName":"Doe","email":"john.doe@example.com","phone":"+61412345678","dob":"1990-01-15","address":"123 Main Street","city":"Melbourne","state":"VIC","postcode":"3000","createdAt":"2024-01-01 10:00:00"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 0
+Total Response Time: 0.000s
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

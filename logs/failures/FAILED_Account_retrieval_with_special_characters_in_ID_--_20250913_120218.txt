@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-13T12:02:18.514878
+[TEST] Scenario: Account retrieval with special characters in ID -- @1.4 
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:118
+[TIME]  Duration: 0:00:00.996244
+[TAGS]  Tags: edge_cases
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 400
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.493s
+Errors: ['Status code assertion failed - Expected: 404, Actual: 400']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://your-wiremock-app.railway.app
+Test Environment: railway
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

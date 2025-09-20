@@ -1,0 +1,5 @@
+{
+  "customerId": "CUST002",
+  "accountType": "CHECKING",
+  "currency": "AUD"
+}

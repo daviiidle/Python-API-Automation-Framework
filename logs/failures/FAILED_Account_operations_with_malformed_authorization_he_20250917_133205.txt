@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:32:05.659011
+[TEST] Scenario: Account operations with malformed authorization header
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:36
+[TIME]  Duration: 0:00:00.151286
+[TAGS]  Tags: authentication_errors, regression
+[INFO] Status: failed
+
+[ERROR] Last Error: Unauthorized assertion failed - Expected: 401, Actual: 403
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.015s
+Errors: ['Unauthorized assertion failed - Expected: 401, Actual: 403']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

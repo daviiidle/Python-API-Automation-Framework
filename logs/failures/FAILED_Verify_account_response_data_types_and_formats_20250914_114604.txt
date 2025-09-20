@@ -1,0 +1,47 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T11:46:04.206489
+[TEST] Scenario: Verify account response data types and formats
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:73
+[TIME]  Duration: 0:00:01.622254
+[TAGS]  Tags: data_validation
+[INFO] Status: failed
+
+[ERROR] Last Error: Value assertion failed - 'customerId' expected 'ACC001' but got 'CUST745603'
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 200
+URL: https://wiremock-production.up.railway.app/accounts/ACC001
+Headers: {
+  "Content-Encoding": "gzip",
+  "Content-Type": "application/json",
+  "Matched-Stub-Id": "f86a34b1-8dd3-49f1-903c-297a0521bc10",
+  "Server": "railway-edge",
+  "X-Correlation-Id": "",
+  "X-Railway-Edge": "railway/us-west2",
+  "X-Railway-Request-Id": "lPd0HwlFTVSZa4wC9I3ezw",
+  "Date": "Sun, 14 Sep 2025 01:46:01 GMT",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC001","customerId":"CUST745603","bsb":"747366","accountNumber":"66625328","accountType":"SAVINGS","currency":"AUD","balance":"l_g%lvzy-iyiq!d_xcjj%)7zhond;.vp$<dm","createdAt":"2025-09-14 01:46:01"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.754s
+Errors: ["Value assertion failed - 'customerId' expected 'ACC001' but got 'CUST745603'"]
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

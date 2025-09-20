@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-16T13:50:56.701726
+[TEST] Scenario: Retrieve accounts with boundary ID values -- @1.2 
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:61
+[TIME]  Duration: 0:00:00.135524
+[TAGS]  Tags: boundary_testing
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 200 | JSON Error: {"accountId": "ACC999", "customerId": "CUST384596", "bsb": "709571", "accountNumber": "66987842", "accountType": "SAVINGS", "currency": "AUD", "balance": "732938639800699392307158612566803684.041444768336534691764622772478765021", "createdAt": "2025-09-16 13:50:56"}
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 200
+URL: http://localhost:8081/accounts/ACC999
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "cb5c2f54-ee37-4368-9ffa-2312067d9bab",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC999","customerId":"CUST384596","bsb":"709571","accountNumber":"66987842","accountType":"SAVINGS","currency":"AUD","balance":"732938639800699392307158612566803684.041444768336534691764622772478765021","createdAt":"2025-09-16 13:50:56"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.016s
+Errors: ['Status code assertion failed - Expected: 404, Actual: 200']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

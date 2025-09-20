@@ -1,0 +1,5 @@
+{
+  "customerId": null,
+  "accountType": "SAVINGS",
+  "currency": "AUD"
+}

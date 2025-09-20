@@ -1,0 +1,26 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T17:57:41.040289
+[TEST] Scenario: Account creation with invalid token
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:21
+[TIME]  Duration: 0:00:00.141797
+[TAGS]  Tags: authentication_errors, regression
+[INFO] Status: failed
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.003s
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

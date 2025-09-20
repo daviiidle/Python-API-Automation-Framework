@@ -1,0 +1,1033 @@
+2025-09-13 23:14:25,433 - banking_api_tests - INFO - [environment.py:276] - [FRAMEWORK] ================================================================================
+2025-09-13 23:14:25,433 - banking_api_tests - INFO - [environment.py:277] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION START
+2025-09-13 23:14:25,433 - banking_api_tests - INFO - [environment.py:278] - [FRAMEWORK] ================================================================================
+2025-09-13 23:14:25,433 - banking_api_tests - DEBUG - [environment.py:283] - [FILE] Created reports directories
+2025-09-13 23:14:25,434 - banking_api_tests - INFO - [environment.py:242] - [ENV] Loading environment: railway
+2025-09-13 23:14:25,434 - banking_api_tests - INFO - [environment.py:243] - [FILE] Environment file: environments/.env.railway
+2025-09-13 23:14:25,434 - banking_api_tests - INFO - [environment.py:261] - [ENV] Successfully loaded environments/.env.railway
+2025-09-13 23:14:25,435 - banking_api_tests - INFO - [environment.py:300] - [ENV] Configuration loaded successfully for environment: railway
+2025-09-13 23:14:25,435 - banking_api_tests - INFO - [environment.py:311] - [ENV] Test Environment: railway
+2025-09-13 23:14:25,435 - banking_api_tests - INFO - [environment.py:312] - [URL] API Base URL: https://wiremock-production.up.railway.app
+2025-09-13 23:14:25,435 - banking_api_tests - INFO - [environment.py:313] - [AUTH] Auth Token: ****************2024
+2025-09-13 23:14:25,435 - banking_api_tests - INFO - [environment.py:314] - [FILE] Log File: logs/banking_api_tests_20250913_231425.log
+2025-09-13 23:14:25,435 - banking_api_tests - INFO - [environment.py:317] - [PLATFORM]  Platform: nt
+2025-09-13 23:14:25,435 - banking_api_tests - INFO - [environment.py:318] - [TIME] Start Time: 2025-09-13T23:14:25.435801
+2025-09-13 23:14:25,435 - banking_api_tests - INFO - [environment.py:319] - [USER] User: D
+2025-09-13 23:14:25,436 - banking_api_tests - INFO - [environment.py:320] - [DIR] Working Directory: C:\Users\D\python api automation framework
+2025-09-13 23:14:25,436 - banking_api_tests - INFO - [environment.py:321] - [TIMEOUT] Request Timeout: 10s
+2025-09-13 23:14:25,436 - banking_api_tests - INFO - [environment.py:322] - [PERFORMANCE] Performance Threshold: 2000ms
+2025-09-13 23:14:25,436 - banking_api_tests - INFO - [environment.py:335] - [START] Framework initialization complete - Ready to execute tests
+2025-09-13 23:14:25,437 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:25,437 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create account with valid generated data
+2025-09-13 23:14:25,437 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Creation
+2025-09-13 23:14:25,437 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_creation.feature:12
+2025-09-13 23:14:25,438 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-13 23:14:25,438 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:25.437476
+2025-09-13 23:14:25,438 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:25,438 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:26,788 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:26,788 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:26,790 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:26,790 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:26,790 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:26,791 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: account
+2025-09-13 23:14:26,792 - banking_api_tests - INFO - [data_steps.py:216] - [REQUEST] Creating account using generated data
+2025-09-13 23:14:27,575 - banking_api_tests - INFO - [data_steps.py:236] - [RESPONSE] Create account Response: 201
+2025-09-13 23:14:27,575 - banking_api_tests - INFO - [data_steps.py:237] - [TIME]  Response Time: 0.782s
+2025-09-13 23:14:27,575 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 201
+2025-09-13 23:14:27,576 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 201, Actual: 201
+2025-09-13 23:14:27,576 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 201
+2025-09-13 23:14:27,576 - banking_api_tests - INFO - [common_steps.py:590] - [VERIFY] Verifying response is valid JSON
+2025-09-13 23:14:27,576 - banking_api_tests - INFO - [common_steps.py:598] - [SUCCESS] JSON validation PASSED: Response is valid JSON
+2025-09-13 23:14:27,577 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'accountId'
+2025-09-13 23:14:27,577 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'accountId' in response
+2025-09-13 23:14:27,577 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'customerId'
+2025-09-13 23:14:27,577 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'customerId' in response
+2025-09-13 23:14:27,578 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'accountType'
+2025-09-13 23:14:27,578 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'accountType' in response
+2025-09-13 23:14:27,578 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'currency'
+2025-09-13 23:14:27,578 - banking_api_tests - ERROR - [common_steps.py:555] - [ERROR] Key assertion FAILED: 'currency' not found in response
+2025-09-13 23:14:27,578 - banking_api_tests - ERROR - [common_steps.py:556] - [HEADERS] Available keys: ['accountId', 'customerId', 'bsb', 'accountNumber', 'accountType', 'createdAt']
+2025-09-13 23:14:27,579 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_account_with_valid_generated_d_20250913_231427.txt
+2025-09-13 23:14:27,580 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:27,580 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create account with valid generated data
+2025-09-13 23:14:27,580 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:27,580 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:02.141642
+2025-09-13 23:14:27,580 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:27,580 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.782s
+2025-09-13 23:14:27,580 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.782s
+2025-09-13 23:14:27,581 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Key assertion failed - 'currency' not found. Available keys: ['accountId', 'customerId', 'bsb', 'accountNumber', 'accountType', 'createdAt']
+2025-09-13 23:14:27,581 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 201
+2025-09-13 23:14:27,581 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: 
+2025-09-13 23:14:27,581 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:27,604 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:27,604 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create account with generated data
+2025-09-13 23:14:27,604 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Creation with Dynamic Data
+2025-09-13 23:14:27,604 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_creation_dynamic.feature:12
+2025-09-13 23:14:27,605 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-13 23:14:27,605 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:27.604377
+2025-09-13 23:14:27,605 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:27,605 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:28,444 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:28,444 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:28,446 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:28,446 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:28,446 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:28,446 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: account
+2025-09-13 23:14:28,447 - banking_api_tests - INFO - [data_steps.py:216] - [REQUEST] Creating account using generated data
+2025-09-13 23:14:29,217 - banking_api_tests - INFO - [data_steps.py:236] - [RESPONSE] Create account Response: 201
+2025-09-13 23:14:29,218 - banking_api_tests - INFO - [data_steps.py:237] - [TIME]  Response Time: 0.771s
+2025-09-13 23:14:29,218 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 201
+2025-09-13 23:14:29,218 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 201, Actual: 201
+2025-09-13 23:14:29,219 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 201
+2025-09-13 23:14:29,219 - banking_api_tests - INFO - [common_steps.py:590] - [VERIFY] Verifying response is valid JSON
+2025-09-13 23:14:29,219 - banking_api_tests - INFO - [common_steps.py:598] - [SUCCESS] JSON validation PASSED: Response is valid JSON
+2025-09-13 23:14:29,219 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'accountId'
+2025-09-13 23:14:29,220 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'accountId' in response
+2025-09-13 23:14:29,220 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'customerId'
+2025-09-13 23:14:29,220 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'customerId' in response
+2025-09-13 23:14:29,220 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'accountType'
+2025-09-13 23:14:29,221 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'accountType' in response
+2025-09-13 23:14:29,221 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'currency'
+2025-09-13 23:14:29,221 - banking_api_tests - ERROR - [common_steps.py:555] - [ERROR] Key assertion FAILED: 'currency' not found in response
+2025-09-13 23:14:29,221 - banking_api_tests - ERROR - [common_steps.py:556] - [HEADERS] Available keys: ['accountId', 'customerId', 'bsb', 'accountNumber', 'accountType', 'createdAt']
+2025-09-13 23:14:29,223 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_account_with_generated_data_20250913_231429.txt
+2025-09-13 23:14:29,223 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:29,223 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create account with generated data
+2025-09-13 23:14:29,223 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:29,223 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.617701
+2025-09-13 23:14:29,223 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:29,223 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.771s
+2025-09-13 23:14:29,224 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.771s
+2025-09-13 23:14:29,224 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Key assertion failed - 'currency' not found. Available keys: ['accountId', 'customerId', 'bsb', 'accountNumber', 'accountType', 'createdAt']
+2025-09-13 23:14:29,224 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 201
+2025-09-13 23:14:29,224 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: 
+2025-09-13 23:14:29,224 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:29,266 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:29,266 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully retrieve account by valid ID
+2025-09-13 23:14:29,266 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:29,266 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:12
+2025-09-13 23:14:29,266 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, regression
+2025-09-13 23:14:29,266 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:29.266115
+2025-09-13 23:14:29,266 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:29,267 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:30,106 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:30,106 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:30,107 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:30,108 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:30,108 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:30,108 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC001
+2025-09-13 23:14:30,997 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 200
+2025-09-13 23:14:30,997 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.888s
+2025-09-13 23:14:30,997 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:30,997 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 200
+2025-09-13 23:14:30,998 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 200, Actual: 200
+2025-09-13 23:14:30,998 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 200
+2025-09-13 23:14:30,998 - banking_api_tests - INFO - [common_steps.py:590] - [VERIFY] Verifying response is valid JSON
+2025-09-13 23:14:30,998 - banking_api_tests - INFO - [common_steps.py:598] - [SUCCESS] JSON validation PASSED: Response is valid JSON
+2025-09-13 23:14:30,999 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'customerId'
+2025-09-13 23:14:30,999 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'customerId' in response
+2025-09-13 23:14:30,999 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'firstName'
+2025-09-13 23:14:30,999 - banking_api_tests - ERROR - [common_steps.py:555] - [ERROR] Key assertion FAILED: 'firstName' not found in response
+2025-09-13 23:14:30,999 - banking_api_tests - ERROR - [common_steps.py:556] - [HEADERS] Available keys: ['accountId', 'customerId', 'bsb', 'accountNumber', 'accountType', 'createdAt']
+2025-09-13 23:14:31,000 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_retrieve_account_by_valid_ID_20250913_231431.txt
+2025-09-13 23:14:31,000 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:31,001 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully retrieve account by valid ID
+2025-09-13 23:14:31,001 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:31,001 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.733934
+2025-09-13 23:14:31,001 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:31,001 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.888s
+2025-09-13 23:14:31,001 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.888s
+2025-09-13 23:14:31,001 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Key assertion failed - 'firstName' not found. Available keys: ['accountId', 'customerId', 'bsb', 'accountNumber', 'accountType', 'createdAt']
+2025-09-13 23:14:31,001 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 200
+2025-09-13 23:14:31,001 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: 
+2025-09-13 23:14:31,001 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:31,003 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:31,004 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully retrieve account with different valid ID
+2025-09-13 23:14:31,004 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:31,004 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:24
+2025-09-13 23:14:31,004 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, regression
+2025-09-13 23:14:31,004 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:31.003829
+2025-09-13 23:14:31,004 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:31,005 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:31,842 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:31,842 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:31,844 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:31,844 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:31,844 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:31,845 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC002
+2025-09-13 23:14:32,695 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 200
+2025-09-13 23:14:32,696 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.851s
+2025-09-13 23:14:32,696 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:32,696 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 200
+2025-09-13 23:14:32,697 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 200, Actual: 200
+2025-09-13 23:14:32,697 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 200
+2025-09-13 23:14:32,697 - banking_api_tests - INFO - [common_steps.py:590] - [VERIFY] Verifying response is valid JSON
+2025-09-13 23:14:32,697 - banking_api_tests - INFO - [common_steps.py:598] - [SUCCESS] JSON validation PASSED: Response is valid JSON
+2025-09-13 23:14:32,698 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'customerId'
+2025-09-13 23:14:32,698 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'customerId' in response
+2025-09-13 23:14:32,699 - banking_api_tests - INFO - [common_steps.py:1093] - [VERIFY] Checking response contains required fields
+2025-09-13 23:14:32,699 - banking_api_tests - ERROR - [common_steps.py:1104] - [ERROR] Missing fields: ['firstName', 'lastName', 'email', 'phone', 'dob']
+2025-09-13 23:14:32,700 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_retrieve_account_with_different_valid_20250913_231432.txt
+2025-09-13 23:14:32,701 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:32,701 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully retrieve account with different valid ID
+2025-09-13 23:14:32,701 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:32,701 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.696035
+2025-09-13 23:14:32,701 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:32,701 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.851s
+2025-09-13 23:14:32,701 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.851s
+2025-09-13 23:14:32,702 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 200
+2025-09-13 23:14:32,702 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: 
+2025-09-13 23:14:32,702 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:32,703 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:32,704 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Attempt to retrieve non-existent account
+2025-09-13 23:14:32,704 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:32,704 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:39
+2025-09-13 23:14:32,704 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: error_handling, regression
+2025-09-13 23:14:32,704 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:32.703844
+2025-09-13 23:14:32,704 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:32,705 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:33,548 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:33,548 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:33,549 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:33,549 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:33,550 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:33,550 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/NONEXISTENT
+2025-09-13 23:14:34,306 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 500
+2025-09-13 23:14:34,306 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.756s
+2025-09-13 23:14:34,306 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:34,307 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 404
+2025-09-13 23:14:34,307 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 404, Actual: 500
+2025-09-13 23:14:34,307 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 404, got 500
+2025-09-13 23:14:34,307 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: {
+"servlet":"com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+"cause0":"java.io.FileNotFoundException: /app/./__files/account-NONEXISTENT.json (No such file or directory)",
+"message":"java.io.FileNotFoundException: /app/./__files/account-NONEXISTENT.json (No such ...
+2025-09-13 23:14:34,307 - banking_api_tests - ERROR - [common_steps.py:525] - [BODY] Error Response JSON: {
+  "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+  "cause0": "java.io.FileNotFoundException: /app/./__files/account-NONEXISTENT.json (No such file or directory)",
+  "message": "java.io.FileNotFoundException: /app/./__files/account-NONEXISTENT.json (No such file or directory)",
+  "url": "/accounts/NONEXISTENT",
+  "status": "500"
+}
+2025-09-13 23:14:34,308 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Attempt_to_retrieve_non-existent_account_20250913_231434.txt
+2025-09-13 23:14:34,309 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:34,309 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Attempt to retrieve non-existent account
+2025-09-13 23:14:34,309 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:34,309 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.604312
+2025-09-13 23:14:34,309 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:34,309 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.756s
+2025-09-13 23:14:34,309 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.756s
+2025-09-13 23:14:34,309 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 500 | JSON Error: {"servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d", "cause0": "java.io.FileNotFoundException: /app/./__files/account-NONEXISTENT.json (No such file or directory)", "message": "java.io.FileNotFoundException: /app/./__files/account-NONEXISTENT.json (No such file or directory)", "url": "/accounts/NONEXISTENT", "status": "500"}
+2025-09-13 23:14:34,310 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:34,311 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:34,311 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Attempt to retrieve account with invalid ID format
+2025-09-13 23:14:34,311 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:34,312 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:47
+2025-09-13 23:14:34,312 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: error_handling, regression
+2025-09-13 23:14:34,312 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:34.311660
+2025-09-13 23:14:34,312 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:34,312 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:35,157 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:35,157 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:35,158 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:35,159 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:35,159 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:35,159 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/123invalid
+2025-09-13 23:14:35,917 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 500
+2025-09-13 23:14:35,917 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.758s
+2025-09-13 23:14:35,918 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:35,918 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 404
+2025-09-13 23:14:35,918 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 404, Actual: 500
+2025-09-13 23:14:35,918 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 404, got 500
+2025-09-13 23:14:35,918 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: {
+"servlet":"com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+"cause0":"java.io.FileNotFoundException: /app/./__files/account-123invalid.json (No such file or directory)",
+"message":"java.io.FileNotFoundException: /app/./__files/account-123invalid.json (No such fi...
+2025-09-13 23:14:35,918 - banking_api_tests - ERROR - [common_steps.py:525] - [BODY] Error Response JSON: {
+  "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+  "cause0": "java.io.FileNotFoundException: /app/./__files/account-123invalid.json (No such file or directory)",
+  "message": "java.io.FileNotFoundException: /app/./__files/account-123invalid.json (No such file or directory)",
+  "url": "/accounts/123invalid",
+  "status": "500"
+}
+2025-09-13 23:14:35,919 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Attempt_to_retrieve_account_with_invalid_ID_format_20250913_231435.txt
+2025-09-13 23:14:35,920 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:35,920 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Attempt to retrieve account with invalid ID format
+2025-09-13 23:14:35,920 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:35,920 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.607689
+2025-09-13 23:14:35,920 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:35,920 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.758s
+2025-09-13 23:14:35,921 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.758s
+2025-09-13 23:14:35,921 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 500 | JSON Error: {"servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d", "cause0": "java.io.FileNotFoundException: /app/./__files/account-123invalid.json (No such file or directory)", "message": "java.io.FileNotFoundException: /app/./__files/account-123invalid.json (No such file or directory)", "url": "/accounts/123invalid", "status": "500"}
+2025-09-13 23:14:35,921 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:35,923 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:35,923 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Retrieve accounts with boundary ID values -- @1.1 
+2025-09-13 23:14:35,923 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:35,923 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:60
+2025-09-13 23:14:35,923 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: boundary_testing
+2025-09-13 23:14:35,923 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:35.923312
+2025-09-13 23:14:35,924 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:35,924 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:36,783 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:36,783 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:36,784 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:36,785 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:36,785 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:36,785 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC001
+2025-09-13 23:14:37,641 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 200
+2025-09-13 23:14:37,641 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.856s
+2025-09-13 23:14:37,641 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:37,642 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 200
+2025-09-13 23:14:37,642 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 200, Actual: 200
+2025-09-13 23:14:37,642 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 200
+2025-09-13 23:14:37,642 - banking_api_tests - INFO - [common_steps.py:590] - [VERIFY] Verifying response is valid JSON
+2025-09-13 23:14:37,642 - banking_api_tests - INFO - [common_steps.py:598] - [SUCCESS] JSON validation PASSED: Response is valid JSON
+2025-09-13 23:14:37,643 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:37,643 - banking_api_tests - INFO - [environment.py:385] - [PASSED] SCENARIO COMPLETE: Retrieve accounts with boundary ID values -- @1.1 
+2025-09-13 23:14:37,643 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [PASSED] PASSED
+2025-09-13 23:14:37,643 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.719667
+2025-09-13 23:14:37,643 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:37,643 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.856s
+2025-09-13 23:14:37,643 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.856s
+2025-09-13 23:14:37,643 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 200
+2025-09-13 23:14:37,643 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: 
+2025-09-13 23:14:37,643 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:37,644 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:37,645 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Retrieve accounts with boundary ID values -- @1.2 
+2025-09-13 23:14:37,645 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:37,645 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:61
+2025-09-13 23:14:37,645 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: boundary_testing
+2025-09-13 23:14:37,645 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:37.644911
+2025-09-13 23:14:37,645 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:37,646 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:38,512 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:38,512 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:38,513 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:38,514 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:38,514 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:38,514 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC999
+2025-09-13 23:14:39,291 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 500
+2025-09-13 23:14:39,291 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.777s
+2025-09-13 23:14:39,291 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:39,292 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 404
+2025-09-13 23:14:39,292 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 404, Actual: 500
+2025-09-13 23:14:39,292 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 404, got 500
+2025-09-13 23:14:39,292 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: {
+"servlet":"com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+"cause0":"java.io.FileNotFoundException: /app/./__files/account-ACC999.json (No such file or directory)",
+"message":"java.io.FileNotFoundException: /app/./__files/account-ACC999.json (No such file or di...
+2025-09-13 23:14:39,292 - banking_api_tests - ERROR - [common_steps.py:525] - [BODY] Error Response JSON: {
+  "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+  "cause0": "java.io.FileNotFoundException: /app/./__files/account-ACC999.json (No such file or directory)",
+  "message": "java.io.FileNotFoundException: /app/./__files/account-ACC999.json (No such file or directory)",
+  "url": "/accounts/ACC999",
+  "status": "500"
+}
+2025-09-13 23:14:39,293 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Retrieve_accounts_with_boundary_ID_values_--__1_2__20250913_231439.txt
+2025-09-13 23:14:39,293 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:39,294 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Retrieve accounts with boundary ID values -- @1.2 
+2025-09-13 23:14:39,294 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:39,294 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.648228
+2025-09-13 23:14:39,294 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:39,294 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.777s
+2025-09-13 23:14:39,294 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.777s
+2025-09-13 23:14:39,294 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 500 | JSON Error: {"servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d", "cause0": "java.io.FileNotFoundException: /app/./__files/account-ACC999.json (No such file or directory)", "message": "java.io.FileNotFoundException: /app/./__files/account-ACC999.json (No such file or directory)", "url": "/accounts/ACC999", "status": "500"}
+2025-09-13 23:14:39,294 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:39,296 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:39,296 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Retrieve accounts with boundary ID values -- @1.3 
+2025-09-13 23:14:39,296 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:39,296 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:62
+2025-09-13 23:14:39,296 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: boundary_testing
+2025-09-13 23:14:39,296 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:39.296258
+2025-09-13 23:14:39,297 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:39,297 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:40,155 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:40,155 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:40,156 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:40,156 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:40,157 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:40,157 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/A
+2025-09-13 23:14:40,903 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 500
+2025-09-13 23:14:40,903 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.746s
+2025-09-13 23:14:40,903 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:40,904 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 404
+2025-09-13 23:14:40,904 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 404, Actual: 500
+2025-09-13 23:14:40,904 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 404, got 500
+2025-09-13 23:14:40,904 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: {
+"servlet":"com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+"cause0":"java.io.FileNotFoundException: /app/./__files/account-A.json (No such file or directory)",
+"message":"java.io.FileNotFoundException: /app/./__files/account-A.json (No such file or directory)",...
+2025-09-13 23:14:40,904 - banking_api_tests - ERROR - [common_steps.py:525] - [BODY] Error Response JSON: {
+  "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+  "cause0": "java.io.FileNotFoundException: /app/./__files/account-A.json (No such file or directory)",
+  "message": "java.io.FileNotFoundException: /app/./__files/account-A.json (No such file or directory)",
+  "url": "/accounts/A",
+  "status": "500"
+}
+2025-09-13 23:14:40,905 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Retrieve_accounts_with_boundary_ID_values_--__1_3__20250913_231440.txt
+2025-09-13 23:14:40,905 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:40,905 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Retrieve accounts with boundary ID values -- @1.3 
+2025-09-13 23:14:40,906 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:40,906 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.608791
+2025-09-13 23:14:40,906 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:40,906 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.746s
+2025-09-13 23:14:40,906 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.746s
+2025-09-13 23:14:40,906 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 500 | JSON Error: {"servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d", "cause0": "java.io.FileNotFoundException: /app/./__files/account-A.json (No such file or directory)", "message": "java.io.FileNotFoundException: /app/./__files/account-A.json (No such file or directory)", "url": "/accounts/A", "status": "500"}
+2025-09-13 23:14:40,906 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:40,908 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:40,908 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Retrieve accounts with boundary ID values -- @1.4 
+2025-09-13 23:14:40,908 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:40,908 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:63
+2025-09-13 23:14:40,908 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: boundary_testing
+2025-09-13 23:14:40,908 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:40.908080
+2025-09-13 23:14:40,908 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:40,909 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:41,764 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:41,764 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:41,766 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:41,766 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:41,766 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:41,766 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/VERYLONGACCOUNTID
+2025-09-13 23:14:42,496 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 500
+2025-09-13 23:14:42,496 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.730s
+2025-09-13 23:14:42,497 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:42,497 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 404
+2025-09-13 23:14:42,497 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 404, Actual: 500
+2025-09-13 23:14:42,497 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 404, got 500
+2025-09-13 23:14:42,497 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: {
+"servlet":"com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+"cause0":"java.io.FileNotFoundException: /app/./__files/account-VERYLONGACCOUNTID.json (No such file or directory)",
+"message":"java.io.FileNotFoundException: /app/./__files/account-VERYLONGACCOUNTID.js...
+2025-09-13 23:14:42,498 - banking_api_tests - ERROR - [common_steps.py:525] - [BODY] Error Response JSON: {
+  "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+  "cause0": "java.io.FileNotFoundException: /app/./__files/account-VERYLONGACCOUNTID.json (No such file or directory)",
+  "message": "java.io.FileNotFoundException: /app/./__files/account-VERYLONGACCOUNTID.json (No such file or directory)",
+  "url": "/accounts/VERYLONGACCOUNTID",
+  "status": "500"
+}
+2025-09-13 23:14:42,499 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Retrieve_accounts_with_boundary_ID_values_--__1_4__20250913_231442.txt
+2025-09-13 23:14:42,499 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:42,499 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Retrieve accounts with boundary ID values -- @1.4 
+2025-09-13 23:14:42,499 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:42,499 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.590319
+2025-09-13 23:14:42,499 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:42,499 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.730s
+2025-09-13 23:14:42,499 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.730s
+2025-09-13 23:14:42,499 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 500 | JSON Error: {"servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d", "cause0": "java.io.FileNotFoundException: /app/./__files/account-VERYLONGACCOUNTID.json (No such file or directory)", "message": "java.io.FileNotFoundException: /app/./__files/account-VERYLONGACCOUNTID.json (No such file or directory)", "url": "/accounts/VERYLONGACCOUNTID", "status": "500"}
+2025-09-13 23:14:42,500 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:42,501 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:42,501 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Multiple concurrent account retrievals
+2025-09-13 23:14:42,501 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:42,502 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:66
+2025-09-13 23:14:42,502 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: performance, load_testing
+2025-09-13 23:14:42,502 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:42.501405
+2025-09-13 23:14:42,502 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:42,503 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:43,406 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:43,406 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:43,407 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:43,407 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:43,407 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:43,408 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC001
+2025-09-13 23:14:44,278 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 200
+2025-09-13 23:14:44,278 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.870s
+2025-09-13 23:14:44,278 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:44,279 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC002
+2025-09-13 23:14:45,126 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 200
+2025-09-13 23:14:45,126 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.847s
+2025-09-13 23:14:45,126 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:45,127 - banking_api_tests - INFO - [common_steps.py:1015] - [VERIFY] Verifying response time is under 1500ms
+2025-09-13 23:14:45,127 - banking_api_tests - INFO - [common_steps.py:1034] - [SUCCESS] Response time assertion PASSED: 858ms <= 1500ms
+2025-09-13 23:14:45,127 - banking_api_tests - INFO - [common_steps.py:924] - [VERIFY] Verifying response is successful (2xx status)
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [common_steps.py:934] - [SUCCESS] Success assertion PASSED: Status 200
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [environment.py:385] - [PASSED] SCENARIO COMPLETE: Multiple concurrent account retrievals
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [PASSED] PASSED
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:02.626777
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 2
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.858s
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 1.716s
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 200
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: 
+2025-09-13 23:14:45,128 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:45,130 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:45,130 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Verify account response data types and formats
+2025-09-13 23:14:45,130 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:45,130 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:73
+2025-09-13 23:14:45,130 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: data_validation
+2025-09-13 23:14:45,130 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:45.130201
+2025-09-13 23:14:45,130 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:45,131 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:45,960 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:45,960 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:45,962 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:45,962 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:45,962 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:45,962 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC001
+2025-09-13 23:14:46,803 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 200
+2025-09-13 23:14:46,803 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.841s
+2025-09-13 23:14:46,804 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:46,804 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 200
+2025-09-13 23:14:46,804 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 200, Actual: 200
+2025-09-13 23:14:46,804 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 200
+2025-09-13 23:14:46,805 - banking_api_tests - INFO - [common_steps.py:870] - [VERIFY] Verifying response 'customerId' should be 'ACC001'
+2025-09-13 23:14:46,805 - banking_api_tests - ERROR - [common_steps.py:894] - [ERROR] Value assertion FAILED: Expected 'ACC001', got 'CUST001'
+2025-09-13 23:14:46,806 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Verify_account_response_data_types_and_formats_20250913_231446.txt
+2025-09-13 23:14:46,806 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:46,806 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Verify account response data types and formats
+2025-09-13 23:14:46,806 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:46,806 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.675354
+2025-09-13 23:14:46,806 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:46,807 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.841s
+2025-09-13 23:14:46,807 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.841s
+2025-09-13 23:14:46,807 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Value assertion failed - 'customerId' expected 'ACC001' but got 'CUST001'
+2025-09-13 23:14:46,807 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 200
+2025-09-13 23:14:46,807 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: 
+2025-09-13 23:14:46,807 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:46,809 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:46,809 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Verify correlation ID is propagated in account retrieval
+2025-09-13 23:14:46,809 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:46,809 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:84
+2025-09-13 23:14:46,809 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: correlation_tracking
+2025-09-13 23:14:46,810 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:46.809258
+2025-09-13 23:14:46,810 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:46,810 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:47,642 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:47,642 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:47,643 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:47,644 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:47,644 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:47,644 - banking_api_tests - INFO - [common_steps.py:221] - [CORRELATION] Setting correlation ID: test-acc-001
+2025-09-13 23:14:47,645 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC001
+2025-09-13 23:14:48,484 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 200
+2025-09-13 23:14:48,484 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.840s
+2025-09-13 23:14:48,485 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:48,485 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 200
+2025-09-13 23:14:48,485 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 200, Actual: 200
+2025-09-13 23:14:48,485 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 200
+2025-09-13 23:14:48,486 - banking_api_tests - INFO - [common_steps.py:682] - [SUCCESS] Found correlation ID: test-acc-001
+2025-09-13 23:14:48,486 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:48,486 - banking_api_tests - INFO - [environment.py:385] - [PASSED] SCENARIO COMPLETE: Verify correlation ID is propagated in account retrieval
+2025-09-13 23:14:48,486 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [PASSED] PASSED
+2025-09-13 23:14:48,486 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.677057
+2025-09-13 23:14:48,486 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:48,486 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.840s
+2025-09-13 23:14:48,486 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.840s
+2025-09-13 23:14:48,487 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 200
+2025-09-13 23:14:48,487 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: test-acc-001
+2025-09-13 23:14:48,487 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:48,488 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:48,488 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Verify consistent response for repeated requests
+2025-09-13 23:14:48,488 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:48,488 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:91
+2025-09-13 23:14:48,488 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: caching_behavior
+2025-09-13 23:14:48,488 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:48.488308
+2025-09-13 23:14:48,488 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:48,489 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:49,325 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:49,325 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:49,326 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:49,327 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:49,327 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:49,327 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC001
+2025-09-13 23:14:50,168 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 200
+2025-09-13 23:14:50,168 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.840s
+2025-09-13 23:14:50,168 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:50,169 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 200
+2025-09-13 23:14:50,169 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 200, Actual: 200
+2025-09-13 23:14:50,169 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 200
+2025-09-13 23:14:50,169 - banking_api_tests - ERROR - [common_steps.py:654] - [ERROR] Response does not contain field: firstName
+2025-09-13 23:14:50,171 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Verify_consistent_response_for_repeated_requests_20250913_231450.txt
+2025-09-13 23:14:50,171 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:50,171 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Verify consistent response for repeated requests
+2025-09-13 23:14:50,171 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:50,171 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.681869
+2025-09-13 23:14:50,171 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:50,171 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.840s
+2025-09-13 23:14:50,172 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.840s
+2025-09-13 23:14:50,172 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 200
+2025-09-13 23:14:50,172 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: 
+2025-09-13 23:14:50,172 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:50,174 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:50,174 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Verify account retrieval response headers
+2025-09-13 23:14:50,174 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:50,174 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:101
+2025-09-13 23:14:50,174 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: response_headers
+2025-09-13 23:14:50,174 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:50.174181
+2025-09-13 23:14:50,174 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:50,175 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:51,011 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:51,011 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:51,013 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:51,013 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:51,013 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:51,013 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC001
+2025-09-13 23:14:51,854 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 200
+2025-09-13 23:14:51,854 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.840s
+2025-09-13 23:14:51,854 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:51,855 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 200
+2025-09-13 23:14:51,855 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 200, Actual: 200
+2025-09-13 23:14:51,855 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 200
+2025-09-13 23:14:51,855 - banking_api_tests - INFO - [common_steps.py:1126] - [VERIFY] Checking security headers in response
+2025-09-13 23:14:51,855 - banking_api_tests - INFO - [common_steps.py:1150] - [SUCCESS] All security headers present
+2025-09-13 23:14:51,856 - banking_api_tests - INFO - [common_steps.py:682] - [SUCCESS] Found correlation ID: 
+2025-09-13 23:14:51,856 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:51,856 - banking_api_tests - INFO - [environment.py:385] - [PASSED] SCENARIO COMPLETE: Verify account retrieval response headers
+2025-09-13 23:14:51,856 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [PASSED] PASSED
+2025-09-13 23:14:51,856 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.682241
+2025-09-13 23:14:51,856 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:51,856 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.840s
+2025-09-13 23:14:51,857 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.840s
+2025-09-13 23:14:51,857 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 200
+2025-09-13 23:14:51,857 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: 
+2025-09-13 23:14:51,857 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:51,858 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:51,858 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Account retrieval with special characters in ID -- @1.1 
+2025-09-13 23:14:51,859 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:51,859 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:115
+2025-09-13 23:14:51,859 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: edge_cases
+2025-09-13 23:14:51,859 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:51.858829
+2025-09-13 23:14:51,859 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:51,860 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:52,709 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:52,709 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:52,711 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:52,711 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:52,711 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:52,711 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC@001
+2025-09-13 23:14:53,481 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 404
+2025-09-13 23:14:53,481 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.770s
+2025-09-13 23:14:53,481 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:53,482 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 404
+2025-09-13 23:14:53,482 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 404, Actual: 404
+2025-09-13 23:14:53,482 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 404
+2025-09-13 23:14:53,482 - banking_api_tests - INFO - [common_steps.py:955] - [VERIFY] Verifying response contains error message
+2025-09-13 23:14:53,482 - banking_api_tests - ERROR - [common_steps.py:991] - [ERROR] JSON decode error: Expecting value: line 2 column 48 (char 48)
+2025-09-13 23:14:53,483 - banking_api_tests - ERROR - [common_steps.py:992] - [BODY] Raw response: 
+                                               Request was not matched
+                                               =======================
+
+--------------------------------------------------------...
+2025-09-13 23:14:53,483 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Account_retrieval_with_special_characters_in_ID_--_20250913_231453.txt
+2025-09-13 23:14:53,484 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:53,484 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Account retrieval with special characters in ID -- @1.1 
+2025-09-13 23:14:53,484 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:53,484 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.624524
+2025-09-13 23:14:53,484 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:53,484 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.770s
+2025-09-13 23:14:53,484 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.770s
+2025-09-13 23:14:53,485 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: JSON decode error and no error text found: Expecting value: line 2 column 48 (char 48)
+2025-09-13 23:14:53,485 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:53,485 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:53,485 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Account retrieval with special characters in ID -- @1.2 
+2025-09-13 23:14:53,485 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:53,485 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:116
+2025-09-13 23:14:53,486 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: edge_cases
+2025-09-13 23:14:53,486 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:53.485626
+2025-09-13 23:14:53,486 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:53,486 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:54,321 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:54,321 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:54,323 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:54,323 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:54,323 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:54,323 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC 001
+2025-09-13 23:14:55,077 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 404
+2025-09-13 23:14:55,077 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.754s
+2025-09-13 23:14:55,077 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:55,078 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 404
+2025-09-13 23:14:55,078 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 404, Actual: 404
+2025-09-13 23:14:55,078 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 404
+2025-09-13 23:14:55,079 - banking_api_tests - INFO - [common_steps.py:955] - [VERIFY] Verifying response contains error message
+2025-09-13 23:14:55,079 - banking_api_tests - ERROR - [common_steps.py:991] - [ERROR] JSON decode error: Expecting value: line 2 column 48 (char 48)
+2025-09-13 23:14:55,079 - banking_api_tests - ERROR - [common_steps.py:992] - [BODY] Raw response: 
+                                               Request was not matched
+                                               =======================
+
+--------------------------------------------------------...
+2025-09-13 23:14:55,080 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Account_retrieval_with_special_characters_in_ID_--_20250913_231455.txt
+2025-09-13 23:14:55,080 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:55,080 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Account retrieval with special characters in ID -- @1.2 
+2025-09-13 23:14:55,080 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:55,080 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.593953
+2025-09-13 23:14:55,080 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:55,080 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.754s
+2025-09-13 23:14:55,081 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.754s
+2025-09-13 23:14:55,081 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: JSON decode error and no error text found: Expecting value: line 2 column 48 (char 48)
+2025-09-13 23:14:55,081 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:55,081 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:55,081 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Account retrieval with special characters in ID -- @1.3 
+2025-09-13 23:14:55,081 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:55,082 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:117
+2025-09-13 23:14:55,082 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: edge_cases
+2025-09-13 23:14:55,082 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:55.081735
+2025-09-13 23:14:55,082 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:55,083 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:55,911 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:55,911 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:55,913 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:55,913 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:55,913 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:55,914 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC#001
+2025-09-13 23:14:56,645 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 500
+2025-09-13 23:14:56,646 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.732s
+2025-09-13 23:14:56,646 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:56,646 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 404
+2025-09-13 23:14:56,646 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 404, Actual: 500
+2025-09-13 23:14:56,646 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 404, got 500
+2025-09-13 23:14:56,647 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: {
+"servlet":"com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+"cause0":"java.io.FileNotFoundException: /app/./__files/account-ACC.json (No such file or directory)",
+"message":"java.io.FileNotFoundException: /app/./__files/account-ACC.json (No such file or director...
+2025-09-13 23:14:56,647 - banking_api_tests - ERROR - [common_steps.py:525] - [BODY] Error Response JSON: {
+  "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+  "cause0": "java.io.FileNotFoundException: /app/./__files/account-ACC.json (No such file or directory)",
+  "message": "java.io.FileNotFoundException: /app/./__files/account-ACC.json (No such file or directory)",
+  "url": "/accounts/ACC",
+  "status": "500"
+}
+2025-09-13 23:14:56,648 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Account_retrieval_with_special_characters_in_ID_--_20250913_231456.txt
+2025-09-13 23:14:56,648 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:56,648 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Account retrieval with special characters in ID -- @1.3 
+2025-09-13 23:14:56,648 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:56,648 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.565866
+2025-09-13 23:14:56,648 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:56,648 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.732s
+2025-09-13 23:14:56,649 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.732s
+2025-09-13 23:14:56,649 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 500 | JSON Error: {"servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d", "cause0": "java.io.FileNotFoundException: /app/./__files/account-ACC.json (No such file or directory)", "message": "java.io.FileNotFoundException: /app/./__files/account-ACC.json (No such file or directory)", "url": "/accounts/ACC", "status": "500"}
+2025-09-13 23:14:56,649 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:56,650 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:56,651 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Account retrieval with special characters in ID -- @1.4 
+2025-09-13 23:14:56,651 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Retrieval
+2025-09-13 23:14:56,651 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_retrieval.feature:118
+2025-09-13 23:14:56,651 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: edge_cases
+2025-09-13 23:14:56,651 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:56.650726
+2025-09-13 23:14:56,651 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:56,652 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:57,495 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:57,495 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:57,496 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:14:57,496 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:14:57,497 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:14:57,497 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /accounts/ACC%001
+2025-09-13 23:14:58,233 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 400
+2025-09-13 23:14:58,233 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.736s
+2025-09-13 23:14:58,233 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:58,234 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 404
+2025-09-13 23:14:58,234 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 404, Actual: 400
+2025-09-13 23:14:58,234 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 404, got 400
+2025-09-13 23:14:58,234 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: <h1>Bad Message 400</h1><pre>reason: Bad Request</pre>...
+2025-09-13 23:14:58,235 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Account_retrieval_with_special_characters_in_ID_--_20250913_231458.txt
+2025-09-13 23:14:58,236 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:58,236 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Account retrieval with special characters in ID -- @1.4 
+2025-09-13 23:14:58,236 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:58,236 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.584482
+2025-09-13 23:14:58,236 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:58,236 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.736s
+2025-09-13 23:14:58,236 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.736s
+2025-09-13 23:14:58,236 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 400
+2025-09-13 23:14:58,237 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:58,239 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:58,239 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successful API access with valid bearer token
+2025-09-13 23:14:58,239 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Authentication and Security
+2025-09-13 23:14:58,239 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/authentication/auth_security.feature:11
+2025-09-13 23:14:58,239 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: authentication, smoke
+2025-09-13 23:14:58,239 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:58.239295
+2025-09-13 23:14:58,239 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:58,240 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:14:59,070 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:14:59,070 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:14:59,072 - banking_api_tests - INFO - [auth_steps.py:28] - [AUTH] Setting up valid bearer token
+2025-09-13 23:14:59,072 - banking_api_tests - INFO - [common_steps.py:305] - [REQUEST] Sending GET request to: /customers/CUST001
+2025-09-13 23:14:59,813 - banking_api_tests - INFO - [common_steps.py:327] - [RESPONSE] GET Response: 500
+2025-09-13 23:14:59,813 - banking_api_tests - INFO - [common_steps.py:328] - [TIME] Response Time: 0.740s
+2025-09-13 23:14:59,813 - banking_api_tests - INFO - [common_steps.py:341] - [SUCCESS] GET request completed successfully
+2025-09-13 23:14:59,814 - banking_api_tests - INFO - [common_steps.py:924] - [VERIFY] Verifying response is successful (2xx status)
+2025-09-13 23:14:59,814 - banking_api_tests - ERROR - [common_steps.py:936] - [ERROR] Success assertion FAILED: Status 500 is not successful
+2025-09-13 23:14:59,814 - banking_api_tests - ERROR - [common_steps.py:937] - [BODY] Response content: {
+"cause1":"wiremock.com.github.jknack.handlebars.HandlebarsException: inline@7685f485:1:2: could not find helper: &apos;fake&apos;\n{{fake &apos;name.firstName&apos;}}&quot;,\n  ^\n",
+"servlet":"com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+"cause0":"wiremock....
+2025-09-13 23:14:59,815 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successful_API_access_with_valid_bearer_token_20250913_231459.txt
+2025-09-13 23:14:59,815 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:14:59,816 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successful API access with valid bearer token
+2025-09-13 23:14:59,816 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:14:59,816 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.575685
+2025-09-13 23:14:59,816 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:14:59,816 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.740s
+2025-09-13 23:14:59,816 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.740s
+2025-09-13 23:14:59,816 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Success assertion failed - Status 500 is not in 2xx range
+2025-09-13 23:14:59,816 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:14:59,821 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:14:59,822 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create booking with generated data
+2025-09-13 23:14:59,822 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Booking Management
+2025-09-13 23:14:59,822 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/bookings/booking_management.feature:12
+2025-09-13 23:14:59,822 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-13 23:14:59,822 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:14:59.821914
+2025-09-13 23:14:59,822 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:14:59,823 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:15:00,655 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:15:00,655 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:15:00,656 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:15:00,656 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:15:00,656 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:15:00,657 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: booking
+2025-09-13 23:15:00,657 - banking_api_tests - INFO - [data_steps.py:216] - [REQUEST] Creating booking using generated data
+2025-09-13 23:15:01,426 - banking_api_tests - INFO - [data_steps.py:236] - [RESPONSE] Create booking Response: 404
+2025-09-13 23:15:01,426 - banking_api_tests - INFO - [data_steps.py:237] - [TIME]  Response Time: 0.768s
+2025-09-13 23:15:01,427 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 201
+2025-09-13 23:15:01,427 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 201, Actual: 404
+2025-09-13 23:15:01,427 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 201, got 404
+2025-09-13 23:15:01,427 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                      ...
+2025-09-13 23:15:01,428 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_booking_with_generated_data_20250913_231501.txt
+2025-09-13 23:15:01,428 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:15:01,428 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create booking with generated data
+2025-09-13 23:15:01,428 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:15:01,429 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.606033
+2025-09-13 23:15:01,429 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:15:01,429 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.768s
+2025-09-13 23:15:01,429 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.768s
+2025-09-13 23:15:01,429 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 404
+2025-09-13 23:15:01,429 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:15:01,433 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:15:01,433 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create customer with generated data
+2025-09-13 23:15:01,433 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Customer Management
+2025-09-13 23:15:01,433 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/customers/customer_management.feature:12
+2025-09-13 23:15:01,433 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-13 23:15:01,433 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:15:01.433299
+2025-09-13 23:15:01,433 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:15:01,434 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:15:02,272 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:15:02,272 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:15:02,273 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:15:02,274 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:15:02,274 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:15:02,274 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: customer
+2025-09-13 23:15:02,274 - banking_api_tests - INFO - [data_steps.py:216] - [REQUEST] Creating customer using generated data
+2025-09-13 23:15:03,018 - banking_api_tests - INFO - [data_steps.py:236] - [RESPONSE] Create customer Response: 201
+2025-09-13 23:15:03,018 - banking_api_tests - INFO - [data_steps.py:237] - [TIME]  Response Time: 0.743s
+2025-09-13 23:15:03,019 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 201
+2025-09-13 23:15:03,019 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 201, Actual: 201
+2025-09-13 23:15:03,019 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 201
+2025-09-13 23:15:03,019 - banking_api_tests - INFO - [common_steps.py:590] - [VERIFY] Verifying response is valid JSON
+2025-09-13 23:15:03,019 - banking_api_tests - INFO - [common_steps.py:598] - [SUCCESS] JSON validation PASSED: Response is valid JSON
+2025-09-13 23:15:03,020 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'customerId'
+2025-09-13 23:15:03,020 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'customerId' in response
+2025-09-13 23:15:03,020 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'firstName'
+2025-09-13 23:15:03,020 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'firstName' in response
+2025-09-13 23:15:03,021 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'lastName'
+2025-09-13 23:15:03,021 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'lastName' in response
+2025-09-13 23:15:03,021 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'email'
+2025-09-13 23:15:03,021 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'email' in response
+2025-09-13 23:15:03,022 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'phone'
+2025-09-13 23:15:03,022 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'phone' in response
+2025-09-13 23:15:03,022 - banking_api_tests - INFO - [common_steps.py:539] - [VERIFY] Verifying response contains key: 'createdAt'
+2025-09-13 23:15:03,022 - banking_api_tests - INFO - [common_steps.py:552] - [SUCCESS] Key assertion PASSED: Found 'createdAt' in response
+2025-09-13 23:15:03,022 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:15:03,023 - banking_api_tests - INFO - [environment.py:385] - [PASSED] SCENARIO COMPLETE: Successfully create customer with generated data
+2025-09-13 23:15:03,023 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [PASSED] PASSED
+2025-09-13 23:15:03,023 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.589541
+2025-09-13 23:15:03,023 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:15:03,023 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.743s
+2025-09-13 23:15:03,023 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.743s
+2025-09-13 23:15:03,023 - banking_api_tests - INFO - [environment.py:401] - [URL] Final Response Status: 201
+2025-09-13 23:15:03,023 - banking_api_tests - INFO - [environment.py:404] - [VERIFY] Correlation ID: 
+2025-09-13 23:15:03,024 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:15:03,025 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:15:03,025 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully retrieve customer with generated ID
+2025-09-13 23:15:03,025 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Customer Management
+2025-09-13 23:15:03,025 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/customers/customer_management.feature:25
+2025-09-13 23:15:03,025 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-13 23:15:03,025 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:15:03.025133
+2025-09-13 23:15:03,025 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:15:03,026 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:15:03,870 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:15:03,870 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:15:03,871 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:15:03,871 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:15:03,871 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:15:03,872 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: customer
+2025-09-13 23:15:03,872 - banking_api_tests - INFO - [data_steps.py:216] - [REQUEST] Creating customer using generated data
+2025-09-13 23:15:04,608 - banking_api_tests - INFO - [data_steps.py:236] - [RESPONSE] Create customer Response: 201
+2025-09-13 23:15:04,608 - banking_api_tests - INFO - [data_steps.py:237] - [TIME]  Response Time: 0.736s
+2025-09-13 23:15:04,609 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 201
+2025-09-13 23:15:04,609 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 201, Actual: 201
+2025-09-13 23:15:04,609 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 201
+2025-09-13 23:15:04,610 - banking_api_tests - INFO - [data_steps.py:308] - [VERIFY] Retrieving customer with ID: CUST788625
+2025-09-13 23:15:05,343 - banking_api_tests - INFO - [data_steps.py:327] - [RESPONSE] Retrieve customer Response: 500
+2025-09-13 23:15:05,343 - banking_api_tests - INFO - [data_steps.py:328] - [TIME]  Response Time: 0.732s
+2025-09-13 23:15:05,343 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 200
+2025-09-13 23:15:05,343 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 200, Actual: 500
+2025-09-13 23:15:05,344 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 200, got 500
+2025-09-13 23:15:05,344 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: {
+"servlet":"com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+"cause0":"java.io.FileNotFoundException: /app/./__files/customer-CUST788625.json (No such file or directory)",
+"message":"java.io.FileNotFoundException: /app/./__files/customer-CUST788625.json (No such ...
+2025-09-13 23:15:05,344 - banking_api_tests - ERROR - [common_steps.py:525] - [BODY] Error Response JSON: {
+  "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+  "cause0": "java.io.FileNotFoundException: /app/./__files/customer-CUST788625.json (No such file or directory)",
+  "message": "java.io.FileNotFoundException: /app/./__files/customer-CUST788625.json (No such file or directory)",
+  "url": "/customers/CUST788625",
+  "status": "500"
+}
+2025-09-13 23:15:05,345 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_retrieve_customer_with_generated_ID_20250913_231505.txt
+2025-09-13 23:15:05,345 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:15:05,345 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully retrieve customer with generated ID
+2025-09-13 23:15:05,345 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:15:05,346 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:02.319672
+2025-09-13 23:15:05,346 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 2
+2025-09-13 23:15:05,346 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.734s
+2025-09-13 23:15:05,346 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 1.468s
+2025-09-13 23:15:05,346 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 200, Actual: 500 | JSON Error: {"servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d", "cause0": "java.io.FileNotFoundException: /app/./__files/customer-CUST788625.json (No such file or directory)", "message": "java.io.FileNotFoundException: /app/./__files/customer-CUST788625.json (No such file or directory)", "url": "/customers/CUST788625", "status": "500"}
+2025-09-13 23:15:05,346 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:15:05,351 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:15:05,351 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Complete customer onboarding workflow
+2025-09-13 23:15:05,351 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: End-to-End Banking Workflows
+2025-09-13 23:15:05,351 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/integration/end_to_end_workflows.feature:12
+2025-09-13 23:15:05,351 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: workflow, smoke
+2025-09-13 23:15:05,352 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:15:05.351533
+2025-09-13 23:15:05,352 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:15:05,352 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:15:06,191 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:15:06,192 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:15:06,193 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:15:06,193 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:15:06,193 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:15:06,194 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: customer
+2025-09-13 23:15:06,195 - banking_api_tests - INFO - [data_steps.py:574] - [HEADERS] Generated correlation ID: corr_6e9f4d39e996
+2025-09-13 23:15:06,196 - banking_api_tests - INFO - [data_steps.py:216] - [REQUEST] Creating customer using generated data
+2025-09-13 23:15:06,942 - banking_api_tests - INFO - [data_steps.py:236] - [RESPONSE] Create customer Response: 201
+2025-09-13 23:15:06,943 - banking_api_tests - INFO - [data_steps.py:237] - [TIME]  Response Time: 0.747s
+2025-09-13 23:15:06,943 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 201
+2025-09-13 23:15:06,943 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 201, Actual: 201
+2025-09-13 23:15:06,943 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 201
+2025-09-13 23:15:06,944 - banking_api_tests - INFO - [common_steps.py:662] - [SUCCESS] Saved customerId='CUST981613' as 'customer_id'
+2025-09-13 23:15:06,944 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: account
+2025-09-13 23:15:06,945 - banking_api_tests - INFO - [data_steps.py:216] - [REQUEST] Creating account using generated data
+2025-09-13 23:15:07,680 - banking_api_tests - INFO - [data_steps.py:236] - [RESPONSE] Create account Response: 201
+2025-09-13 23:15:07,680 - banking_api_tests - INFO - [data_steps.py:237] - [TIME]  Response Time: 0.734s
+2025-09-13 23:15:07,681 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 201
+2025-09-13 23:15:07,681 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 201, Actual: 201
+2025-09-13 23:15:07,681 - banking_api_tests - INFO - [common_steps.py:507] - [SUCCESS] Status code assertion PASSED: 201
+2025-09-13 23:15:07,681 - banking_api_tests - INFO - [common_steps.py:662] - [SUCCESS] Saved accountId='ACC336216' as 'account_id'
+2025-09-13 23:15:07,682 - banking_api_tests - INFO - [data_steps.py:308] - [VERIFY] Retrieving customer with ID: CUST981613
+2025-09-13 23:15:08,452 - banking_api_tests - INFO - [data_steps.py:327] - [RESPONSE] Retrieve customer Response: 500
+2025-09-13 23:15:08,452 - banking_api_tests - INFO - [data_steps.py:328] - [TIME]  Response Time: 0.769s
+2025-09-13 23:15:08,453 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 200
+2025-09-13 23:15:08,453 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 200, Actual: 500
+2025-09-13 23:15:08,453 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 200, got 500
+2025-09-13 23:15:08,453 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: {
+"servlet":"com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+"cause0":"java.io.FileNotFoundException: /app/./__files/customer-CUST981613.json (No such file or directory)",
+"message":"java.io.FileNotFoundException: /app/./__files/customer-CUST981613.json (No such ...
+2025-09-13 23:15:08,453 - banking_api_tests - ERROR - [common_steps.py:525] - [BODY] Error Response JSON: {
+  "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d",
+  "cause0": "java.io.FileNotFoundException: /app/./__files/customer-CUST981613.json (No such file or directory)",
+  "message": "java.io.FileNotFoundException: /app/./__files/customer-CUST981613.json (No such file or directory)",
+  "url": "/customers/CUST981613",
+  "status": "500"
+}
+2025-09-13 23:15:08,454 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Complete_customer_onboarding_workflow_20250913_231508.txt
+2025-09-13 23:15:08,455 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:15:08,455 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Complete customer onboarding workflow
+2025-09-13 23:15:08,455 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:15:08,455 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:03.102751
+2025-09-13 23:15:08,455 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 3
+2025-09-13 23:15:08,455 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.750s
+2025-09-13 23:15:08,456 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 2.249s
+2025-09-13 23:15:08,456 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 200, Actual: 500 | JSON Error: {"servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d", "cause0": "java.io.FileNotFoundException: /app/./__files/customer-CUST981613.json (No such file or directory)", "message": "java.io.FileNotFoundException: /app/./__files/customer-CUST981613.json (No such file or directory)", "url": "/customers/CUST981613", "status": "500"}
+2025-09-13 23:15:08,456 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:15:08,461 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:15:08,461 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create loan application with generated data
+2025-09-13 23:15:08,461 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Loan Management
+2025-09-13 23:15:08,461 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/loans/loan_management.feature:12
+2025-09-13 23:15:08,462 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-13 23:15:08,462 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:15:08.461424
+2025-09-13 23:15:08,462 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:15:08,463 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:15:09,305 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:15:09,305 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:15:09,307 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:15:09,307 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:15:09,307 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:15:09,307 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: loan
+2025-09-13 23:15:09,308 - banking_api_tests - INFO - [data_steps.py:216] - [REQUEST] Creating loan using generated data
+2025-09-13 23:15:10,055 - banking_api_tests - INFO - [data_steps.py:236] - [RESPONSE] Create loan Response: 404
+2025-09-13 23:15:10,055 - banking_api_tests - INFO - [data_steps.py:237] - [TIME]  Response Time: 0.747s
+2025-09-13 23:15:10,056 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 201
+2025-09-13 23:15:10,056 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 201, Actual: 404
+2025-09-13 23:15:10,056 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 201, got 404
+2025-09-13 23:15:10,056 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                      ...
+2025-09-13 23:15:10,058 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_loan_application_with_generate_20250913_231510.txt
+2025-09-13 23:15:10,058 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:15:10,058 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create loan application with generated data
+2025-09-13 23:15:10,058 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:15:10,058 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.595907
+2025-09-13 23:15:10,058 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:15:10,058 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.747s
+2025-09-13 23:15:10,059 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.747s
+2025-09-13 23:15:10,059 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 404
+2025-09-13 23:15:10,059 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:15:10,062 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-13 23:15:10,062 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create term deposit with generated data
+2025-09-13 23:15:10,062 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Term Deposit Management
+2025-09-13 23:15:10,062 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/term_deposits/term_deposit_management.feature:12
+2025-09-13 23:15:10,062 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-13 23:15:10,062 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-13T23:15:10.062402
+2025-09-13 23:15:10,063 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-13 23:15:10,063 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 23:15:10,903 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 23:15:10,904 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 23:15:10,905 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 23:15:10,905 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 23:15:10,905 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 23:15:10,905 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: term_deposit
+2025-09-13 23:15:10,906 - banking_api_tests - INFO - [data_steps.py:216] - [REQUEST] Creating term_deposit using generated data
+2025-09-13 23:15:11,667 - banking_api_tests - INFO - [data_steps.py:236] - [RESPONSE] Create term_deposit Response: 404
+2025-09-13 23:15:11,667 - banking_api_tests - INFO - [data_steps.py:237] - [TIME]  Response Time: 0.761s
+2025-09-13 23:15:11,668 - banking_api_tests - INFO - [common_steps.py:497] - [VERIFY] Verifying response status code should be 201
+2025-09-13 23:15:11,668 - banking_api_tests - INFO - [common_steps.py:504] - [INFO] Expected: 201, Actual: 404
+2025-09-13 23:15:11,668 - banking_api_tests - ERROR - [common_steps.py:509] - [ERROR] Status code assertion FAILED: Expected 201, got 404
+2025-09-13 23:15:11,668 - banking_api_tests - ERROR - [common_steps.py:510] - [BODY] Response content: 
+                                               Request was not matched
+                                               =======================
+
+-----------------------------------------------------------------------------------------------------------------------
+| Closest stub                      ...
+2025-09-13 23:15:11,669 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_term_deposit_with_generated_da_20250913_231511.txt
+2025-09-13 23:15:11,670 - banking_api_tests - INFO - [environment.py:384] - [END] ============================================================
+2025-09-13 23:15:11,670 - banking_api_tests - INFO - [environment.py:385] - [FAILED] SCENARIO COMPLETE: Successfully create term deposit with generated data
+2025-09-13 23:15:11,670 - banking_api_tests - INFO - [environment.py:386] - [INFO] Status: [FAILED] FAILED
+2025-09-13 23:15:11,670 - banking_api_tests - INFO - [environment.py:387] - [TIME]  Duration: 0:00:01.606870
+2025-09-13 23:15:11,670 - banking_api_tests - INFO - [environment.py:388] - [URL] API Calls Made: 1
+2025-09-13 23:15:11,670 - banking_api_tests - INFO - [environment.py:392] - [PERFORMANCE] Avg Response Time: 0.761s
+2025-09-13 23:15:11,670 - banking_api_tests - INFO - [environment.py:393] - [INFO] Total Response Time: 0.761s
+2025-09-13 23:15:11,670 - banking_api_tests - ERROR - [environment.py:397] - [ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 404
+2025-09-13 23:15:11,670 - banking_api_tests - INFO - [environment.py:406] - [END] ============================================================
+2025-09-13 23:15:11,673 - banking_api_tests - INFO - [environment.py:429] - [RESULTS] ================================================================================
+2025-09-13 23:15:11,673 - banking_api_tests - INFO - [environment.py:430] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION COMPLETE
+2025-09-13 23:15:11,673 - banking_api_tests - INFO - [environment.py:431] - [RESULTS] ================================================================================
+2025-09-13 23:15:11,673 - banking_api_tests - INFO - [environment.py:432] - [TIMEOUT] Total Execution Time: 0:00:46.237143
+2025-09-13 23:15:11,673 - banking_api_tests - INFO - [environment.py:433] - [INFO] Total Scenarios: 26
+2025-09-13 23:15:11,673 - banking_api_tests - INFO - [environment.py:434] - [PASSED] Passed: 5
+2025-09-13 23:15:11,674 - banking_api_tests - INFO - [environment.py:435] - [FAILED] Failed: 21
+2025-09-13 23:15:11,674 - banking_api_tests - INFO - [environment.py:436] - [SKIPPED]  Skipped: 0
+2025-09-13 23:15:11,674 - banking_api_tests - INFO - [environment.py:437] - [PERFORMANCE] Pass Rate: 19.23%
+2025-09-13 23:15:11,674 - banking_api_tests - INFO - [environment.py:438] - [URL] Total API Calls: 30
+2025-09-13 23:15:11,674 - banking_api_tests - INFO - [environment.py:442] - [PERFORMANCE] Average Response Time: 0.782s
+2025-09-13 23:15:11,674 - banking_api_tests - INFO - [environment.py:443] - [INFO] Total Response Time: 23.459s
+2025-09-13 23:15:11,674 - banking_api_tests - INFO - [environment.py:445] - [FILE] Detailed Logs: logs/banking_api_tests_20250913_231425.log
+2025-09-13 23:15:11,674 - banking_api_tests - INFO - [environment.py:446] - [TIME] End Time: 2025-09-13T23:15:11.673429
+2025-09-13 23:15:11,674 - banking_api_tests - ERROR - [environment.py:460] - [ERROR] LOW SUCCESS RATE. Significant issues need attention.
+2025-09-13 23:15:11,674 - banking_api_tests - INFO - [environment.py:469] - [RESULTS] ================================================================================

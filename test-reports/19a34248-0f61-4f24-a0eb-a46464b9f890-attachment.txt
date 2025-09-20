@@ -1,0 +1,7 @@
+{
+  "customerId": "CUST001",
+  "accountType": "SAVINGS",
+  "currency": "AUD",
+  "initialBalance": 1000.00,
+  "description": "Savings account with special chars !@#$%"
+}

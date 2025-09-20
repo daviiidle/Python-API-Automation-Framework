@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T18:12:29.349949
+[TEST] Scenario: Unsupported HTTP methods on account endpoints
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:95
+[TIME]  Duration: 0:00:00.154916
+[TAGS]  Tags: method_not_allowed, regression, FAILED
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 405, Actual: 404
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 2
+Total Response Time: 0.016s
+Errors: ['Status code assertion failed - Expected: 405, Actual: 404']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

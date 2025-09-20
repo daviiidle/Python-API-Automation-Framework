@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:23:45.247270
+[TEST] Scenario: Account retrieval without authentication
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:12
+[TIME]  Duration: 0:00:00.136527
+[TAGS]  Tags: authentication_errors, regression
+[INFO] Status: failed
+
+[ERROR] Last Error: Unauthorized assertion failed - Expected: 401, Actual: 403
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.016s
+Errors: ['Unauthorized assertion failed - Expected: 401, Actual: 403']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T19:53:47.610449
+[TEST] Scenario: Successful API access with valid bearer token
+[FILE] Feature: Authentication and Security
+[LOCATION] Location: features/authentication/auth_security.feature:11
+[TIME]  Duration: 0:00:01.527440
+[TAGS]  Tags: authentication, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Success assertion failed - Status 502 is not in 2xx range
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.780s
+Errors: ['Success assertion failed - Status 502 is not in 2xx range']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

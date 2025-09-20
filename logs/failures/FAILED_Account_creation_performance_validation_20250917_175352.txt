@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T17:53:52.842620
+[TEST] Scenario: Account creation performance validation
+[FILE] Feature: Account Creation
+[LOCATION] Location: features/accounts/account_creation.feature:192
+[TIME]  Duration: 0:00:00.152186
+[TAGS]  Tags: performance
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 409 | JSON Error: {"error": "Conflict", "code": "DUPLICATE_ACCOUNT", "message": "Account already exists for customer CUST001 with type SAVINGS", "timestamp": "2025-09-17 17:53:52"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.018s
+Errors: ['Status code assertion failed - Expected: 201, Actual: 409']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

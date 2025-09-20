@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T19:03:55.649150
+[TEST] Scenario: Attempt to create conflicting bookings
+[FILE] Feature: Booking Management
+[LOCATION] Location: features/bookings/booking_management.feature:34
+[TIME]  Duration: 0:00:00.151305
+[TAGS]  Tags: conflict_handling, error_handling
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 409 | JSON Error: {"error": "Conflict", "code": "DUPLICATE_BOOKING", "message": "A booking already exists for this customer on the specified date and time", "timestamp": "2025-09-17 19:03:55"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.015s
+Errors: ['Status code assertion failed - Expected: 201, Actual: 409']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

@@ -1,0 +1,47 @@
+2025-09-17 18:19:51,094 - banking_api_tests - INFO - [environment.py:276] - [FRAMEWORK] ================================================================================
+2025-09-17 18:19:51,095 - banking_api_tests - INFO - [environment.py:277] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION START
+2025-09-17 18:19:51,095 - banking_api_tests - INFO - [environment.py:278] - [FRAMEWORK] ================================================================================
+2025-09-17 18:19:51,095 - banking_api_tests - DEBUG - [environment.py:283] - [FILE] Created reports directories
+2025-09-17 18:19:51,096 - banking_api_tests - INFO - [environment.py:242] - [ENV] Loading environment: test
+2025-09-17 18:19:51,096 - banking_api_tests - INFO - [environment.py:243] - [FILE] Environment file: environments/.env.test
+2025-09-17 18:19:51,096 - banking_api_tests - INFO - [environment.py:261] - [ENV] Successfully loaded environments/.env.test
+2025-09-17 18:19:51,096 - banking_api_tests - INFO - [environment.py:300] - [ENV] Configuration loaded successfully for environment: test
+2025-09-17 18:19:51,097 - banking_api_tests - INFO - [environment.py:311] - [ENV] Test Environment: test
+2025-09-17 18:19:51,097 - banking_api_tests - INFO - [environment.py:312] - [URL] API Base URL: http://localhost:8081
+2025-09-17 18:19:51,097 - banking_api_tests - INFO - [environment.py:313] - [AUTH] Auth Token: ****************2024
+2025-09-17 18:19:51,097 - banking_api_tests - INFO - [environment.py:314] - [FILE] Log File: logs/banking_api_tests_20250917_181951.log
+2025-09-17 18:19:51,097 - banking_api_tests - INFO - [environment.py:317] - [PLATFORM]  Platform: nt
+2025-09-17 18:19:51,097 - banking_api_tests - INFO - [environment.py:318] - [TIME] Start Time: 2025-09-17T18:19:51.097779
+2025-09-17 18:19:51,097 - banking_api_tests - INFO - [environment.py:319] - [USER] User: D
+2025-09-17 18:19:51,098 - banking_api_tests - INFO - [environment.py:320] - [DIR] Working Directory: C:\Users\D\python api automation framework
+2025-09-17 18:19:51,098 - banking_api_tests - INFO - [environment.py:321] - [TIMEOUT] Request Timeout: 15s
+2025-09-17 18:19:51,098 - banking_api_tests - INFO - [environment.py:322] - [PERFORMANCE] Performance Threshold: 3000ms
+2025-09-17 18:19:51,098 - banking_api_tests - INFO - [environment.py:335] - [START] Framework initialization complete - Ready to execute tests
+2025-09-17 18:19:51,099 - banking_api_tests - INFO - [environment.py:347] - [SCENARIO] ============================================================
+2025-09-17 18:19:51,099 - banking_api_tests - INFO - [environment.py:348] - [TEST] SCENARIO START: Successfully create account with valid generated data
+2025-09-17 18:19:51,099 - banking_api_tests - INFO - [environment.py:349] - [FILE] Feature: Account Creation
+2025-09-17 18:19:51,099 - banking_api_tests - INFO - [environment.py:350] - [LOCATION] Location: features/accounts/account_creation.feature:12
+2025-09-17 18:19:51,099 - banking_api_tests - INFO - [environment.py:351] - [TAGS]  Tags: happy_path, smoke
+2025-09-17 18:19:51,100 - banking_api_tests - INFO - [environment.py:352] - [TIME] Start Time: 2025-09-17T18:19:51.099509
+2025-09-17 18:19:51,100 - banking_api_tests - INFO - [environment.py:353] - [SCENARIO] ============================================================
+2025-09-17 18:19:51,101 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-17 18:19:53,136 - banking_api_tests - INFO - [environment.py:387] - [END] ============================================================
+2025-09-17 18:19:53,137 - banking_api_tests - INFO - [environment.py:388] - [FAILED] SCENARIO COMPLETE: Successfully create account with valid generated data
+2025-09-17 18:19:53,137 - banking_api_tests - INFO - [environment.py:389] - [INFO] Status: [FAILED] FAILED
+2025-09-17 18:19:53,137 - banking_api_tests - INFO - [environment.py:390] - [TIME]  Duration: 0:00:02.037405
+2025-09-17 18:19:53,137 - banking_api_tests - INFO - [environment.py:391] - [URL] API Calls Made: 0
+2025-09-17 18:19:53,137 - banking_api_tests - INFO - [environment.py:409] - [END] ============================================================
+2025-09-17 18:19:53,162 - banking_api_tests - INFO - [environment.py:432] - [RESULTS] ================================================================================
+2025-09-17 18:19:53,162 - banking_api_tests - INFO - [environment.py:433] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION COMPLETE
+2025-09-17 18:19:53,162 - banking_api_tests - INFO - [environment.py:434] - [RESULTS] ================================================================================
+2025-09-17 18:19:53,162 - banking_api_tests - INFO - [environment.py:435] - [TIMEOUT] Total Execution Time: 0:00:02.063800
+2025-09-17 18:19:53,162 - banking_api_tests - INFO - [environment.py:436] - [INFO] Total Scenarios: 1
+2025-09-17 18:19:53,162 - banking_api_tests - INFO - [environment.py:437] - [PASSED] Passed: 0
+2025-09-17 18:19:53,162 - banking_api_tests - INFO - [environment.py:438] - [FAILED] Failed: 0
+2025-09-17 18:19:53,163 - banking_api_tests - INFO - [environment.py:439] - [SKIPPED]  Skipped: 1
+2025-09-17 18:19:53,163 - banking_api_tests - INFO - [environment.py:440] - [PERFORMANCE] Pass Rate: 0.00%
+2025-09-17 18:19:53,163 - banking_api_tests - INFO - [environment.py:441] - [URL] Total API Calls: 0
+2025-09-17 18:19:53,163 - banking_api_tests - INFO - [environment.py:448] - [FILE] Detailed Logs: logs/banking_api_tests_20250917_181951.log
+2025-09-17 18:19:53,163 - banking_api_tests - INFO - [environment.py:449] - [TIME] End Time: 2025-09-17T18:19:53.162092
+2025-09-17 18:19:53,163 - banking_api_tests - ERROR - [environment.py:463] - [ERROR] LOW SUCCESS RATE. Significant issues need attention.
+2025-09-17 18:19:53,163 - banking_api_tests - INFO - [environment.py:472] - [RESULTS] ================================================================================

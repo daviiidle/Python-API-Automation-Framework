@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-13T12:08:30.854566
+[TEST] Scenario: Successfully create account with generated data
+[FILE] Feature: Account Creation with Dynamic Data
+[LOCATION] Location: features/accounts/account_creation_dynamic.feature:12
+[TIME]  Duration: 0:00:01.607100
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 500 | JSON Error: {"cause1": "com.github.tomakehurst.wiremock.common.JsonException: {\n  &quot;errors&quot; : [ {\n    &quot;code&quot; : 10,\n    &quot;source&quot; : { },\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\n    &quot;detail&quot; : &quot;Unexpected character (&apos;{&apos; (code 123)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;zi0kcl9oebub\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST001\\&quot;,\\&quot;bsb\\&quot;:\\&quot;0o8b5ll|n}fzbho&apos;q\\&quot;{xrpxvn4lvceq9ac5jp\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;8c_3+]v|v5k@2pwvm&amp;yh0\\\\#qa(wf&lt;w[a` tt\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-13 02:08:29\\&quot;}\\&quot;; line: 1, column: 77]&quot;\n  } ]\n}", "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-5305c37d", "cause0": "wiremock.com.fasterxml.jackson.databind.JsonMappingException: {\n  &quot;errors&quot; : [ {\n    &quot;code&quot; : 10,\n    &quot;source&quot; : { },\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\n    &quot;detail&quot; : &quot;Unexpected character (&apos;{&apos; (code 123)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;zi0kcl9oebub\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST001\\&quot;,\\&quot;bsb\\&quot;:\\&quot;0o8b5ll|n}fzbho&apos;q\\&quot;{xrpxvn4lvceq9ac5jp\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;8c_3+]v|v5k@2pwvm&amp;yh0\\\\#qa(wf&lt;w[a` tt\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-13 02:08:29\\&quot;}\\&quot;; line: 1, column: 77]&quot;\n  } ]\n} (through reference chain: com.github.tomakehurst.wiremock.http.ResponseDefinition[&quot;jsonBody&quot;])", "message": "wiremock.com.fasterxml.jackson.databind.JsonMappingException: {\n  &quot;errors&quot; : [ {\n    &quot;code&quot; : 10,\n    &quot;source&quot; : { },\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\n    &quot;detail&quot; : &quot;Unexpected character (&apos;{&apos; (code 123)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;accountId\\&quot;:\\&quot;zi0kcl9oebub\\&quot;,\\&quot;customerId\\&quot;:\\&quot;CUST001\\&quot;,\\&quot;bsb\\&quot;:\\&quot;0o8b5ll|n}fzbho&apos;q\\&quot;{xrpxvn4lvceq9ac5jp\\&quot;,\\&quot;accountNumber\\&quot;:\\&quot;8c_3+]v|v5k@2pwvm&amp;yh0\\\\#qa(wf&lt;w[a` tt\\&quot;,\\&quot;accountType\\&quot;:\\&quot;SAVINGS\\&quot;,\\&quot;createdAt\\&quot;:\\&quot;2025-09-13 02:08:29\\&quot;}\\&quot;; line: 1, column: 77]&quot;\n  } ]\n} (through reference chain: com.github.tomakehurst.wiremock.http.ResponseDefinition[&quot;jsonBody&quot;])", "url": "/accounts", "status": "500"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.759s
+Errors: ['Status code assertion failed - Expected: 201, Actual: 500']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: railway
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

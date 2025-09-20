@@ -1,0 +1,1015 @@
+@api @banking @accounts @regression
+Feature: Account Creation # features/accounts/account_creation.feature:2
+  As a banking API client
+  I want to create new accounts
+  So that I can establish customer accounts in the system
+  @api @banking @accounts @regression
+  Feature: Account Creation  # features/accounts/account_creation.feature:2
+
+  @happy_path @smoke
+  Scenario: Successfully create account with valid generated data  # features/accounts/account_creation.feature:12
+    Given the banking API is available                             # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                    # features/steps/environment_steps.py:70
+    Given I generate test data for "account"                       # features/steps/data_generation_steps.py:23
+    When I create a "account" using generated data                 # features/steps/data_generation_steps.py:425
+    Then the response status code should be 201                    # features/steps/assertion_steps.py:17
+    And the response should be valid JSON                          # features/steps/assertion_steps.py:133
+    And the response should contain "accountId"                    # features/steps/assertion_steps.py:187
+    And the response should contain "customerId"                   # features/steps/assertion_steps.py:187
+    And the response should contain "accountType"                  # features/steps/assertion_steps.py:187
+    And the response should contain "currency"                     # features/steps/assertion_steps.py:187
+    And the response should contain "createdAt"                    # features/steps/assertion_steps.py:187
+    And the response should contain the correlation ID             # features/steps/assertion_steps.py:506
+
+  @happy_path @regression
+  Scenario: Create account with minimum required fields        # features/accounts/account_creation.feature:25
+    Given the banking API is available                         # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                # features/steps/environment_steps.py:70
+    Given the banking API is available                         # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                # features/steps/environment_steps.py:70
+    Given I generate a unique customer ID for account creation # features/steps/data_generation_steps.py:150
+    When I send a POST request to "/accounts" with data:       # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST002",
+        "accountType": "CHECKING",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 201                # features/steps/assertion_steps.py:17
+    And the response should contain "accountId"                # features/steps/assertion_steps.py:187
+    And the response should contain "customerId"               # features/steps/assertion_steps.py:187
+    And the response "accountType" should be "CHECKING"        # features/steps/assertion_steps.py:231
+
+  @data_validation @regression
+  Scenario: Create account with all optional fields            # features/accounts/account_creation.feature:43
+    Given the banking API is available                         # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                # features/steps/environment_steps.py:70
+    Given the banking API is available                         # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                # features/steps/environment_steps.py:70
+    Given I generate a unique customer ID for account creation # features/steps/data_generation_steps.py:150
+    When I send a POST request to "/accounts" with data:       # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST003",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 5000.00,
+        "description": "Primary savings account",
+        "branch": "Melbourne CBD"
+      }
+      """
+    Then the response status code should be 201                # features/steps/assertion_steps.py:17
+    And the response should contain "accountId"                # features/steps/assertion_steps.py:187
+    And the response should contain "description"              # features/steps/assertion_steps.py:187
+    And the response should contain "branch"                   # features/steps/assertion_steps.py:187
+
+  @error_handling @regression
+  Scenario: Attempt to create account without authentication    # features/accounts/account_creation.feature:64
+    Given the banking API is available                          # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                 # features/steps/environment_steps.py:70
+    Given I have no authentication token                        # features/steps/auth_steps.py:87
+    When I send a POST request to "/accounts" with data:        # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then I should receive an unauthorized error                 # features/steps/auth_steps.py:160
+    And the error message should indicate missing authorization # features/steps/auth_steps.py:270
+    Then I restore the original authentication                  # features/steps/auth_steps.py:249
+
+  @error_handling @regression
+  Scenario: Attempt to create account with missing required fields  # features/accounts/account_creation.feature:79
+    Given the banking API is available                              # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                     # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:            # features/steps/http_steps.py:184
+      """
+      {
+        "accountType": "SAVINGS"
+      }
+      """
+    Then the response status code should be 400                     # features/steps/assertion_steps.py:17
+    And the response should contain an error message                # features/steps/assertion_steps.py:366
+
+  @error_handling @regression
+  Scenario: Attempt to create account with invalid customer ID  # features/accounts/account_creation.feature:90
+    Given the banking API is available                          # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                 # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:        # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 400                 # features/steps/assertion_steps.py:17
+    And the response should contain an error message            # features/steps/assertion_steps.py:366
+
+  @error_handling @regression
+  Scenario: Attempt to create account with invalid account type  # features/accounts/account_creation.feature:103
+    Given the banking API is available                           # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                  # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:         # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "INVALID_TYPE",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 400                  # features/steps/assertion_steps.py:17
+    And the response should contain an error message             # features/steps/assertion_steps.py:366
+
+  @boundary_testing
+  Scenario Outline: Create account with boundary values -- @1.1   # features/accounts/account_creation.feature:130
+    Given the banking API is available                            # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                   # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:          # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 0.00
+      }
+      """
+    Then the response status code should be 201                   # features/steps/assertion_steps.py:17
+
+  @boundary_testing
+  Scenario Outline: Create account with boundary values -- @1.2   # features/accounts/account_creation.feature:131
+    Given the banking API is available                            # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                   # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:          # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": -100.00
+      }
+      """
+    Then the response status code should be 400                   # features/steps/assertion_steps.py:17
+
+  @boundary_testing
+  Scenario Outline: Create account with boundary values -- @1.3   # features/accounts/account_creation.feature:132
+    Given the banking API is available                            # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                   # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:          # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 999999
+      }
+      """
+    Then the response status code should be 201                   # features/steps/assertion_steps.py:17
+
+  @boundary_testing
+  Scenario Outline: Create account with boundary values -- @1.4   # features/accounts/account_creation.feature:133
+    Given the banking API is available                            # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                   # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:          # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "VERYLONGCUSTOMERID123456789",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000
+      }
+      """
+    Then the response status code should be 400                   # features/steps/assertion_steps.py:17
+
+  @data_types_validation @quarantine
+  Scenario: Attempt to create account with invalid data types  # features/accounts/account_creation.feature:136
+    Given the banking API is available                         # None
+    And I have valid authentication credentials                # None
+    When I send a POST request to "/accounts" with data:       # None
+      """
+      {
+        "customerId": 123,
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": "invalid_number"
+      }
+      """
+    Then the response status code should be 400                # None
+    And the response should contain an error message           # None
+
+  @currency_validation @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.1   # features/accounts/account_creation.feature:164
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a POST request to "/accounts" with data:                # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201                         # None
+
+  @currency_validation @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.2   # features/accounts/account_creation.feature:165
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a POST request to "/accounts" with data:                # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "USD",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201                         # None
+
+  @currency_validation @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.3   # features/accounts/account_creation.feature:166
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a POST request to "/accounts" with data:                # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "EUR",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201                         # None
+
+  @currency_validation @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.4   # features/accounts/account_creation.feature:167
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a POST request to "/accounts" with data:                # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "GBP",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201                         # None
+
+  @currency_validation @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.5   # features/accounts/account_creation.feature:168
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a POST request to "/accounts" with data:                # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "XXX",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 400                         # None
+
+  @currency_validation @quarantine
+  Scenario Outline: Create accounts with different currencies -- @1.6   # features/accounts/account_creation.feature:169
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a POST request to "/accounts" with data:                # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "invalid",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 400                         # None
+
+  @duplicate_handling
+  Scenario: Attempt to create duplicate account for same customer  # features/accounts/account_creation.feature:172
+    Given the banking API is available                             # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                    # features/steps/environment_steps.py:70
+    Given the banking API is available                             # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                    # features/steps/environment_steps.py:70
+    Given I generate a unique account conflict test dataset        # features/steps/data_generation_steps.py:126
+    When I create an account using the conflict dataset            # features/steps/data_generation_steps.py:219
+    Then the response status code should be 201                    # features/steps/assertion_steps.py:17
+    When I create an account using the conflict dataset            # features/steps/data_generation_steps.py:219
+    Then the response status code should be 409                    # features/steps/assertion_steps.py:17
+    And the response should contain an error message               # features/steps/assertion_steps.py:366
+
+  @performance
+  Scenario: Account creation performance validation         # features/accounts/account_creation.feature:183
+    Given the banking API is available                      # features/steps/environment_steps.py:20
+    And I have valid authentication credentials             # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:    # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201             # features/steps/assertion_steps.py:17
+    And the response time should be under 3000 milliseconds # features/steps/performance_steps.py:19
+
+  @schema_validation
+  Scenario: Verify account creation response schema       # features/accounts/account_creation.feature:197
+    Given the banking API is available                    # features/steps/environment_steps.py:20
+    And I have valid authentication credentials           # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:  # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be 201           # features/steps/assertion_steps.py:17
+    And the response should match the schema              # features/steps/assertion_steps.py:161
+    And the response should contain the following fields: # features/steps/assertion_steps.py:286
+      | field          |
+      | accountId      |
+      | customerId     |
+      | accountType    |
+      | currency       |
+      | initialBalance |
+      | createdAt      |
+
+  @special_characters
+  Scenario: Create account with special characters in description  # features/accounts/account_creation.feature:219
+    Given the banking API is available                             # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                    # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:           # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000.00,
+        "description": "Savings account with special chars !@#$%"
+      }
+      """
+    Then the response status code should be 201                    # features/steps/assertion_steps.py:17
+    And the response should contain "description"                  # features/steps/assertion_steps.py:187
+
+  @content_type_validation
+  Scenario: Attempt to create account with incorrect content type  # features/accounts/account_creation.feature:234
+    Given the banking API is available                             # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                    # features/steps/environment_steps.py:70
+    Given I set the "Content-Type" header to "text/plain"          # features/steps/http_steps.py:447
+    When I send a POST request to "/accounts" with data:           # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 400                    # features/steps/assertion_steps.py:17
+    And the response should contain an error message               # features/steps/assertion_steps.py:366
+
+@api @banking @accounts @regression @dynamic_data
+Feature: Account Creation with Dynamic Data # features/accounts/account_creation_dynamic.feature:2
+  As a banking API client
+  I want to create accounts using dynamic test data
+  So that I can test with realistic and varied data scenarios
+  @api @banking @accounts @regression @dynamic_data
+  Feature: Account Creation with Dynamic Data  # features/accounts/account_creation_dynamic.feature:2
+
+  @happy_path @smoke
+  Scenario: Successfully create account with generated data  # features/accounts/account_creation_dynamic.feature:12
+    Given the banking API is available                       # features/steps/environment_steps.py:20
+    And I have valid authentication credentials              # features/steps/environment_steps.py:70
+    Given I generate test data for "account"                 # features/steps/data_generation_steps.py:23
+    When I create a "account" using generated data           # features/steps/data_generation_steps.py:425
+    Then the response status code should be 201              # features/steps/assertion_steps.py:17
+    And the response should be valid JSON                    # features/steps/assertion_steps.py:133
+    And the response should contain "accountId"              # features/steps/assertion_steps.py:187
+    And the response should contain "customerId"             # features/steps/assertion_steps.py:187
+    And the response should contain "accountType"            # features/steps/assertion_steps.py:187
+    And the response should contain "currency"               # features/steps/assertion_steps.py:187
+    And the response should contain "createdAt"              # features/steps/assertion_steps.py:187
+    And the generated data should be realistic and valid     # features/steps/data_generation_steps.py:635
+
+  @table_driven @regression
+  Scenario: Create accounts with various account types and currencies  # features/accounts/account_creation_dynamic.feature:25
+    Given the banking API is available                                 # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                        # features/steps/environment_steps.py:70
+    When I create accounts with the following data:                    # features/steps/table_driven_steps.py:18
+      | accountType  | currency | initialBalance | description          |
+      | SAVINGS      | AUD      | 1000.50        | Primary savings      |
+      | CHECKING     | USD      | 2500.00        | USD checking account |
+      | TERM_DEPOSIT | EUR      | 10000.00       | Euro term deposit    |
+      | CREDIT_CARD  | GBP      | 0.00           | GBP credit card      |
+      | SAVINGS      | AUD      | 0.01           | Minimum balance test |
+    Then all account creations should have the expected results        # features/steps/table_driven_steps.py:427
+
+  @boundary_testing @regression
+  Scenario Outline: Create accounts with boundary values -- @1.1   # features/accounts/account_creation_dynamic.feature:43
+    Given the banking API is available                             # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                    # features/steps/environment_steps.py:70
+    Given I generate boundary data for "account" with "min" values # features/steps/data_generation_steps.py:383
+    When I create a "account" using generated data                 # features/steps/data_generation_steps.py:425
+    Then the response status code should be 201                    # features/steps/assertion_steps.py:17
+
+  @boundary_testing @regression
+  Scenario Outline: Create accounts with boundary values -- @1.2   # features/accounts/account_creation_dynamic.feature:44
+    Given the banking API is available                             # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                    # features/steps/environment_steps.py:70
+    Given I generate boundary data for "account" with "max" values # features/steps/data_generation_steps.py:383
+    When I create a "account" using generated data                 # features/steps/data_generation_steps.py:425
+    Then the response status code should be 201                    # features/steps/assertion_steps.py:17
+
+  @negative_testing @error_handling
+  Scenario Outline: Attempt to create accounts with invalid data -- @1.1   # features/accounts/account_creation_dynamic.feature:55
+    Given the banking API is available                                     # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                            # features/steps/environment_steps.py:70
+    Given I generate invalid data for "account" with invalid "customerId"  # features/steps/data_generation_steps.py:341
+    When I create a "account" using generated data                         # features/steps/data_generation_steps.py:425
+    Then the response status code should be 400                            # features/steps/assertion_steps.py:17
+    And the response should contain an error message                       # features/steps/assertion_steps.py:366
+
+  @negative_testing @error_handling
+  Scenario Outline: Attempt to create accounts with invalid data -- @1.2      # features/accounts/account_creation_dynamic.feature:56
+    Given the banking API is available                                        # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                               # features/steps/environment_steps.py:70
+    Given I generate invalid data for "account" with invalid "initialBalance" # features/steps/data_generation_steps.py:341
+    When I create a "account" using generated data                            # features/steps/data_generation_steps.py:425
+    Then the response status code should be 400                               # features/steps/assertion_steps.py:17
+    And the response should contain an error message                          # features/steps/assertion_steps.py:366
+
+  @negative_testing @error_handling
+  Scenario Outline: Attempt to create accounts with invalid data -- @1.3   # features/accounts/account_creation_dynamic.feature:57
+    Given the banking API is available                                     # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                            # features/steps/environment_steps.py:70
+    Given I generate invalid data for "account" with invalid "accountType" # features/steps/data_generation_steps.py:341
+    When I create a "account" using generated data                         # features/steps/data_generation_steps.py:425
+    Then the response status code should be 400                            # features/steps/assertion_steps.py:17
+    And the response should contain an error message                       # features/steps/assertion_steps.py:366
+
+  @performance @load_testing
+  Scenario: Create multiple accounts for performance testing   # features/accounts/account_creation_dynamic.feature:60
+    Given the banking API is available                         # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                # features/steps/environment_steps.py:70
+    Given I generate 5 test records for "account"              # features/steps/data_generation_steps.py:273
+    When I create multiple resources using performance dataset # features/steps/performance_steps.py:132
+    Then the performance should meet the required thresholds   # features/steps/performance_steps.py:306
+
+  @data_validation @regression
+  Scenario: Verify account creation response contains generated data  # features/accounts/account_creation_dynamic.feature:66
+    Given the banking API is available                                # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                       # features/steps/environment_steps.py:70
+    Given I generate test data for "account"                          # features/steps/data_generation_steps.py:23
+    When I create a "account" using generated data                    # features/steps/data_generation_steps.py:425
+    Then the response status code should be 201                       # features/steps/assertion_steps.py:17
+    And the response should contain generated "customerId" value      # features/steps/data_generation_steps.py:600
+    And the response should contain generated "accountType" value     # features/steps/data_generation_steps.py:600
+    And the response should contain generated "currency" value        # features/steps/data_generation_steps.py:600
+
+  @correlation_tracking
+  Scenario: Create account with generated correlation ID  # features/accounts/account_creation_dynamic.feature:75
+    Given the banking API is available                    # features/steps/environment_steps.py:20
+    And I have valid authentication credentials           # features/steps/environment_steps.py:70
+    Given I save the generated correlation ID             # features/steps/environment_steps.py:125
+    And I generate test data for "account"                # features/steps/data_generation_steps.py:23
+    When I create a "account" using generated data        # features/steps/data_generation_steps.py:425
+    Then the response status code should be 201           # features/steps/assertion_steps.py:17
+    And the response should contain the correlation ID    # features/steps/assertion_steps.py:506
+
+  @concurrent_creation
+  Scenario: Create multiple accounts concurrently              # features/accounts/account_creation_dynamic.feature:83
+    Given the banking API is available                         # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                # features/steps/environment_steps.py:70
+    Given I generate 3 test records for "account"              # features/steps/data_generation_steps.py:273
+    When I create multiple resources using performance dataset # features/steps/performance_steps.py:132
+    Then the performance should meet the required thresholds   # features/steps/performance_steps.py:306
+    And all scenario results should match expectations         # features/steps/table_driven_steps.py:457
+
+  @realistic_data_testing
+  Scenario: Verify generated account data is realistic    # features/accounts/account_creation_dynamic.feature:90
+    Given the banking API is available                    # features/steps/environment_steps.py:20
+    And I have valid authentication credentials           # features/steps/environment_steps.py:70
+    Given I generate test data for "account"              # features/steps/data_generation_steps.py:23
+    Then the generated data should be realistic and valid # features/steps/data_generation_steps.py:635
+    When I create a "account" using generated data        # features/steps/data_generation_steps.py:425
+    Then the response status code should be 201           # features/steps/assertion_steps.py:17
+
+  @currency_variety_testing
+  Scenario: Create accounts with different currencies using table  # features/accounts/account_creation_dynamic.feature:97
+    Given the banking API is available                             # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                    # features/steps/environment_steps.py:70
+    When I create accounts with the following data:                # features/steps/table_driven_steps.py:18
+      | currency | accountType  | initialBalance |
+      | AUD      | SAVINGS      | 1500.75        |
+      | USD      | CHECKING     | 3200.00        |
+      | EUR      | SAVINGS      | 2100.25        |
+      | GBP      | TERM_DEPOSIT | 8500.00        |
+      | CAD      | CHECKING     | 1800.50        |
+    Then all account creations should have the expected results    # features/steps/table_driven_steps.py:427
+
+@api @banking @accounts @error_handling
+Feature: Account Error Handling # features/accounts/account_errors.feature:2
+  As a banking API client
+  I want to receive appropriate error responses for invalid account operations
+  So that I can handle errors gracefully in my application
+  @api @banking @accounts @error_handling
+  Feature: Account Error Handling  # features/accounts/account_errors.feature:2
+
+  @authentication_errors @regression
+  Scenario: Account retrieval without authentication            # features/accounts/account_errors.feature:12
+    Given the banking API is available                          # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                 # features/steps/environment_steps.py:70
+    Given I have no authentication token                        # features/steps/auth_steps.py:87
+    When I send a GET request to "/accounts/ACC001"             # features/steps/http_steps.py:19
+    Then I should receive an unauthorized error                 # features/steps/auth_steps.py:160
+    And the error message should indicate missing authorization # features/steps/auth_steps.py:270
+    And the WWW-Authenticate header should be present           # features/steps/auth_steps.py:360
+    Then I restore the original authentication                  # features/steps/auth_steps.py:249
+
+  @authentication_errors @regression
+  Scenario: Account creation with invalid token          # features/accounts/account_errors.feature:21
+    Given the banking API is available                   # features/steps/environment_steps.py:20
+    And I have valid authentication credentials          # features/steps/environment_steps.py:70
+    Given I have an invalid bearer token                 # features/steps/auth_steps.py:40
+    When I send a POST request to "/accounts" with data: # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then I should receive an unauthorized error          # features/steps/auth_steps.py:160
+    And the error message should indicate invalid token  # features/steps/auth_steps.py:315
+    Then I restore the original authentication           # features/steps/auth_steps.py:249
+
+  @authentication_errors @regression
+  Scenario: Account operations with malformed authorization header  # features/accounts/account_errors.feature:36
+    Given the banking API is available                              # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                     # features/steps/environment_steps.py:70
+    When I send a request with malformed Authorization header       # features/steps/http_steps.py:487
+    And I send a GET request to "/accounts/ACC001"                  # features/steps/http_steps.py:19
+    Then I should receive an unauthorized error                     # features/steps/auth_steps.py:160
+    Then I restore the original authentication                      # features/steps/auth_steps.py:249
+
+  @validation_errors @regression
+  Scenario Outline: Account creation with invalid JSON -- @1.1   # features/accounts/account_errors.feature:53
+    Given the banking API is available                           # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                  # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:         # features/steps/http_steps.py:184
+      """
+      {invalid json}
+      """
+    Then the response status code should be 400                  # features/steps/assertion_steps.py:17
+    And the response should contain an error message             # features/steps/assertion_steps.py:366
+
+  @validation_errors @regression
+  Scenario Outline: Account creation with invalid JSON -- @1.2   # features/accounts/account_errors.feature:54
+    Given the banking API is available                           # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                  # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:         # features/steps/http_steps.py:184
+      """
+      {"missing": "quote}
+      """
+    Then the response status code should be 400                  # features/steps/assertion_steps.py:17
+    And the response should contain an error message             # features/steps/assertion_steps.py:366
+
+  @validation_errors @regression
+  Scenario Outline: Account creation with invalid JSON -- @1.3   # features/accounts/account_errors.feature:55
+    Given the banking API is available                           # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                  # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:         # features/steps/http_steps.py:184
+      """
+      {"trailing": "comma",}
+      """
+    Then the response status code should be 400                  # features/steps/assertion_steps.py:17
+    And the response should contain an error message             # features/steps/assertion_steps.py:366
+
+  @validation_errors @regression
+  Scenario Outline: Account creation with invalid JSON -- @1.4   # features/accounts/account_errors.feature:56
+    Given the banking API is available                           # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                  # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data:         # features/steps/http_steps.py:184
+      """
+      {]
+      """
+    Then the response status code should be 400                  # features/steps/assertion_steps.py:17
+    And the response should contain an error message             # features/steps/assertion_steps.py:366
+
+  @validation_errors @regression
+  Scenario: Account creation with empty request body     # features/accounts/account_errors.feature:59
+    Given the banking API is available                   # features/steps/environment_steps.py:20
+    And I have valid authentication credentials          # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data: # features/steps/http_steps.py:184
+      """
+      {}
+      """
+    Then the response status code should be 400          # features/steps/assertion_steps.py:17
+    And the response should contain an error message     # features/steps/assertion_steps.py:366
+
+  @validation_errors @regression
+  Scenario: Account creation with null values            # features/accounts/account_errors.feature:68
+    Given the banking API is available                   # features/steps/environment_steps.py:20
+    And I have valid authentication credentials          # features/steps/environment_steps.py:70
+    When I send a POST request to "/accounts" with data: # features/steps/http_steps.py:184
+      """
+      {
+        "customerId": null,
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 400          # features/steps/assertion_steps.py:17
+    And the response should contain an error message     # features/steps/assertion_steps.py:366
+
+  @not_found_errors @regression
+  Scenario Outline: Account retrieval for non-existent accounts -- @1.1   # features/accounts/account_errors.feature:89
+    Given the banking API is available                                    # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                           # features/steps/environment_steps.py:70
+    When I send a GET request to "/accounts/NONEXISTENT"                  # features/steps/http_steps.py:19
+    Then the response status code should be 404                           # features/steps/assertion_steps.py:17
+    And the response should contain an error message                      # features/steps/assertion_steps.py:366
+    And the response should be valid JSON                                 # features/steps/assertion_steps.py:133
+
+  @not_found_errors @regression
+  Scenario Outline: Account retrieval for non-existent accounts -- @1.2   # features/accounts/account_errors.feature:90
+    Given the banking API is available                                    # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                           # features/steps/environment_steps.py:70
+    When I send a GET request to "/accounts/ACC999"                       # features/steps/http_steps.py:19
+    Then the response status code should be 404                           # features/steps/assertion_steps.py:17
+    And the response should contain an error message                      # features/steps/assertion_steps.py:366
+    And the response should be valid JSON                                 # features/steps/assertion_steps.py:133
+
+  @not_found_errors @regression
+  Scenario Outline: Account retrieval for non-existent accounts -- @1.3   # features/accounts/account_errors.feature:91
+    Given the banking API is available                                    # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                           # features/steps/environment_steps.py:70
+    When I send a GET request to "/accounts/DELETED001"                   # features/steps/http_steps.py:19
+    Then the response status code should be 404                           # features/steps/assertion_steps.py:17
+    And the response should contain an error message                      # features/steps/assertion_steps.py:366
+    And the response should be valid JSON                                 # features/steps/assertion_steps.py:133
+
+  @not_found_errors @regression
+  Scenario Outline: Account retrieval for non-existent accounts -- @1.4   # features/accounts/account_errors.feature:92
+    Given the banking API is available                                    # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                           # features/steps/environment_steps.py:70
+    When I send a GET request to "/accounts/"""                           # features/steps/http_steps.py:19
+    Then the response status code should be 404                           # features/steps/assertion_steps.py:17
+    And the response should contain an error message                      # features/steps/assertion_steps.py:366
+    And the response should be valid JSON                                 # features/steps/assertion_steps.py:133
+
+  @method_not_allowed @regression
+  Scenario: Unsupported HTTP methods on account endpoints  # features/accounts/account_errors.feature:95
+    Given the banking API is available                     # features/steps/environment_steps.py:20
+    And I have valid authentication credentials            # features/steps/environment_steps.py:70
+    When I send a PUT request to "/accounts/ACC001"        # features/steps/http_steps.py:289
+    Then the response status code should be 405            # features/steps/assertion_steps.py:17
+    When I send a DELETE request to "/accounts/ACC001"     # features/steps/http_steps.py:347
+    Then the response status code should be 405            # features/steps/assertion_steps.py:17
+    When I send a PATCH request to "/accounts/ACC001"      # features/steps/http_steps.py:396
+    Then the response status code should be 405            # features/steps/assertion_steps.py:17
+
+  @request_size_limits
+  Scenario: Account creation with oversized request      # features/accounts/account_errors.feature:104
+    Given the banking API is available                   # None
+    And I have valid authentication credentials          # None
+    When I send a POST request to "/accounts" with data: # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "description": "This is an extremely long description that should exceed reasonable limits and test the API's ability to handle large request bodies. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      }
+      """
+    Then the response status code should be 400          # None
+
+  @rate_limiting
+  Scenario: Rapid consecutive account creation requests  # features/accounts/account_errors.feature:117
+    Given the banking API is available                   # None
+    And I have valid authentication credentials          # None
+    When I send a POST request to "/accounts" with data: # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    And I send a POST request to "/accounts" with data:  # None
+      """
+      {
+        "customerId": "CUST002",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    And I send a POST request to "/accounts" with data:  # None
+      """
+      {
+        "customerId": "CUST003",
+        "accountType": "SAVINGS",
+        "currency": "AUD"
+      }
+      """
+    Then the response status code should be 201          # None
+
+  @concurrent_errors
+  Scenario: Concurrent requests with authentication errors  # features/accounts/account_errors.feature:145
+    Given the banking API is available                      # None
+    And I have valid authentication credentials             # None
+    Given I have an invalid bearer token                    # None
+    When I send concurrent requests with the same token     # None
+    Then all concurrent requests should be unauthorized     # None
+    Then I restore the original authentication              # None
+
+  @sql_injection_protection
+  Scenario: Account operations with SQL injection attempts              # features/accounts/account_errors.feature:152
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a GET request to "/accounts/'; DROP TABLE accounts; --" # None
+    Then the response status code should be 404                         # None
+    And the response should contain an error message                    # None
+
+  @xss_protection
+  Scenario: Account creation with XSS payloads           # features/accounts/account_errors.feature:158
+    Given the banking API is available                   # None
+    And I have valid authentication credentials          # None
+    When I send a POST request to "/accounts" with data: # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "description": "<script>alert('xss')</script>"
+      }
+      """
+    Then the response status code should be 400          # None
+    And the response should contain an error message     # None
+
+  @unicode_handling
+  Scenario: Account operations with Unicode characters   # features/accounts/account_errors.feature:172
+    Given the banking API is available                   # None
+    And I have valid authentication credentials          # None
+    When I send a POST request to "/accounts" with data: # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "description": "Account description with international chars and symbols"
+      }
+      """
+    Then the response status code should be 201          # None
+
+  @timeout_handling
+  Scenario: Account operation timeout simulation             # features/accounts/account_errors.feature:185
+    Given the banking API is available                       # None
+    And I have valid authentication credentials              # None
+    When I send a GET request to "/accounts/ACC001"          # None
+    Then the response time should be under 5000 milliseconds # None
+
+  @malformed_urls
+  Scenario Outline: Account operations with malformed URLs -- @1.1   # features/accounts/account_errors.feature:197
+    Given the banking API is available                               # None
+    And I have valid authentication credentials                      # None
+    When I send a GET request to "/accounts//ACC001"                 # None
+    Then the response status code should be 404                      # None
+
+  @malformed_urls
+  Scenario Outline: Account operations with malformed URLs -- @1.2   # features/accounts/account_errors.feature:198
+    Given the banking API is available                               # None
+    And I have valid authentication credentials                      # None
+    When I send a GET request to "/accounts/ACC001/"                 # None
+    Then the response status code should be 404                      # None
+
+  @malformed_urls
+  Scenario Outline: Account operations with malformed URLs -- @1.3   # features/accounts/account_errors.feature:199
+    Given the banking API is available                               # None
+    And I have valid authentication credentials                      # None
+    When I send a GET request to "/accounts/ACC001/extra"            # None
+    Then the response status code should be 404                      # None
+
+  @malformed_urls
+  Scenario Outline: Account operations with malformed URLs -- @1.4   # features/accounts/account_errors.feature:200
+    Given the banking API is available                               # None
+    And I have valid authentication credentials                      # None
+    When I send a GET request to "/accounts/%20"                     # None
+    Then the response status code should be 404                      # None
+
+  @content_length_mismatch
+  Scenario: Account creation with mismatched content length   # features/accounts/account_errors.feature:203
+    Given the banking API is available                        # None
+    And I have valid authentication credentials               # None
+    Given I set the "Content-Length" header to "50"           # None
+    When I send a POST request to "/accounts" with data:      # None
+      """
+      {
+        "customerId": "CUST001",
+        "accountType": "SAVINGS",
+        "currency": "AUD",
+        "initialBalance": 1000.00
+      }
+      """
+    Then the response status code should be either 400 or 201 # None
+
+  @error_response_format
+  Scenario: Verify error response format consistency     # features/accounts/account_errors.feature:217
+    Given the banking API is available                   # None
+    And I have valid authentication credentials          # None
+    When I send a GET request to "/accounts/NONEXISTENT" # None
+    Then the response status code should be 404          # None
+    And the response should be valid JSON                # None
+    And the response should contain "error"              # None
+    And the response should contain "message"            # None
+    And the response should contain "timestamp"          # None
+    And the response should contain the correlation ID   # None
+
+  @security_headers_on_errors
+  Scenario: Verify security headers are present in error responses  # features/accounts/account_errors.feature:227
+    Given the banking API is available                              # None
+    And I have valid authentication credentials                     # None
+    When I send a GET request to "/accounts/NONEXISTENT"            # None
+    Then the response status code should be 404                     # None
+    And the response should include security headers                # None
+
+@api @banking @accounts @smoke
+Feature: Account Retrieval # features/accounts/account_retrieval.feature:2
+  As a banking API client
+  I want to retrieve account information
+  So that I can access customer account details
+  @api @banking @accounts @smoke
+  Feature: Account Retrieval  # features/accounts/account_retrieval.feature:2
+
+  @happy_path @regression
+  Scenario: Successfully retrieve account by valid ID       # features/accounts/account_retrieval.feature:12
+    Given the banking API is available                      # features/steps/environment_steps.py:20
+    And I have valid authentication credentials             # features/steps/environment_steps.py:70
+    When I send a GET request to "/accounts/ACC001"         # features/steps/http_steps.py:19
+    Then the response status code should be 200             # features/steps/assertion_steps.py:17
+    And the response should be valid JSON                   # features/steps/assertion_steps.py:133
+    And the response should contain "customerId"            # features/steps/assertion_steps.py:187
+    And the response should contain "accountId"             # features/steps/assertion_steps.py:187
+    And the response should contain "accountType"           # features/steps/assertion_steps.py:187
+    And the response should contain "createdAt"             # features/steps/assertion_steps.py:187
+    And the response should contain the correlation ID      # features/steps/assertion_steps.py:506
+    And the response time should be under 2000 milliseconds # features/steps/performance_steps.py:19
+
+  @happy_path @regression
+  Scenario: Successfully retrieve account with different valid ID  # features/accounts/account_retrieval.feature:24
+    Given the banking API is available                             # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                    # features/steps/environment_steps.py:70
+    When I send a GET request to "/accounts/ACC002"                # features/steps/http_steps.py:19
+    Then the response status code should be 200                    # features/steps/assertion_steps.py:17
+    And the response should be valid JSON                          # features/steps/assertion_steps.py:133
+    And the response should contain "customerId"                   # features/steps/assertion_steps.py:187
+    And the response should contain the following fields:          # features/steps/assertion_steps.py:286
+      | field       |
+      | accountId   |
+      | accountType |
+      | currency    |
+      | balance     |
+      | bsb         |
+      | createdAt   |
+
+  @error_handling @regression
+  Scenario: Attempt to retrieve non-existent account     # features/accounts/account_retrieval.feature:39
+    Given the banking API is available                   # features/steps/environment_steps.py:20
+    And I have valid authentication credentials          # features/steps/environment_steps.py:70
+    When I send a GET request to "/accounts/NONEXISTENT" # features/steps/http_steps.py:19
+    Then the response status code should be 404          # features/steps/assertion_steps.py:17
+    And the response should be valid JSON                # features/steps/assertion_steps.py:133
+    And the response should contain an error message     # features/steps/assertion_steps.py:366
+    And the response should contain the correlation ID   # features/steps/assertion_steps.py:506
+
+  @error_handling @regression
+  Scenario: Attempt to retrieve account with invalid ID format  # features/accounts/account_retrieval.feature:47
+    Given the banking API is available                          # features/steps/environment_steps.py:20
+    And I have valid authentication credentials                 # features/steps/environment_steps.py:70
+    When I send a GET request to "/accounts/123invalid"         # features/steps/http_steps.py:19
+    Then the response status code should be 404                 # features/steps/assertion_steps.py:17
+    And the response should contain an error message            # features/steps/assertion_steps.py:366
+
+  @boundary_testing
+  Scenario Outline: Retrieve accounts with boundary ID values -- @1.1   # features/accounts/account_retrieval.feature:60
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a GET request to "/accounts/ACC001"                     # None
+    Then the response status code should be 200                         # None
+    And the response should be valid JSON                               # None
+
+  @boundary_testing
+  Scenario Outline: Retrieve accounts with boundary ID values -- @1.2   # features/accounts/account_retrieval.feature:61
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a GET request to "/accounts/ACC999"                     # None
+    Then the response status code should be 404                         # None
+    And the response should be valid JSON                               # None
+
+  @boundary_testing
+  Scenario Outline: Retrieve accounts with boundary ID values -- @1.3   # features/accounts/account_retrieval.feature:62
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a GET request to "/accounts/A"                          # None
+    Then the response status code should be 404                         # None
+    And the response should be valid JSON                               # None
+
+  @boundary_testing
+  Scenario Outline: Retrieve accounts with boundary ID values -- @1.4   # features/accounts/account_retrieval.feature:63
+    Given the banking API is available                                  # None
+    And I have valid authentication credentials                         # None
+    When I send a GET request to "/accounts/VERYLONGACCOUNTID"          # None
+    Then the response status code should be 404                         # None
+    And the response should be valid JSON                               # None
+
+  @performance @load_testing
+  Scenario: Multiple concurrent account retrievals           # features/accounts/account_retrieval.feature:66
+    Given the banking API is available                       # None
+    And I have valid authentication credentials              # None
+    When I send a GET request to "/accounts/ACC001"          # None
+    And I send a GET request to "/accounts/ACC002"           # None
+    Then the response time should be under 1500 milliseconds # None
+    And the response should be successful                    # None
+
+  @data_validation
+  Scenario: Verify account response data types and formats  # features/accounts/account_retrieval.feature:73
+    Given the banking API is available                      # None
+    And I have valid authentication credentials             # None
+    When I send a GET request to "/accounts/ACC001"         # None
+    Then the response status code should be 200             # None
+    And the response "accountId" should be "ACC001"         # None
+    And the response should contain "accountId"             # None
+    And the response should contain "accountType"           # None
+    And the response should contain "currency"              # None
+    And the response should contain "balance"               # None
+    And the response should contain "createdAt"             # None
+
+  @correlation_tracking
+  Scenario: Verify correlation ID is propagated in account retrieval  # features/accounts/account_retrieval.feature:84
+    Given the banking API is available                                # None
+    And I have valid authentication credentials                       # None
+    Given I set the correlation ID to "test-acc-001"                  # None
+    When I send a GET request to "/accounts/ACC001"                   # None
+    Then the response status code should be 200                       # None
+    And the response should contain the correlation ID                # None
+
+  @caching_behavior
+  Scenario: Verify consistent response for repeated requests  # features/accounts/account_retrieval.feature:91
+    Given the banking API is available                        # None
+    And I have valid authentication credentials               # None
+    When I send a GET request to "/accounts/ACC001"           # None
+    Then the response status code should be 200               # None
+    And I save the response "accountId" as "account_id_1"     # None
+    When I send a GET request to "/accounts/ACC001"           # None
+    Then the response status code should be 200               # None
+    And I save the response "accountId" as "account_id_2"     # None
+
+  @response_headers
+  Scenario: Verify account retrieval response headers  # features/accounts/account_retrieval.feature:101
+    Given the banking API is available                 # None
+    And I have valid authentication credentials        # None
+    When I send a GET request to "/accounts/ACC001"    # None
+    Then the response status code should be 200        # None
+    And the response should include security headers   # None
+    And the response should contain the correlation ID # None
+
+  @edge_cases
+  Scenario Outline: Account retrieval with special characters in ID -- @1.1   # features/accounts/account_retrieval.feature:115
+    Given the banking API is available                                        # None
+    And I have valid authentication credentials                               # None
+    When I send a GET request to "/accounts/ACC@001"                          # None
+    Then the response status code should be 404                               # None
+    And the response should contain an error message                          # None
+
+  @edge_cases
+  Scenario Outline: Account retrieval with special characters in ID -- @1.2   # features/accounts/account_retrieval.feature:116
+    Given the banking API is available                                        # None
+    And I have valid authentication credentials                               # None
+    When I send a GET request to "/accounts/ACC 001"                          # None
+    Then the response status code should be 404                               # None
+    And the response should contain an error message                          # None
+
+  @edge_cases
+  Scenario Outline: Account retrieval with special characters in ID -- @1.3   # features/accounts/account_retrieval.feature:117
+    Given the banking API is available                                        # None
+    And I have valid authentication credentials                               # None
+    When I send a GET request to "/accounts/ACC#001"                          # None
+    Then the response status code should be 404                               # None
+    And the response should contain an error message                          # None
+
+  @edge_cases
+  Scenario Outline: Account retrieval with special characters in ID -- @1.4   # features/accounts/account_retrieval.feature:118
+    Given the banking API is available                                        # None
+    And I have valid authentication credentials                               # None
+    When I send a GET request to "/accounts/ACC%001"                          # None
+    Then the response status code should be 400                               # None
+    And the response should contain an error message                          # None
+

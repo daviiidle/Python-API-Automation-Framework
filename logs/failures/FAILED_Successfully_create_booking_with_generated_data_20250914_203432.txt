@@ -1,0 +1,47 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T20:34:32.983496
+[TEST] Scenario: Successfully create booking with generated data
+[FILE] Feature: Booking Management
+[LOCATION] Location: features/bookings/booking_management.feature:12
+[TIME]  Duration: 0:00:01.599879
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Key assertion failed - 'serviceType' not found. Available keys: ['bookingId', 'customerId', 'productType', 'productId', 'status', 'createdAt']
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: https://wiremock-production.up.railway.app/bookings
+Headers: {
+  "Content-Encoding": "gzip",
+  "Content-Type": "application/json",
+  "Matched-Stub-Id": "4c8a126b-a723-4fe3-bbe6-bc825f0e8e8a",
+  "Server": "railway-edge",
+  "X-Correlation-Id": "",
+  "X-Railway-Edge": "railway/us-west2",
+  "X-Railway-Request-Id": "crQAnxY4SsK0SrPY-_9nXA",
+  "Date": "Sun, 14 Sep 2025 10:34:32 GMT",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"bookingId":"BOOK184690","customerId":"CUST525950","productType":"APPOINTMENT","productId":"PROD246759","status":"active","createdAt":"2025-09-14 10:34:32"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.749s
+Errors: ["Key assertion failed - 'serviceType' not found. Available keys: ['bookingId', 'customerId', 'productType', 'productId', 'status', 'createdAt']"]
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

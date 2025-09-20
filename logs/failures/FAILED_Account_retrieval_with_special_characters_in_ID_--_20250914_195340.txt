@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T19:53:40.512836
+[TEST] Scenario: Account retrieval with special characters in ID -- @1.1 
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:115
+[TIME]  Duration: 0:00:01.531741
+[TAGS]  Tags: edge_cases
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 502 | JSON Error: {"status": "error", "code": 502, "message": "Application failed to respond", "request_id": "BdJn3oxuQuawAhMqLPU1MQ"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.762s
+Errors: ['Status code assertion failed - Expected: 404, Actual: 502']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

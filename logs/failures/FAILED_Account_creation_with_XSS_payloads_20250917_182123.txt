@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T18:21:23.776268
+[TEST] Scenario: Account creation with XSS payloads
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:158
+[TIME]  Duration: 0:00:00.151938
+[TAGS]  Tags: xss_protection
+[INFO] Status: failed
+
+[ERROR] Last Error: Security assertion failed - Response contains forbidden text '<script>'
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/accounts
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "cbe310ae-1ebd-4b96-a05c-8352fa709f63",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC086279","customerId":"CUST000001","bsb":"088400","accountNumber":"78575328","accountType":"SAVINGS","currency":"AUD","initialBalance":"0.00","description":"<script>alert('xss')</script>","branch":"","createdAt":"2025-09-17 18:21:23"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.017s
+Errors: ["Security assertion failed - Response contains forbidden text '<script>'"]
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

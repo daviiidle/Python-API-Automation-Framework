@@ -1,0 +1,6 @@
+{
+  "customerId": "CUST001",
+  "accountType": "SAVINGS",
+  "currency": "AUD",
+  "initialBalance": 0.00
+}

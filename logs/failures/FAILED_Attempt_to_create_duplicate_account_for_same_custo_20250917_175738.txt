@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T17:57:38.225691
+[TEST] Scenario: Attempt to create duplicate account for same customer
+[FILE] Feature: Account Creation
+[LOCATION] Location: features/accounts/account_creation.feature:166
+[TIME]  Duration: 0:00:00.304654
+[TAGS]  Tags: duplicate_handling
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 409, Actual: 201 | JSON Error: {"accountId": "ACC708028", "customerId": "CUST947825", "bsb": "130950", "accountNumber": "32573136", "accountType": "SAVINGS", "currency": "EUR", "initialBalance": "6856.07", "description": "", "branch": "", "createdAt": "2025-09-17 17:57:38"}
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/accounts
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "bb546a1d-31ff-4d16-ae9b-f676db706078",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC708028","customerId":"CUST947825","bsb":"130950","accountNumber":"32573136","accountType":"SAVINGS","currency":"EUR","initialBalance":"6856.07","description":"","branch":"","createdAt":"2025-09-17 17:57:38"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 2
+Total Response Time: 0.042s
+Errors: ['Status code assertion failed - Expected: 409, Actual: 201']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

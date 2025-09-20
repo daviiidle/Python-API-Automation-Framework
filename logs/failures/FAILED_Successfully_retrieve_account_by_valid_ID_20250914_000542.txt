@@ -1,0 +1,54 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T00:05:42.847504
+[TEST] Scenario: Successfully retrieve account by valid ID
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:12
+[TIME]  Duration: 0:00:01.704636
+[TAGS]  Tags: happy_path, regression
+[INFO] Status: failed
+
+[ERROR] Last Error: Key assertion failed - 'firstName' not found. Available keys: ['accountId', 'customerId', 'bsb', 'accountNumber', 'accountType', 'createdAt']
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 200
+URL: https://wiremock-production.up.railway.app/accounts/ACC001
+Headers: {
+  "Content-Encoding": "gzip",
+  "Content-Type": "application/json",
+  "Matched-Stub-Id": "189f34fa-5631-4785-8846-7ad6992d32b5",
+  "Server": "railway-edge",
+  "X-Correlation-Id": "",
+  "X-Railway-Edge": "railway/us-west2",
+  "X-Railway-Request-Id": "clZotPbzR8eIqh5hnpoFkQ",
+  "Date": "Sat, 13 Sep 2025 14:05:41 GMT",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{
+  "accountId": "ACC001",
+  "customerId": "CUST001",
+  "bsb": "358134",
+  "accountNumber": "50195430",
+  "accountType": "SAVINGS",
+  "createdAt": "2025-09-13 14:05:41"
+}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.862s
+Errors: ["Key assertion failed - 'firstName' not found. Available keys: ['accountId', 'customerId', 'bsb', 'accountNumber', 'accountType', 'createdAt']"]
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: railway
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

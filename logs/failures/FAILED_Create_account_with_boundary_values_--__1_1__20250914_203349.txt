@@ -1,0 +1,28 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T20:33:49.855451
+[TEST] Scenario: Create account with boundary values -- @1.1 
+[FILE] Feature: Account Creation
+[LOCATION] Location: features/accounts/account_creation.feature:124
+[TIME]  Duration: 0:00:00.870086
+[TAGS]  Tags: boundary_testing
+[INFO] Status: failed
+
+[ERROR] Last Error: name 'timeout' is not defined
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 0
+Total Response Time: 0.000s
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

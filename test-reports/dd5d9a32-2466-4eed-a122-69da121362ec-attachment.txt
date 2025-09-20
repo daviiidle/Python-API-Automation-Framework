@@ -1,0 +1,6 @@
+{
+  "customerId": 123,
+  "accountType": "SAVINGS",
+  "currency": "AUD",
+  "initialBalance": "invalid_number"
+}

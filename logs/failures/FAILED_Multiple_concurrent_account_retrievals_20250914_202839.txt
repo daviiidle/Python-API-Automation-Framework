@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T20:28:39.480322
+[TEST] Scenario: Multiple concurrent account retrievals
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:66
+[TIME]  Duration: 0:00:02.340000
+[TAGS]  Tags: performance, load_testing
+[INFO] Status: failed
+
+[ERROR] Last Error: Success assertion failed - Status 500 is not in 2xx range
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 2
+Total Response Time: 1.498s
+Errors: ['Success assertion failed - Status 500 is not in 2xx range']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

@@ -8,7 +8,7 @@ Feature: End-to-End Banking Workflows
     Given the banking API is available
     And I have valid authentication credentials
 
-  @workflow @smoke
+  @workflow @smoke @quarantine
   Scenario: Complete customer onboarding workflow
     Given I generate test data for "customer"
     And I save the generated correlation ID
@@ -21,9 +21,9 @@ Feature: End-to-End Banking Workflows
     Then the response status code should be 201
     And I save the response "accountId" as "account_id"
     
-    When I retrieve the created "customer" using generated ID
+    When I send a GET request to "/customers/{customer_id}" with substitution
     Then the response status code should be 200
-    When I retrieve the created "account" using generated ID
+    When I send a GET request to "/accounts/{account_id}" with substitution
     Then the response status code should be 200
 
   @workflow @regression

@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-13T11:07:18.278231
+[TEST] Scenario: Successfully create customer with generated data
+[FILE] Feature: Customer Management
+[LOCATION] Location: features/customers/customer_management.feature:12
+[TIME]  Duration: 0:00:01.040316
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 404
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.538s
+Errors: ['Status code assertion failed - Expected: 201, Actual: 404']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://your-wiremock-app.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

@@ -1,0 +1,28 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-16T12:24:34.524080
+[TEST] Scenario: Successfully create account with generated data
+[FILE] Feature: Account Creation with Dynamic Data
+[LOCATION] Location: features/accounts/account_creation_dynamic.feature:12
+[TIME]  Duration: 0:00:04.102973
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Connection error during API health check: HTTPConnectionPool(host='localhost', port=8081): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C55AF81590>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 0
+Total Response Time: 0.000s
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

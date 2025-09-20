@@ -1,0 +1,37 @@
+name: Simple Health Check
+
+on:
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  simple-health:
+    name: Simple Railway API Health Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test Railway API
+        run: |
+          API_URL="https://wiremock-production.up.railway.app"
+          AUTH_TOKEN="banking-api-key-2024"
+
+          echo "🔍 Testing Railway API: $API_URL"
+
+          # Simple connectivity test
+          echo "1. Basic connectivity test..."
+          curl -v --max-time 30 "$API_URL" || echo "Basic test failed"
+
+          echo ""
+          echo "2. Health endpoint test..."
+          curl -v --max-time 30 "$API_URL/__admin/health" || echo "Health test failed"
+
+          echo ""
+          echo "3. Test with auth..."
+          curl -v --max-time 30 \
+            -H "Authorization: Bearer $AUTH_TOKEN" \
+            "$API_URL/customers/CUST001" || echo "Auth test failed"
+
+          echo ""
+          echo "✅ Health check completed (always succeeds for debugging)"

@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:18:41.601352
+[TEST] Scenario: API access denied with invalid token
+[FILE] Feature: Authentication and Security
+[LOCATION] Location: features/authentication/auth_security.feature:27
+[TIME]  Duration: 0:00:00.122720
+[TAGS]  Tags: authentication, error_handling
+[INFO] Status: failed
+
+[ERROR] Last Error: Unauthorized assertion failed - Expected: 401, Actual: 200
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 200
+URL: http://localhost:8081/customers/CUST001
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "2d49efa0-3e87-4a96-955e-6e836b807e49",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"customerId":"CUST001","firstName":"John","lastName":"Doe","email":"john.doe@example.com","phone":"+61412345678","dob":"1990-01-15","address":"123 Main Street","city":"Melbourne","state":"VIC","postcode":"3000","createdAt":"2024-01-01 10:00:00"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.015s
+Errors: ['Unauthorized assertion failed - Expected: 401, Actual: 200']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

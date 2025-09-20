@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:18:35.040597
+[TEST] Scenario: Account creation with invalid token
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:21
+[TIME]  Duration: 0:00:00.153518
+[TAGS]  Tags: authentication_errors, regression
+[INFO] Status: failed
+
+[ERROR] Last Error: Unauthorized assertion failed - Expected: 401, Actual: 201
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/accounts
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "e362c1c9-0bd6-4c27-b61a-2a9697c18c35",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC948616","customerId":"CUST001","bsb":"750076","accountNumber":"33268502","accountType":"SAVINGS","currency":"AUD","initialBalance":"0.00","createdAt":"2025-09-17 13:18:35"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.014s
+Errors: ['Unauthorized assertion failed - Expected: 401, Actual: 201']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

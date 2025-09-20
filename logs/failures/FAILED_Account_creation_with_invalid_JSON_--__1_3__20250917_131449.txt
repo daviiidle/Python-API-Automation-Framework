@@ -1,0 +1,26 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:14:49.356102
+[TEST] Scenario: Account creation with invalid JSON -- @1.3 
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:55
+[TIME]  Duration: 0:00:00.136328
+[TAGS]  Tags: validation_errors, regression
+[INFO] Status: failed
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 0
+Total Response Time: 0.000s
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

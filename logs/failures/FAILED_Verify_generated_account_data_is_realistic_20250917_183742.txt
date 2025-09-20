@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T18:37:42.610073
+[TEST] Scenario: Verify generated account data is realistic
+[FILE] Feature: Account Creation with Dynamic Data
+[LOCATION] Location: features/accounts/account_creation_dynamic.feature:90
+[TIME]  Duration: 0:00:00.155550
+[TAGS]  Tags: realistic_data_testing
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 409 | JSON Error: {"error": "Conflict", "code": "DUPLICATE_ACCOUNT", "message": "An account with the same type and currency already exists for this customer", "timestamp": "2025-09-17 18:37:42"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.013s
+Errors: ['Status code assertion failed - Expected: 201, Actual: 409']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

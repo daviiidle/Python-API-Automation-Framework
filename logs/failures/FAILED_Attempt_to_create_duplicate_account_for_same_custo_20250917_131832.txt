@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:18:32.276652
+[TEST] Scenario: Attempt to create duplicate account for same customer
+[FILE] Feature: Account Creation
+[LOCATION] Location: features/accounts/account_creation.feature:166
+[TIME]  Duration: 0:00:00.249225
+[TAGS]  Tags: duplicate_handling
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 409, Actual: 201 | JSON Error: {"accountId": "ACC751115", "customerId": "CUST001", "bsb": "148092", "accountNumber": "78091867", "accountType": "SAVINGS", "currency": "AUD", "initialBalance": "1000.0", "createdAt": "2025-09-17 13:18:32"}
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/accounts
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "d0512559-92d3-4b5f-b08e-1844303006ab",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC751115","customerId":"CUST001","bsb":"148092","accountNumber":"78091867","accountType":"SAVINGS","currency":"AUD","initialBalance":"1000.0","createdAt":"2025-09-17 13:18:32"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 2
+Total Response Time: 0.016s
+Errors: ['Status code assertion failed - Expected: 409, Actual: 201']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

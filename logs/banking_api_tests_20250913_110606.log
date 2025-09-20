@@ -1,0 +1,64 @@
+2025-09-13 11:06:06,709 - banking_api_tests - INFO - [environment.py:232] - [FRAMEWORK] ================================================================================
+2025-09-13 11:06:06,709 - banking_api_tests - INFO - [environment.py:233] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION START
+2025-09-13 11:06:06,709 - banking_api_tests - INFO - [environment.py:234] - [FRAMEWORK] ================================================================================
+2025-09-13 11:06:06,709 - banking_api_tests - DEBUG - [environment.py:239] - [FILE] Created reports directories
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:258] - [ENV] Test Environment: test
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:259] - [URL] API Base URL: https://your-wiremock-app.railway.app
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:260] - [AUTH] Auth Token: ****************2024
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:261] - [FILE] Log File: logs/banking_api_tests_20250913_110606.log
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:264] - [PLATFORM]  Platform: nt
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:265] - [TIME] Start Time: 2025-09-13T11:06:06.710451
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:266] - [USER] User: D
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:267] - [DIR] Working Directory: C:\Users\D\python api automation framework
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:268] - [TIMEOUT] Request Timeout: 30s
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:269] - [PERFORMANCE] Performance Threshold: 2000ms
+2025-09-13 11:06:06,710 - banking_api_tests - INFO - [environment.py:282] - [START] Framework initialization complete - Ready to execute tests
+2025-09-13 11:06:06,711 - banking_api_tests - INFO - [environment.py:291] - [SCENARIO] ============================================================
+2025-09-13 11:06:06,711 - banking_api_tests - INFO - [environment.py:292] - [TEST] SCENARIO START: Successfully create account with valid generated data
+2025-09-13 11:06:06,711 - banking_api_tests - INFO - [environment.py:293] - [FILE] Feature: Account Creation
+2025-09-13 11:06:06,711 - banking_api_tests - INFO - [environment.py:294] - [LOCATION] Location: features/accounts/account_creation.feature:12
+2025-09-13 11:06:06,711 - banking_api_tests - INFO - [environment.py:295] - [TAGS]  Tags: happy_path, smoke
+2025-09-13 11:06:06,711 - banking_api_tests - INFO - [environment.py:296] - [TIME] Start Time: 2025-09-13T11:06:06.711354
+2025-09-13 11:06:06,711 - banking_api_tests - INFO - [environment.py:297] - [SCENARIO] ============================================================
+2025-09-13 11:06:06,711 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 11:06:06,711 - banking_api_tests - DEBUG - [common_steps.py:154] - [API] Target API URL: https://your-wiremock-app.railway.app
+2025-09-13 11:06:06,712 - banking_api_tests - DEBUG - [common_steps.py:156] - [ENV] Environment: dev
+2025-09-13 11:06:06,713 - urllib3.connectionpool - DEBUG - [connectionpool.py:1049] - Starting new HTTPS connection (1): your-wiremock-app.railway.app:443
+2025-09-13 11:06:07,262 - urllib3.connectionpool - DEBUG - [connectionpool.py:544] - https://your-wiremock-app.railway.app:443 "GET / HTTP/1.1" 200 336
+2025-09-13 11:06:07,263 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 11:06:07,263 - banking_api_tests - DEBUG - [common_steps.py:164] - [TIME] Health Check Response Time: 0.551s
+2025-09-13 11:06:07,263 - banking_api_tests - DEBUG - [common_steps.py:165] - [HEADERS] Health Check Response Headers: {'vary': 'Origin', 'access-control-allow-origin': 'https://railway.com', 'access-control-allow-credentials': 'true', 'content-type': 'text/plain; charset=utf-8', 'Content-Length': '336', 'date': 'Sat, 13 Sep 2025 01:06:05 GMT', 'via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'}
+2025-09-13 11:06:07,263 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 11:06:07,264 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 11:06:07,264 - banking_api_tests - DEBUG - [common_steps.py:193] - [AUTH] Auth Token Source: Context
+2025-09-13 11:06:07,264 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 11:06:07,265 - banking_api_tests - DEBUG - [common_steps.py:210] - [HEADERS] Default headers configured with authentication
+2025-09-13 11:06:07,265 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 11:06:07,265 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: account
+2025-09-13 11:06:07,265 - banking_api_tests - INFO - [data_steps.py:216] - [REQUEST] Creating account using generated data
+2025-09-13 11:06:07,265 - banking_api_tests - DEBUG - [data_steps.py:217] - [URL] Full URL: https://your-wiremock-app.railway.app/accounts
+2025-09-13 11:06:07,265 - banking_api_tests - DEBUG - [data_steps.py:218] - [BODY] Request Body: {
+  "customerId": "CUST001",
+  "accountType": "SAVINGS",
+  "currency": "AUD",
+  "initialBalance": 1000.0
+}
+2025-09-13 11:06:07,266 - urllib3.connectionpool - DEBUG - [connectionpool.py:1049] - Starting new HTTPS connection (1): your-wiremock-app.railway.app:443
+2025-09-13 11:06:07,774 - urllib3.connectionpool - DEBUG - [connectionpool.py:544] - https://your-wiremock-app.railway.app:443 "POST /accounts HTTP/1.1" 404 9
+2025-09-13 11:06:07,774 - banking_api_tests - INFO - [data_steps.py:236] - [RESPONSE] Create account Response: 404
+2025-09-13 11:06:07,774 - banking_api_tests - INFO - [data_steps.py:237] - [TIME]  Response Time: 0.509s
+2025-09-13 11:06:07,775 - banking_api_tests - INFO - [common_steps.py:467] - [VERIFY] Verifying response status code should be 201
+2025-09-13 11:06:07,775 - banking_api_tests - INFO - [common_steps.py:474] - [INFO] Expected: 201, Actual: 404
+2025-09-13 11:06:07,775 - banking_api_tests - ERROR - [common_steps.py:479] - [ERROR] Status code assertion FAILED: Expected 201, got 404
+2025-09-13 11:06:07,775 - banking_api_tests - ERROR - [common_steps.py:480] - [BODY] Response content: Not Found...
+2025-09-13 11:06:07,775 - banking_api_tests - DEBUG - [common_steps.py:483] - [HEADERS] Response Headers: {'vary': 'Origin, Accept-Encoding', 'access-control-allow-origin': 'https://railway.com', 'access-control-allow-credentials': 'true', 'content-type': 'text/plain; charset=utf-8', 'Content-Length': '9', 'date': 'Sat, 13 Sep 2025 01:06:06 GMT', 'via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'}
+2025-09-13 11:06:07,776 - banking_api_tests - ERROR - [environment.py:170] - [SAVE] Failure details saved to: logs/failures/FAILED_Successfully_create_account_with_valid_generated_d_20250913_110607.txt
+2025-09-13 11:06:07,776 - banking_api_tests - INFO - [environment.py:331] - [END] ============================================================
+2025-09-13 11:06:07,776 - banking_api_tests - INFO - [environment.py:332] - [FAILED] SCENARIO COMPLETE: Successfully create account with valid generated data
+2025-09-13 11:06:07,776 - banking_api_tests - INFO - [environment.py:333] - [INFO] Status: [FAILED] FAILED
+2025-09-13 11:06:07,776 - banking_api_tests - INFO - [environment.py:334] - [TIME]  Duration: 0:00:01.064155
+2025-09-13 11:06:07,776 - banking_api_tests - INFO - [environment.py:335] - [URL] API Calls Made: 1
+2025-09-13 11:06:07,776 - banking_api_tests - INFO - [environment.py:339] - [PERFORMANCE] Avg Response Time: 0.509s
+2025-09-13 11:06:07,776 - banking_api_tests - INFO - [environment.py:340] - [INFO] Total Response Time: 0.509s
+2025-09-13 11:06:07,776 - banking_api_tests - ERROR - [environment.py:344] - [ERROR] Last Error: Status code assertion failed - Expected: 201, Actual: 404
+2025-09-13 11:06:07,776 - banking_api_tests - INFO - [environment.py:353] - [END] ============================================================

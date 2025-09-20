@@ -1,0 +1,40 @@
+<testsuite name="loans.loan_management.Loan Management" tests="2" errors="0" failures="0" skipped="2" time="0.0" timestamp="2025-09-20T14:29:58.875015" hostname="DESKTOP-9TL42EO"><testcase classname="loans.loan_management.Loan Management" name="Successfully create loan application with generated data" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @happy_path @smoke
+  Scenario: Successfully create loan application with generated data
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "loan" ... skipped in 0.000s
+    When I create a "loan" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should contain "loanId" ... skipped in 0.000s
+    And the response should contain "customerId" ... skipped in 0.000s
+    And the response should contain "loanType" ... skipped in 0.000s
+    And the response should contain "amount" ... skipped in 0.000s
+    And the response should contain "term" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="loans.loan_management.Loan Management" name="Create loans with various types and terms" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @table_driven @regression @FAILED
+  Scenario: Create loans with various types and terms
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I create loans with the following data: ... skipped in 0.000s
+      | loanType | amount | term | interestRate |
+      | PERSONAL | 25000  | 36   | 8.5          |
+      | HOME     | 450000 | 300  | 4.2          |
+      | CAR      | 35000  | 60   | 6.8          |
+      | BUSINESS | 100000 | 84   | 9.5          |
+    Then all loan creations should have the expected results ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

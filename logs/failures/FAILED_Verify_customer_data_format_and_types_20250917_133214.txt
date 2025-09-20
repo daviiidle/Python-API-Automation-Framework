@@ -1,0 +1,40 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:32:14.364353
+[TEST] Scenario: Verify customer data format and types
+[FILE] Feature: Customer Management
+[LOCATION] Location: features/customers/customer_management.feature:58
+[TIME]  Duration: 0:00:00.126089
+[TAGS]  Tags: data_validation, regression
+[INFO] Status: failed
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/customers
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "a13cb62a-42c9-4ec6-9023-4a65430581b1",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"customerId":"CUST152042","firstName":"Samantha","lastName":"Dixon","dob":"1961-03-23","email":"zachary59@example.net","phone":"61526465","createdAt":"2025-09-17 13:32:14"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.014s
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-13T11:54:41.889632
+[TEST] Scenario: Verify consistent response for repeated requests
+[FILE] Feature: Account Retrieval
+[LOCATION] Location: features/accounts/account_retrieval.feature:91
+[TIME]  Duration: 0:00:01.008574
+[TAGS]  Tags: caching_behavior
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 200, Actual: 404
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.507s
+Errors: ['Status code assertion failed - Expected: 200, Actual: 404']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://your-wiremock-app.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

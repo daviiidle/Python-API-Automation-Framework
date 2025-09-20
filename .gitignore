@@ -1,0 +1,90 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test Reports and Logs - CRITICAL FOR THIS FRAMEWORK
+logs/
+*.log
+reports/
+.allure/
+.pytest_cache/
+test-results/
+test_failure_analysis_*.json
+comprehensive_analysis_report.txt
+vector_analysis_report.txt
+latest_test_run.log
+pretty.output
+test_currency.txt
+test_summary.txt
+
+# Analysis and temporary files
+COMPACT_FAILURE_ANALYSIS_*.txt
+*_ANALYSIS_*.txt
+*_FIXES_NEEDED.md
+*_CHANGES_NEEDED.md
+*_REGRESSION_FIXES.md
+*_TASK_LIST.md
+*_TASKS.md
+*_IMPLEMENTATION_TASKS.md
+*_REPORTING.md
+*_README.md
+
+# Environment Files (keep only .env.test)
+.env.local
+.env.*.local
+.env.dev
+.env.staging
+.env.railway
+.env.prod
+
+# Temporary Files
+*.tmp
+*.temp
+.tmp/
+parallel_outputs/
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# Behave specific
+behave-results/

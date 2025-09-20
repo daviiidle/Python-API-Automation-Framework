@@ -1,0 +1,6 @@
+{
+  "customerId": "VERYLONGCUSTOMERID123456789",
+  "accountType": "SAVINGS",
+  "currency": "AUD",
+  "initialBalance": 1000
+}

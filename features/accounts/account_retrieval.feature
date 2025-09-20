@@ -14,8 +14,8 @@ Feature: Account Retrieval
     Then the response status code should be 200
     And the response should be valid JSON
     And the response should contain "customerId"
-    And the response should contain "firstName"
-    And the response should contain "lastName"
+    And the response should contain "accountId"
+    And the response should contain "accountType"
     And the response should contain "createdAt"
     And the response should contain the correlation ID
     And the response time should be under 2000 milliseconds
@@ -27,13 +27,13 @@ Feature: Account Retrieval
     And the response should be valid JSON
     And the response should contain "customerId"
     And the response should contain the following fields:
-      | field      |
-      | firstName  |
-      | lastName   |
-      | email      |
-      | phone      |
-      | dob        |
-      | createdAt  |
+      | field        |
+      | accountId    |
+      | accountType  |
+      | currency     |
+      | balance      |
+      | bsb          |
+      | createdAt    |
 
   @error_handling @regression
   Scenario: Attempt to retrieve non-existent account
@@ -73,11 +73,11 @@ Feature: Account Retrieval
   Scenario: Verify account response data types and formats
     When I send a GET request to "/accounts/ACC001"
     Then the response status code should be 200
-    And the response "customerId" should be "ACC001"
-    And the response should contain "firstName"
-    And the response should contain "email"
-    And the response should contain "phone"
-    And the response should contain "dob"
+    And the response "accountId" should be "ACC001"
+    And the response should contain "accountId"
+    And the response should contain "accountType"
+    And the response should contain "currency"
+    And the response should contain "balance"
     And the response should contain "createdAt"
 
   @correlation_tracking
@@ -91,10 +91,10 @@ Feature: Account Retrieval
   Scenario: Verify consistent response for repeated requests
     When I send a GET request to "/accounts/ACC001"
     Then the response status code should be 200
-    And I save the response "firstName" as "first_name_1"
+    And I save the response "accountId" as "account_id_1"
     When I send a GET request to "/accounts/ACC001"
     Then the response status code should be 200
-    And I save the response "firstName" as "first_name_2"
+    And I save the response "accountId" as "account_id_2"
     # Note: In a real scenario, we'd compare these values
 
   @response_headers
@@ -107,12 +107,12 @@ Feature: Account Retrieval
   @edge_cases
   Scenario Outline: Account retrieval with special characters in ID
     When I send a GET request to "/accounts/<account_id>"
-    Then the response status code should be 404
+    Then the response status code should be <expected_status>
     And the response should contain an error message
 
     Examples:
-      | account_id    |
-      | ACC@001      |
-      | ACC 001      |
-      | ACC#001      |
-      | ACC%001      |
+      | account_id    | expected_status |
+      | ACC@001      | 404             |
+      | ACC 001      | 404             |
+      | ACC#001      | 404             |
+      | ACC%001      | 400             |

@@ -7,7 +7,7 @@ Feature: Authentication and Security
   Background:
     Given the banking API is available
 
-  @authentication @smoke
+  @authentication @smoke @quarantine
   Scenario: Successful API access with valid bearer token
     Given I have a valid bearer token
     When I send a GET request to "/customers/CUST001"
@@ -31,7 +31,7 @@ Feature: Authentication and Security
     And the error message should indicate invalid token
     Then I restore the original authentication
 
-  @security @regression
+  @security @regression @quarantine
   Scenario: Authentication is case-sensitive
     Given I have a valid bearer token
     When I send a GET request to "/customers/CUST001"

@@ -1,0 +1,111 @@
+<testsuite name="customers.customer_management.Customer Management" tests="6" errors="0" failures="0" skipped="6" time="0.0" timestamp="2025-09-20T14:30:13.374858" hostname="DESKTOP-9TL42EO"><testcase classname="customers.customer_management.Customer Management" name="Successfully create customer with generated data" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @happy_path @smoke
+  Scenario: Successfully create customer with generated data
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "customer" ... skipped in 0.000s
+    When I create a "customer" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should be valid JSON ... skipped in 0.000s
+    And the response should contain "customerId" ... skipped in 0.000s
+    And the response should contain "firstName" ... skipped in 0.000s
+    And the response should contain "lastName" ... skipped in 0.000s
+    And the response should contain "email" ... skipped in 0.000s
+    And the response should contain "phone" ... skipped in 0.000s
+    And the response should contain "createdAt" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="customers.customer_management.Customer Management" name="Successfully retrieve customer with generated ID" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @happy_path @smoke @quarantine
+  Scenario: Successfully retrieve customer with generated ID
+    Given the banking API is available ... untested in 0.000s
+    And I have valid authentication credentials ... untested in 0.000s
+    Given I generate test data for "customer" ... untested in 0.000s
+    When I create a "customer" using generated data ... untested in 0.000s
+    Then the response status code should be 201 ... untested in 0.000s
+    When I retrieve the created "customer" using generated ID ... untested in 0.000s
+    Then the response status code should be 200 ... untested in 0.000s
+    And the response should contain "customerId" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="customers.customer_management.Customer Management" name="Test customer creation with various scenarios" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @table_driven @regression
+  Scenario: Test customer creation with various scenarios
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I test customer creation with various scenarios: ... skipped in 0.000s
+      | scenario      | expected_status |
+      | valid_data    | 201             |
+      | invalid_email | 400             |
+      | missing_phone | 400             |
+      | boundary_min  | 201             |
+      | boundary_max  | 201             |
+    Then all scenario results should match expectations ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="customers.customer_management.Customer Management" name="Customer retrieval without authentication" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @error_handling @regression
+  Scenario: Customer retrieval without authentication
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I have no authentication token ... skipped in 0.000s
+    When I send a GET request to "/customers/CUST001" ... skipped in 0.000s
+    Then I should receive an unauthorized error ... skipped in 0.000s
+    Then I restore the original authentication ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="customers.customer_management.Customer Management" name="Create multiple customers for performance testing" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @performance @load_testing
+  Scenario: Create multiple customers for performance testing
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate performance test dataset with 10 records ... skipped in 0.000s
+    When I create multiple resources using performance dataset ... skipped in 0.000s
+    Then the performance should meet the required thresholds ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="customers.customer_management.Customer Management" name="Verify customer data format and types" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @data_validation @regression
+  Scenario: Verify customer data format and types
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "customer" ... skipped in 0.000s
+    When I create a "customer" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the generated data should be realistic and valid ... skipped in 0.000s
+    And the response should contain generated "firstName" value ... skipped in 0.000s
+    And the response should contain generated "lastName" value ... skipped in 0.000s
+    And the response should contain generated "email" value ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

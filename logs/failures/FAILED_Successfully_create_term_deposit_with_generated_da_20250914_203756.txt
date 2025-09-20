@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T20:37:56.525274
+[TEST] Scenario: Successfully create term deposit with generated data
+[FILE] Feature: Term Deposit Management
+[LOCATION] Location: features/term_deposits/term_deposit_management.feature:12
+[TIME]  Duration: 0:00:00.146424
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Key assertion failed - 'amount' not found. Available keys: ['depositId', 'customerId', 'principal', 'interestRate', 'termMonths', 'startDate', 'maturityDate', 'createdAt']
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/term-deposits
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "0b6c0746-523f-434d-b494-2177e98f0e4d",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"depositId":"TD919234","customerId":"CUST379948","principal":"36144.45","interestRate":"6.08","termMonths":"3","startDate":"2025-09-14","maturityDate":"2026-09-14","createdAt":"2025-09-14 20:37:56"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.017s
+Errors: ["Key assertion failed - 'amount' not found. Available keys: ['depositId', 'customerId', 'principal', 'interestRate', 'termMonths', 'startDate', 'maturityDate', 'createdAt']"]
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

@@ -1,0 +1,81 @@
+<testsuite name="integration.end_to_end_workflows.End-to-End Banking Workflows" tests="4" errors="0" failures="0" skipped="4" time="0.0" timestamp="2025-09-20T14:30:13.384276" hostname="DESKTOP-9TL42EO"><testcase classname="integration.end_to_end_workflows.End-to-End Banking Workflows" name="Complete customer onboarding workflow" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @workflow @smoke @quarantine
+  Scenario: Complete customer onboarding workflow
+    Given the banking API is available ... untested in 0.000s
+    And I have valid authentication credentials ... untested in 0.000s
+    Given I generate test data for "customer" ... untested in 0.000s
+    And I save the generated correlation ID ... untested in 0.000s
+    When I create a "customer" using generated data ... untested in 0.000s
+    Then the response status code should be 201 ... untested in 0.000s
+    And I save the response "customerId" as "customer_id" ... untested in 0.000s
+    Given I generate test data for "account" ... untested in 0.000s
+    When I create a "account" using generated data ... untested in 0.000s
+    Then the response status code should be 201 ... untested in 0.000s
+    And I save the response "accountId" as "account_id" ... untested in 0.000s
+    When I send a GET request to "/customers/{customer_id}" with substitution ... untested in 0.000s
+    Then the response status code should be 200 ... untested in 0.000s
+    When I send a GET request to "/accounts/{account_id}" with substitution ... untested in 0.000s
+    Then the response status code should be 200 ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="integration.end_to_end_workflows.End-to-End Banking Workflows" name="Customer service booking workflow" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @workflow @regression
+  Scenario: Customer service booking workflow
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "customer" ... skipped in 0.000s
+    When I create a "customer" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    Given I generate test data for "booking" ... skipped in 0.000s
+    When I create a "booking" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    When I retrieve the created "booking" using generated ID ... skipped in 0.000s
+    Then the response status code should be 200 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="integration.end_to_end_workflows.End-to-End Banking Workflows" name="Loan application workflow" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @workflow @regression
+  Scenario: Loan application workflow
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "customer" ... skipped in 0.000s
+    When I create a "customer" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    Given I generate test data for "loan" ... skipped in 0.000s
+    When I create a "loan" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    When I retrieve the created "loan" using generated ID ... skipped in 0.000s
+    Then the response status code should be 200 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="integration.end_to_end_workflows.End-to-End Banking Workflows" name="Performance testing with multiple workflows" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @performance @load_testing @workflow
+  Scenario: Performance testing with multiple workflows
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate performance test dataset with 5 records ... skipped in 0.000s
+    When I create multiple resources using performance dataset ... skipped in 0.000s
+    Then the performance should meet the required thresholds ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

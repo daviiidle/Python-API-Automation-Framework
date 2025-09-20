@@ -1,0 +1,28 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T19:54:09.450216
+[TEST] Scenario: Successfully create loan application with generated data
+[FILE] Feature: Loan Management
+[LOCATION] Location: features/loans/loan_management.feature:12
+[TIME]  Duration: 0:00:15.671607
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: API health check timed out
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 0
+Total Response Time: 0.000s
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: https://wiremock-production.up.railway.app
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

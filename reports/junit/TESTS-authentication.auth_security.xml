@@ -1,0 +1,92 @@
+<testsuite name="authentication.auth_security.Authentication and Security" tests="6" errors="0" failures="0" skipped="6" time="0.0" timestamp="2025-09-20T14:33:09.745988" hostname="DESKTOP-9TL42EO"><testcase classname="authentication.auth_security.Authentication and Security" name="Successful API access with valid bearer token" status="untested" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @authentication @smoke @quarantine
+  Scenario: Successful API access with valid bearer token
+    Given the banking API is available ... untested in 0.000s
+    Given I have a valid bearer token ... untested in 0.000s
+    When I send a GET request to "/customers/CUST001" ... untested in 0.000s
+    Then the response should be successful ... untested in 0.000s
+    And the response should contain the correlation ID ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="authentication.auth_security.Authentication and Security" name="API access denied without authentication token" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @authentication @error_handling
+  Scenario: API access denied without authentication token
+    Given the banking API is available ... skipped in 0.000s
+    Given I have no authentication token ... skipped in 0.000s
+    When I send a GET request to "/customers/CUST001" ... skipped in 0.000s
+    Then I should receive an unauthorized error ... skipped in 0.000s
+    And the error message should indicate missing authorization ... skipped in 0.000s
+    And the WWW-Authenticate header should be present ... skipped in 0.000s
+    Then I restore the original authentication ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="authentication.auth_security.Authentication and Security" name="API access denied with invalid token" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @authentication @error_handling
+  Scenario: API access denied with invalid token
+    Given the banking API is available ... skipped in 0.000s
+    Given I have an invalid bearer token ... skipped in 0.000s
+    When I send a GET request to "/customers/CUST001" ... skipped in 0.000s
+    Then I should receive an unauthorized error ... skipped in 0.000s
+    And the error message should indicate invalid token ... skipped in 0.000s
+    Then I restore the original authentication ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="authentication.auth_security.Authentication and Security" name="Authentication is case-sensitive" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @security @regression @quarantine
+  Scenario: Authentication is case-sensitive
+    Given the banking API is available ... skipped in 0.000s
+    Given I have a valid bearer token ... skipped in 0.000s
+    When I send a GET request to "/customers/CUST001" ... skipped in 0.000s
+    Then the response should be successful ... skipped in 0.000s
+    Then the authentication should be case-sensitive ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="authentication.auth_security.Authentication and Security" name="Concurrent requests with same valid token" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @concurrency @security
+  Scenario: Concurrent requests with same valid token
+    Given the banking API is available ... skipped in 0.000s
+    Given I have a valid bearer token ... skipped in 0.000s
+    When I send concurrent requests with the same token ... skipped in 0.000s
+    Then all concurrent requests should succeed ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="authentication.auth_security.Authentication and Security" name="Security headers are present in responses" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @security @headers
+  Scenario: Security headers are present in responses
+    Given the banking API is available ... skipped in 0.000s
+    Given I have a valid bearer token ... skipped in 0.000s
+    When I send a GET request to "/customers/CUST001" ... skipped in 0.000s
+    Then the response should include security headers ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

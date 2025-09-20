@@ -1,0 +1,40 @@
+2025-09-13 11:03:47,366 - banking_api_tests - INFO - [environment.py:232] - [FRAMEWORK] ================================================================================
+2025-09-13 11:03:47,366 - banking_api_tests - INFO - [environment.py:233] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION START
+2025-09-13 11:03:47,366 - banking_api_tests - INFO - [environment.py:234] - [FRAMEWORK] ================================================================================
+2025-09-13 11:03:47,366 - banking_api_tests - DEBUG - [environment.py:239] - [FILE] Created reports directories
+2025-09-13 11:03:47,367 - banking_api_tests - INFO - [environment.py:247] - [ENV] Test Environment: test
+2025-09-13 11:03:47,367 - banking_api_tests - INFO - [environment.py:248] - [URL] API Base URL: https://your-wiremock-app.railway.app
+2025-09-13 11:03:47,367 - banking_api_tests - INFO - [environment.py:249] - [AUTH] Auth Token: ****************2024
+2025-09-13 11:03:47,367 - banking_api_tests - INFO - [environment.py:250] - [FILE] Log File: logs/banking_api_tests_20250913_110347.log
+2025-09-13 11:03:47,367 - banking_api_tests - INFO - [environment.py:253] - [PLATFORM]  Platform: nt
+2025-09-13 11:03:47,367 - banking_api_tests - INFO - [environment.py:254] - [TIME] Start Time: 2025-09-13T11:03:47.367419
+2025-09-13 11:03:47,367 - banking_api_tests - INFO - [environment.py:255] - [USER] User: D
+2025-09-13 11:03:47,367 - banking_api_tests - INFO - [environment.py:256] - [DIR] Working Directory: C:\Users\D\python api automation framework
+2025-09-13 11:03:47,367 - banking_api_tests - INFO - [environment.py:269] - [START] Framework initialization complete - Ready to execute tests
+2025-09-13 11:03:47,368 - banking_api_tests - INFO - [environment.py:278] - [SCENARIO] ============================================================
+2025-09-13 11:03:47,368 - banking_api_tests - INFO - [environment.py:279] - [SCENARIO] SCENARIO START: Successfully create account with valid generated data
+2025-09-13 11:03:47,368 - banking_api_tests - INFO - [environment.py:280] - [FILE] Feature: Account Creation
+2025-09-13 11:03:47,370 - banking_api_tests - INFO - [environment.py:282] - [TAGS]  Tags: happy_path, smoke
+2025-09-13 11:03:47,370 - banking_api_tests - INFO - [environment.py:283] - [TIMEOUT] Start Time: 2025-09-13T11:03:47.368255
+2025-09-13 11:03:47,370 - banking_api_tests - INFO - [environment.py:284] - [SCENARIO] ============================================================
+2025-09-13 11:03:47,370 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-13 11:03:47,370 - banking_api_tests - DEBUG - [common_steps.py:154] - [API] Target API URL: https://your-wiremock-app.railway.app
+2025-09-13 11:03:47,370 - banking_api_tests - DEBUG - [common_steps.py:156] - [ENV] Environment: dev
+2025-09-13 11:03:47,372 - urllib3.connectionpool - DEBUG - [connectionpool.py:1049] - Starting new HTTPS connection (1): your-wiremock-app.railway.app:443
+2025-09-13 11:03:47,879 - urllib3.connectionpool - DEBUG - [connectionpool.py:544] - https://your-wiremock-app.railway.app:443 "GET / HTTP/1.1" 200 336
+2025-09-13 11:03:47,879 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-13 11:03:47,879 - banking_api_tests - DEBUG - [common_steps.py:164] - [TIME] Health Check Response Time: 0.509s
+2025-09-13 11:03:47,879 - banking_api_tests - DEBUG - [common_steps.py:165] - [HEADERS] Health Check Response Headers: {'vary': 'Origin', 'access-control-allow-origin': 'https://railway.com', 'access-control-allow-credentials': 'true', 'content-type': 'text/plain; charset=utf-8', 'Content-Length': '336', 'date': 'Sat, 13 Sep 2025 01:03:46 GMT', 'via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'}
+2025-09-13 11:03:47,879 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-13 11:03:47,881 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-13 11:03:47,881 - banking_api_tests - DEBUG - [common_steps.py:193] - [AUTH] Auth Token Source: Context
+2025-09-13 11:03:47,881 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-13 11:03:47,881 - banking_api_tests - DEBUG - [common_steps.py:210] - [HEADERS] Default headers configured with authentication
+2025-09-13 11:03:47,881 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured
+2025-09-13 11:03:47,882 - banking_api_tests - INFO - [data_steps.py:31] - [DATA] Generating test data for: account
+2025-09-13 11:03:47,884 - banking_api_tests - INFO - [environment.py:318] - [END] ============================================================
+2025-09-13 11:03:47,884 - banking_api_tests - INFO - [environment.py:319] - [FAILED] SCENARIO COMPLETE: Successfully create account with valid generated data
+2025-09-13 11:03:47,884 - banking_api_tests - INFO - [environment.py:320] - [INFO] Status: [FAILED] FAILED
+2025-09-13 11:03:47,884 - banking_api_tests - INFO - [environment.py:321] - [TIME]  Duration: 0:00:00.515915
+2025-09-13 11:03:47,884 - banking_api_tests - INFO - [environment.py:322] - [URL] API Calls Made: 0
+2025-09-13 11:03:47,884 - banking_api_tests - INFO - [environment.py:340] - [END] ============================================================

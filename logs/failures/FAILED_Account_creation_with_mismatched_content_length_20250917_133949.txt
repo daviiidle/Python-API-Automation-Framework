@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T13:39:49.562933
+[TEST] Scenario: Account creation with mismatched content length
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:203
+[TIME]  Duration: 0:00:00.154838
+[TAGS]  Tags: content_length_mismatch
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 400, Actual: 201 | JSON Error: {"accountId": "ACC159164", "customerId": "CUST001", "bsb": "131376", "accountNumber": "21888964", "accountType": "SAVINGS", "currency": "AUD", "initialBalance": "1000.0", "description": "", "branch": "", "createdAt": "2025-09-17 13:39:49"}
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/accounts
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "fce994ef-e993-42bb-a712-ba1a3ed0ef80",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"accountId":"ACC159164","customerId":"CUST001","bsb":"131376","accountNumber":"21888964","accountType":"SAVINGS","currency":"AUD","initialBalance":"1000.0","description":"","branch":"","createdAt":"2025-09-17 13:39:49"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.015s
+Errors: ['Status code assertion failed - Expected: 400, Actual: 201']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

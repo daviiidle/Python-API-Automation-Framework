@@ -1,0 +1,8 @@
+{
+  "customerId": "CUST003",
+  "accountType": "SAVINGS",
+  "currency": "AUD",
+  "initialBalance": 5000.00,
+  "description": "Primary savings account",
+  "branch": "Melbourne CBD"
+}

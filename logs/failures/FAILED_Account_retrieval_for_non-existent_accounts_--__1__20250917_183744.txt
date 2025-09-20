@@ -1,0 +1,29 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-17T18:37:44.741356
+[TEST] Scenario: Account retrieval for non-existent accounts -- @1.4 
+[FILE] Feature: Account Error Handling
+[LOCATION] Location: features/accounts/account_errors.feature:92
+[TIME]  Duration: 0:00:00.136988
+[TAGS]  Tags: not_found_errors, regression, FAILED
+[INFO] Status: failed
+
+[ERROR] Last Error: Status code assertion failed - Expected: 404, Actual: 500 | JSON Error: {"cause1": "com.github.tomakehurst.wiremock.common.JsonException: {\r\n  &quot;errors&quot; : [ {\r\n    &quot;code&quot; : 10,\r\n    &quot;source&quot; : { },\r\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\r\n    &quot;detail&quot; : &quot;Unexpected character (&apos;\\&quot;&apos; (code 34)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;error\\&quot;:\\&quot;Account not found\\&quot;,\\&quot;code\\&quot;:\\&quot;ACCOUNT_NOT_FOUND\\&quot;,\\&quot;accountId\\&quot;:\\&quot;\\&quot;\\&quot;\\&quot;,\\&quot;message\\&quot;:\\&quot;No account found with ID: \\&quot;\\&quot;\\&quot;,\\&quot;timestamp\\&quot;:\\&quot;2025-09-17 18:37:44\\&quot;}\\&quot;; line: 1, column: 71]&quot;\r\n  } ]\r\n}", "servlet": "com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet-1869f114", "cause0": "wiremock.com.fasterxml.jackson.databind.JsonMappingException: {\r\n  &quot;errors&quot; : [ {\r\n    &quot;code&quot; : 10,\r\n    &quot;source&quot; : { },\r\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\r\n    &quot;detail&quot; : &quot;Unexpected character (&apos;\\&quot;&apos; (code 34)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;error\\&quot;:\\&quot;Account not found\\&quot;,\\&quot;code\\&quot;:\\&quot;ACCOUNT_NOT_FOUND\\&quot;,\\&quot;accountId\\&quot;:\\&quot;\\&quot;\\&quot;\\&quot;,\\&quot;message\\&quot;:\\&quot;No account found with ID: \\&quot;\\&quot;\\&quot;,\\&quot;timestamp\\&quot;:\\&quot;2025-09-17 18:37:44\\&quot;}\\&quot;; line: 1, column: 71]&quot;\r\n  } ]\r\n} (through reference chain: com.github.tomakehurst.wiremock.http.ResponseDefinition[&quot;jsonBody&quot;])", "message": "wiremock.com.fasterxml.jackson.databind.JsonMappingException: {\r\n  &quot;errors&quot; : [ {\r\n    &quot;code&quot; : 10,\r\n    &quot;source&quot; : { },\r\n    &quot;title&quot; : &quot;Error parsing JSON&quot;,\r\n    &quot;detail&quot; : &quot;Unexpected character (&apos;\\&quot;&apos; (code 34)): was expecting comma to separate Object entries\\n at [Source: (String)\\&quot;{\\&quot;error\\&quot;:\\&quot;Account not found\\&quot;,\\&quot;code\\&quot;:\\&quot;ACCOUNT_NOT_FOUND\\&quot;,\\&quot;accountId\\&quot;:\\&quot;\\&quot;\\&quot;\\&quot;,\\&quot;message\\&quot;:\\&quot;No account found with ID: \\&quot;\\&quot;\\&quot;,\\&quot;timestamp\\&quot;:\\&quot;2025-09-17 18:37:44\\&quot;}\\&quot;; line: 1, column: 71]&quot;\r\n  } ]\r\n} (through reference chain: com.github.tomakehurst.wiremock.http.ResponseDefinition[&quot;jsonBody&quot;])", "url": "/accounts/%22%22", "status": "500"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.016s
+Errors: ['Status code assertion failed - Expected: 404, Actual: 500']
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

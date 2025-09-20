@@ -1,0 +1,32 @@
+2025-09-14 10:37:18,950 - banking_api_tests - INFO - [environment.py:276] - [FRAMEWORK] ================================================================================
+2025-09-14 10:37:18,950 - banking_api_tests - INFO - [environment.py:277] - [FRAMEWORK] BANKING API BDD TEST FRAMEWORK - EXECUTION START
+2025-09-14 10:37:18,950 - banking_api_tests - INFO - [environment.py:278] - [FRAMEWORK] ================================================================================
+2025-09-14 10:37:18,951 - banking_api_tests - DEBUG - [environment.py:283] - [FILE] Created reports directories
+2025-09-14 10:37:18,951 - banking_api_tests - INFO - [environment.py:242] - [ENV] Loading environment: test
+2025-09-14 10:37:18,951 - banking_api_tests - INFO - [environment.py:243] - [FILE] Environment file: environments/.env.test
+2025-09-14 10:37:18,952 - banking_api_tests - INFO - [environment.py:261] - [ENV] Successfully loaded environments/.env.test
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:300] - [ENV] Configuration loaded successfully for environment: test
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:311] - [ENV] Test Environment: test
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:312] - [URL] API Base URL: http://wiremock-production.up.railway.app
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:313] - [AUTH] Auth Token: ****************2024
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:314] - [FILE] Log File: logs/banking_api_tests_20250914_103718.log
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:317] - [PLATFORM]  Platform: nt
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:318] - [TIME] Start Time: 2025-09-14T10:37:18.953714
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:319] - [USER] User: D
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:320] - [DIR] Working Directory: C:\Users\D\python api automation framework
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:321] - [TIMEOUT] Request Timeout: 15s
+2025-09-14 10:37:18,953 - banking_api_tests - INFO - [environment.py:322] - [PERFORMANCE] Performance Threshold: 3000ms
+2025-09-14 10:37:18,954 - banking_api_tests - INFO - [environment.py:335] - [START] Framework initialization complete - Ready to execute tests
+2025-09-14 10:37:18,956 - banking_api_tests - INFO - [environment.py:344] - [SCENARIO] ============================================================
+2025-09-14 10:37:18,957 - banking_api_tests - INFO - [environment.py:345] - [TEST] SCENARIO START: Successfully create account with valid generated data
+2025-09-14 10:37:18,957 - banking_api_tests - INFO - [environment.py:346] - [FILE] Feature: Account Creation
+2025-09-14 10:37:18,957 - banking_api_tests - INFO - [environment.py:347] - [LOCATION] Location: features/accounts/account_creation.feature:12
+2025-09-14 10:37:18,957 - banking_api_tests - INFO - [environment.py:348] - [TAGS]  Tags: happy_path, smoke
+2025-09-14 10:37:18,957 - banking_api_tests - INFO - [environment.py:349] - [TIME] Start Time: 2025-09-14T10:37:18.956796
+2025-09-14 10:37:18,957 - banking_api_tests - INFO - [environment.py:350] - [SCENARIO] ============================================================
+2025-09-14 10:37:18,958 - banking_api_tests - INFO - [common_steps.py:153] - [API] Checking API availability...
+2025-09-14 10:37:20,518 - banking_api_tests - INFO - [common_steps.py:163] - [RESPONSE] API Health Check - Status: 200
+2025-09-14 10:37:20,518 - banking_api_tests - INFO - [common_steps.py:170] - [SUCCESS] API is available and responding
+2025-09-14 10:37:20,520 - banking_api_tests - INFO - [common_steps.py:192] - [AUTH] Configuring authentication credentials...
+2025-09-14 10:37:20,520 - banking_api_tests - INFO - [common_steps.py:201] - [AUTH] Auth Token Configured: ****************2024
+2025-09-14 10:37:20,521 - banking_api_tests - INFO - [common_steps.py:211] - [SUCCESS] Authentication credentials validated and configured

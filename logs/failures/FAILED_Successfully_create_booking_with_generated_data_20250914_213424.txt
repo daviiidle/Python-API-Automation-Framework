@@ -1,0 +1,43 @@
+[ERROR] BANKING API BDD FRAMEWORK - TEST FAILURE REPORT [ERROR]
+================================================================================
+
+[TIME] Failure Time: 2025-09-14T21:34:24.684670
+[TEST] Scenario: Successfully create booking with generated data
+[FILE] Feature: Booking Management
+[LOCATION] Location: features/bookings/booking_management.feature:12
+[TIME]  Duration: 0:00:00.125272
+[TAGS]  Tags: happy_path, smoke
+[INFO] Status: failed
+
+[ERROR] Last Error: Key assertion failed - 'bookingDate' not found. Available keys: ['bookingId', 'customerId', 'productType', 'productId', 'status', 'createdAt']
+
+[URL] API RESPONSE DETAILS:
+----------------------------------------
+Status Code: 201
+URL: http://localhost:8081/bookings
+Headers: {
+  "Content-Type": "application/json",
+  "X-Correlation-Id": "",
+  "Matched-Stub-Id": "e7b1ee86-a024-4b58-bf72-5a6d6ab618a7",
+  "Content-Encoding": "gzip",
+  "Transfer-Encoding": "chunked"
+}
+Response Body:
+{"bookingId":"BOOK918564","customerId":"CUST942698","productType":"APPOINTMENT","productId":"PROD792365","status":"active","createdAt":"2025-09-14 21:34:24"}
+
+[INFO] SCENARIO METRICS:
+----------------------------------------
+API Calls: 1
+Total Response Time: 0.005s
+Errors: ["Key assertion failed - 'bookingDate' not found. Available keys: ['bookingId', 'customerId', 'productType', 'productId', 'status', 'createdAt']"]
+
+[ENV] ENVIRONMENT DETAILS:
+----------------------------------------
+Base URL: http://localhost:8081
+Test Environment: Not set
+Working Directory: C:\Users\D\python api automation framework
+
+================================================================================
+[BODY] This file contains detailed failure information for debugging.
+[VERIFY] Review the exception details and API response for troubleshooting.
+================================================================================

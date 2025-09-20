@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "BDD Test Framework for Banking API using Wiremock"
 authors = ["Senior SDET Team <team@company.com>"]
 readme = "README.md"
-packages = [{include = "src"}]
+packages = [{include = "features"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -20,6 +20,7 @@ faker = "^20.1.0"
 jsonschema = "^4.20.0"
 urllib3 = "^2.1.0"
 certifi = "^2023.11.17"
+psutil = "^5.9.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.11.0"
@@ -28,14 +29,10 @@ mypy = "^1.7.1"
 isort = "^5.12.0"
 pytest-cov = "^4.1.0"
 pre-commit = "^3.6.0"
+coverage = "^7.3.2"
+bandit = {extras = ["toml"], version = "^1.7.5"}
+safety = "^2.3.5"
 
-[tool.poetry.scripts]
-test-smoke = "behave --tags=@smoke"
-test-regression = "behave --tags=@regression"
-test-api = "behave --tags=@api"
-test-banking = "behave --tags=@banking"
-test-local = "behave -f allure_behave.formatter:AllureFormatter -o reports/allure-results"
-test-ci = "behave --junit --junit-directory=reports/junit"
 
 [build-system]
 requires = ["poetry-core"]
@@ -55,3 +52,19 @@ python_version = "3.11"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
+
+[tool.bandit]
+exclude_dirs = ["tests", "venv", ".venv"]
+skips = ["B101", "B601"]
+
+[tool.coverage.run]
+source = ["features"]
+omit = ["*/tests/*", "*/venv/*", "*/.venv/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError"
+]

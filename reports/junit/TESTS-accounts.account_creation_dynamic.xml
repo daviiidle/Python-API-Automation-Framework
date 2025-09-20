@@ -1,0 +1,223 @@
+<testsuite name="accounts.account_creation_dynamic.Account Creation with Dynamic Data" tests="13" errors="0" failures="0" skipped="13" time="0.0" timestamp="2025-09-20T14:29:58.793822" hostname="DESKTOP-9TL42EO"><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Successfully create account with generated data" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @happy_path @smoke
+  Scenario: Successfully create account with generated data
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "account" ... skipped in 0.000s
+    When I create a "account" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should be valid JSON ... skipped in 0.000s
+    And the response should contain "accountId" ... skipped in 0.000s
+    And the response should contain "customerId" ... skipped in 0.000s
+    And the response should contain "accountType" ... skipped in 0.000s
+    And the response should contain "currency" ... skipped in 0.000s
+    And the response should contain "createdAt" ... skipped in 0.000s
+    And the generated data should be realistic and valid ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Create accounts with various account types and currencies" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @table_driven @regression
+  Scenario: Create accounts with various account types and currencies
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I create accounts with the following data: ... skipped in 0.000s
+      | accountType  | currency | initialBalance | description          |
+      | SAVINGS      | AUD      | 1000.50        | Primary savings      |
+      | CHECKING     | USD      | 2500.00        | USD checking account |
+      | TERM_DEPOSIT | EUR      | 10000.00       | Euro term deposit    |
+      | CREDIT_CARD  | GBP      | 0.00           | GBP credit card      |
+      | SAVINGS      | AUD      | 0.01           | Minimum balance test |
+    Then all account creations should have the expected results ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Create accounts with boundary values -- @1.1 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @boundary_testing @regression
+  Scenario Outline: Create accounts with boundary values -- @1.1 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate boundary data for "account" with "min" values ... skipped in 0.000s
+    When I create a "account" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Create accounts with boundary values -- @1.2 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @boundary_testing @regression
+  Scenario Outline: Create accounts with boundary values -- @1.2 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate boundary data for "account" with "max" values ... skipped in 0.000s
+    When I create a "account" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Attempt to create accounts with invalid data -- @1.1 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @negative_testing @error_handling
+  Scenario Outline: Attempt to create accounts with invalid data -- @1.1 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate invalid data for "account" with invalid "customerId" ... skipped in 0.000s
+    When I create a "account" using generated data ... skipped in 0.000s
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Attempt to create accounts with invalid data -- @1.2 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @negative_testing @error_handling
+  Scenario Outline: Attempt to create accounts with invalid data -- @1.2 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate invalid data for "account" with invalid "initialBalance" ... skipped in 0.000s
+    When I create a "account" using generated data ... skipped in 0.000s
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Attempt to create accounts with invalid data -- @1.3 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @negative_testing @error_handling
+  Scenario Outline: Attempt to create accounts with invalid data -- @1.3 
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate invalid data for "account" with invalid "accountType" ... skipped in 0.000s
+    When I create a "account" using generated data ... skipped in 0.000s
+    Then the response status code should be 400 ... skipped in 0.000s
+    And the response should contain an error message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Create multiple accounts for performance testing" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @performance @load_testing
+  Scenario: Create multiple accounts for performance testing
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate 5 test records for "account" ... skipped in 0.000s
+    When I create multiple resources using performance dataset ... skipped in 0.000s
+    Then the performance should meet the required thresholds ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Verify account creation response contains generated data" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @data_validation @regression
+  Scenario: Verify account creation response contains generated data
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "account" ... skipped in 0.000s
+    When I create a "account" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should contain generated "customerId" value ... skipped in 0.000s
+    And the response should contain generated "accountType" value ... skipped in 0.000s
+    And the response should contain generated "currency" value ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Create account with generated correlation ID" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @correlation_tracking
+  Scenario: Create account with generated correlation ID
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I save the generated correlation ID ... skipped in 0.000s
+    And I generate test data for "account" ... skipped in 0.000s
+    When I create a "account" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+    And the response should contain the correlation ID ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Create multiple accounts concurrently" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @concurrent_creation
+  Scenario: Create multiple accounts concurrently
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate 3 test records for "account" ... skipped in 0.000s
+    When I create multiple resources using performance dataset ... skipped in 0.000s
+    Then the performance should meet the required thresholds ... skipped in 0.000s
+    And all scenario results should match expectations ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Verify generated account data is realistic" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @realistic_data_testing
+  Scenario: Verify generated account data is realistic
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    Given I generate test data for "account" ... skipped in 0.000s
+    Then the generated data should be realistic and valid ... skipped in 0.000s
+    When I create a "account" using generated data ... skipped in 0.000s
+    Then the response status code should be 201 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="accounts.account_creation_dynamic.Account Creation with Dynamic Data" name="Create accounts with different currencies using table" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @currency_variety_testing
+  Scenario: Create accounts with different currencies using table
+    Given the banking API is available ... skipped in 0.000s
+    And I have valid authentication credentials ... skipped in 0.000s
+    When I create accounts with the following data: ... skipped in 0.000s
+      | currency | accountType  | initialBalance |
+      | AUD      | SAVINGS      | 1500.75        |
+      | USD      | CHECKING     | 3200.00        |
+      | EUR      | SAVINGS      | 2100.25        |
+      | GBP      | TERM_DEPOSIT | 8500.00        |
+      | CAD      | CHECKING     | 1800.50        |
+    Then all account creations should have the expected results ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
